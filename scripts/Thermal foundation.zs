@@ -3,22 +3,22 @@
 //Рамка механизма
 recipes.remove(<thermalexpansion:frame>);
 recipies.addShaped(<thermalexpansion:frame>, 
-[[<ore:plateSteel>, <ore:gearSteel>, <ore:plateSteel>]
-[<ore:gearSteel>, <ore:blockGlassHardened>, <ore:gearSteel>]
+[[<ore:plateSteel>, <ore:gearSteel>, <ore:plateSteel>],
+[<ore:gearSteel>, <ore:blockGlassHardened>, <ore:gearSteel>],
 [<ore:plateSteel>, <ore:gearSteel>, <ore:plateSteel>]]);
 
 //Рамка устройства
 recipes.remove(<thermalexpansion:frame:64>);
 recipies.addShaped(<thermalexpansion:frame:64>, 
-[[<ore:plateSteel>, <ore:gearTin>, <ore:plateSteel>]
-[<ore:gearSteel>, <ore:blockGlassHardened>, <ore:gearSteel>]
+[[<ore:plateSteel>, <ore:gearTin>, <ore:plateSteel>],
+[<ore:gearSteel>, <ore:blockGlassHardened>, <ore:gearSteel>],
 [<ore:plateSteel>, <ore:gearTin>, <ore:plateSteel>]]);
 
 //Рамка энергетической ячейки
 recipes.remove(<thermalexpansion:frame:128>);
 recipies.addShaped(<thermalexpansion:frame:128>, 
-[[<ore:plateSteel>, <ore:plateGold>, <ore:plateSteel>]
-[<ore:plateLead>, <ore:blockGlassHardened>, <ore:plateLead>]
+[[<ore:plateSteel>, <ore:plateGold>, <ore:plateSteel>],
+[<ore:plateLead>, <ore:blockGlassHardened>, <ore:plateLead>],
 [<ore:plateSteel>, <ore:plateGold>, <ore:plateSteel>]]);
 
 //Наборы обновлений
