@@ -24,23 +24,27 @@
           "snd_update:8": "minecraft:entity.player.levelup",
           "autoclaim:1": 0,
           "ismain:1": 1,
-          "name:8": "Forest destroer",
+          "name:8": "Getting wood",
           "desc:8": "No Description22"
         }
       },
       "tasks:9": {
         "0:10": {
-          "blocks:9": {
+          "partialMatch:1": 1,
+          "autoConsume:1": 0,
+          "groupDetect:1": 0,
+          "ignoreNBT:1": 0,
+          "index:3": 1,
+          "consume:1": 1,
+          "requiredItems:9": {
             "0:10": {
-              "blockID:8": "minecraft:log",
-              "nbt:10": {},
-              "amount:3": 16,
-              "oreDict:8": "",
-              "meta:3": -1
+              "id:8": "minecraft:log",
+              "Count:3": 8,
+              "OreDict:8": "logWood",
+              "Damage:3": 0
             }
           },
-          "index:3": 0,
-          "taskID:8": "bq_standard:block_break"
+          "taskID:8": "bq_standard:retrieval"
         }
       },
       "rewards:9": {
@@ -117,7 +121,7 @@
           "lockedprogress:1": 0,
           "tasklogic:8": "AND",
           "repeattime:3": -1,
-          "visibility:8": "NORMAL",
+          "visibility:8": "CHAIN",
           "simultaneous:1": 0,
           "icon:10": {
             "id:8": "tconstruct:tooltables",
@@ -364,6 +368,7 @@
           "lockedprogress:1": 0,
           "tasklogic:8": "AND",
           "repeattime:3": -1,
+          "visibility:8": "CHAIN",
           "simultaneous:1": 0,
           "icon:10": {
             "id:8": "minecraft:furnace",
@@ -424,6 +429,7 @@
           "lockedprogress:1": 0,
           "tasklogic:8": "AND",
           "repeattime:3": -1,
+          "visibility:8": "CHAIN",
           "simultaneous:1": 0,
           "icon:10": {
             "id:8": "rustic:ironberries",
@@ -493,6 +499,7 @@
           "lockedprogress:1": 0,
           "tasklogic:8": "AND",
           "repeattime:3": -1,
+          "visibility:8": "CHAIN",
           "simultaneous:1": 0,
           "icon:10": {
             "id:8": "rustic:crushing_tub",
@@ -553,6 +560,7 @@
           "lockedprogress:1": 0,
           "tasklogic:8": "AND",
           "repeattime:3": -1,
+          "visibility:8": "CHAIN",
           "simultaneous:1": 0,
           "icon:10": {
             "id:8": "tconstruct:smeltery_controller",
@@ -624,6 +632,7 @@
           "lockedprogress:1": 0,
           "tasklogic:8": "AND",
           "repeattime:3": -1,
+          "visibility:8": "CHAIN",
           "simultaneous:1": 0,
           "icon:10": {
             "id:8": "tconstruct:edible",
@@ -687,6 +696,7 @@
           "lockedprogress:1": 0,
           "tasklogic:8": "AND",
           "repeattime:3": -1,
+          "visibility:8": "CHAIN",
           "simultaneous:1": 0,
           "icon:10": {
             "id:8": "immersiveengineering:stone_decoration",
@@ -747,6 +757,7 @@
           "lockedprogress:1": 0,
           "tasklogic:8": "AND",
           "repeattime:3": -1,
+          "visibility:8": "CHAIN",
           "simultaneous:1": 0,
           "icon:10": {
             "id:8": "rustic:evaporating_basin",
@@ -813,6 +824,7 @@
           "lockedprogress:1": 0,
           "tasklogic:8": "AND",
           "repeattime:3": -1,
+          "visibility:8": "CHAIN",
           "simultaneous:1": 0,
           "icon:10": {
             "id:8": "enderio:item_material",
@@ -873,6 +885,7 @@
           "lockedprogress:1": 0,
           "tasklogic:8": "AND",
           "repeattime:3": -1,
+          "visibility:8": "CHAIN",
           "simultaneous:1": 0,
           "icon:10": {
             "id:8": "extrautils2:redstoneclock",
@@ -951,6 +964,7 @@
           "lockedprogress:1": 0,
           "tasklogic:8": "AND",
           "repeattime:3": -1,
+          "visibility:8": "CHAIN",
           "simultaneous:1": 0,
           "icon:10": {
             "id:8": "immersiveengineering:stone_decoration",
@@ -1011,6 +1025,7 @@
           "lockedprogress:1": 0,
           "tasklogic:8": "AND",
           "repeattime:3": -1,
+          "visibility:8": "CHAIN",
           "simultaneous:1": 0,
           "icon:10": {
             "id:8": "tconstruct:stone_torch",
@@ -1077,6 +1092,7 @@
           "lockedprogress:1": 0,
           "tasklogic:8": "AND",
           "repeattime:3": -1,
+          "visibility:8": "CHAIN",
           "simultaneous:1": 0,
           "icon:10": {
             "id:8": "tconstruct:piggybackpack",
