@@ -18,3 +18,18 @@ recipes.addShapeless(<minecraft:planks:5> * 2, [<minecraft:log:5>]);
 //Sticks remake
 recipes.remove(<minecraft:stick>);
 recipes.addShapeless(<minecraft:stick> * 2, [<minecraft:planks:*>]);
+
+//Furnace disabler
+furnace.remove(<ore:ingotCopper>);
+furnace.remove(<ore:ingotSilver>);
+furnace.remove(<ore:ingotIron>);
+furnace.remove(<ore:ingotGold>);
+furnace.remove(<ore:ingotAluminum>);
+furnace.remove(<ore:ingotUranium>);
+furnace.remove(<ore:ingotTin>);
+furnace.remove(<ore:ingotPlatinum>);
+furnace.remove(<ore:ingotIridium>);
+furnace.remove(<ore:ingotMithril>);
+furnace.remove(<ore:ingotCobalt>);
+furnace.remove(<ore:ingotArdite>);
+

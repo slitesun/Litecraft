@@ -521,12 +521,6 @@
               "Count:3": 1,
               "OreDict:8": "",
               "Damage:3": 0
-            },
-            "1:10": {
-              "id:8": "rustic:evaporating_basin",
-              "Count:3": 1,
-              "OreDict:8": "",
-              "Damage:3": 0
             }
           },
           "taskID:8": "bq_standard:crafting"
@@ -621,7 +615,7 @@
     "8:10": {
       "questID:3": 8,
       "preRequisites:11": [
-        7
+        15
       ],
       "properties:10": {
         "betterquesting:10": {
@@ -643,7 +637,7 @@
           "snd_update:8": "minecraft:entity.player.levelup",
           "autoclaim:1": 0,
           "ismain:1": 1,
-          "name:8": "Coagulated blood",
+          "name:8": "Bloody cases",
           "desc:8": "No Description"
         }
       },
@@ -666,7 +660,20 @@
           "taskID:8": "bq_standard:retrieval"
         }
       },
-      "rewards:9": {}
+      "rewards:9": {
+        "0:10": {
+          "rewardID:8": "bq_standard:item",
+          "index:3": 0,
+          "rewards:9": {
+            "0:10": {
+              "id:8": "minecraft:cooked_beef",
+              "Count:3": 8,
+              "OreDict:8": "",
+              "Damage:3": 0
+            }
+          }
+        }
+      }
     },
     "9:10": {
       "questID:3": 9,
@@ -779,12 +786,25 @@
           "taskID:8": "bq_standard:crafting"
         }
       },
-      "rewards:9": {}
+      "rewards:9": {
+        "0:10": {
+          "rewardID:8": "bq_standard:item",
+          "index:3": 0,
+          "rewards:9": {
+            "0:10": {
+              "id:8": "minecraft:bucket",
+              "Count:3": 1,
+              "OreDict:8": "",
+              "Damage:3": 0
+            }
+          }
+        }
+      }
     },
     "11:10": {
       "questID:3": 11,
       "preRequisites:11": [
-        10
+        9
       ],
       "properties:10": {
         "betterquesting:10": {
@@ -826,11 +846,26 @@
           "taskID:8": "bq_standard:crafting"
         }
       },
-      "rewards:9": {}
+      "rewards:9": {
+        "0:10": {
+          "rewardID:8": "bq_standard:item",
+          "index:3": 0,
+          "rewards:9": {
+            "0:10": {
+              "id:8": "immersiveengineering:metal",
+              "Count:3": 2,
+              "OreDict:8": "",
+              "Damage:3": 8
+            }
+          }
+        }
+      }
     },
     "12:10": {
       "questID:3": 12,
-      "preRequisites:11": [],
+      "preRequisites:11": [
+        10
+      ],
       "properties:10": {
         "betterquesting:10": {
           "issilent:1": 0,
@@ -840,7 +875,7 @@
           "repeattime:3": -1,
           "simultaneous:1": 0,
           "icon:10": {
-            "id:8": "minecraft:nether_star",
+            "id:8": "extrautils2:redstoneclock",
             "Count:3": 1,
             "Damage:2": 0,
             "OreDict:8": ""
@@ -851,17 +886,63 @@
           "snd_update:8": "minecraft:entity.player.levelup",
           "autoclaim:1": 0,
           "ismain:1": 0,
-          "name:8": "New Quest",
+          "name:8": "Tinkers automatization",
           "desc:8": "No Description"
         }
       },
-      "tasks:9": {},
-      "rewards:9": {}
+      "tasks:9": {
+        "0:10": {
+          "partialMatch:1": 1,
+          "ignoreNBT:1": 0,
+          "index:3": 0,
+          "requiredItems:9": {
+            "0:10": {
+              "id:8": "extrautils2:drum",
+              "Count:3": 1,
+              "OreDict:8": "",
+              "Damage:3": 0
+            },
+            "1:10": {
+              "id:8": "extrautils2:redstoneclock",
+              "Count:3": 1,
+              "OreDict:8": "",
+              "Damage:3": 0
+            },
+            "2:10": {
+              "id:8": "extrautils2:grocket",
+              "Count:3": 1,
+              "OreDict:8": "",
+              "Damage:3": 2
+            },
+            "3:10": {
+              "id:8": "extrautils2:grocket",
+              "Count:3": 1,
+              "OreDict:8": "",
+              "Damage:3": 0
+            }
+          },
+          "taskID:8": "bq_standard:crafting"
+        }
+      },
+      "rewards:9": {
+        "0:10": {
+          "rewardID:8": "bq_standard:item",
+          "index:3": 0,
+          "rewards:9": {
+            "0:10": {
+              "id:8": "extrautils2:grocket",
+              "Count:3": 2,
+              "OreDict:8": "",
+              "Damage:3": 0
+            }
+          }
+        }
+      }
     },
     "13:10": {
       "questID:3": 13,
       "preRequisites:11": [
-        10
+        6
       ],
       "properties:10": {
         "betterquesting:10": {
@@ -903,7 +984,159 @@
           "taskID:8": "bq_standard:crafting"
         }
       },
-      "rewards:9": {}
+      "rewards:9": {
+        "0:10": {
+          "rewardID:8": "bq_standard:item",
+          "index:3": 0,
+          "rewards:9": {
+            "0:10": {
+              "id:8": "minecraft:coal",
+              "Count:3": 16,
+              "OreDict:8": "",
+              "Damage:3": 1
+            }
+          }
+        }
+      }
+    },
+    "14:10": {
+      "questID:3": 14,
+      "preRequisites:11": [
+        4
+      ],
+      "properties:10": {
+        "betterquesting:10": {
+          "issilent:1": 0,
+          "snd_complete:8": "minecraft:entity.player.levelup",
+          "lockedprogress:1": 0,
+          "tasklogic:8": "AND",
+          "repeattime:3": -1,
+          "simultaneous:1": 0,
+          "icon:10": {
+            "id:8": "tconstruct:stone_torch",
+            "Count:3": 1,
+            "Damage:2": 0,
+            "OreDict:8": ""
+          },
+          "globalshare:1": 0,
+          "questlogic:8": "AND",
+          "partysinglereward:1": 0,
+          "snd_update:8": "minecraft:entity.player.levelup",
+          "autoclaim:1": 0,
+          "ismain:1": 0,
+          "name:8": "Miner\u0027s friends",
+          "desc:8": "No Description"
+        }
+      },
+      "tasks:9": {
+        "0:10": {
+          "partialMatch:1": 1,
+          "ignoreNBT:1": 0,
+          "index:3": 0,
+          "requiredItems:9": {
+            "0:10": {
+              "id:8": "tconstruct:stone_ladder",
+              "Count:3": 32,
+              "OreDict:8": "",
+              "Damage:3": 0
+            },
+            "1:10": {
+              "id:8": "tconstruct:stone_torch",
+              "Count:3": 32,
+              "OreDict:8": "",
+              "Damage:3": 0
+            }
+          },
+          "taskID:8": "bq_standard:crafting"
+        }
+      },
+      "rewards:9": {
+        "0:10": {
+          "rewardID:8": "bq_standard:item",
+          "index:3": 0,
+          "rewards:9": {
+            "0:10": {
+              "id:8": "minecraft:mushroom_stew",
+              "Count:3": 8,
+              "OreDict:8": "",
+              "Damage:3": 0
+            }
+          }
+        }
+      }
+    },
+    "15:10": {
+      "questID:3": 15,
+      "preRequisites:11": [
+        7
+      ],
+      "properties:10": {
+        "betterquesting:10": {
+          "issilent:1": 0,
+          "snd_complete:8": "minecraft:entity.player.levelup",
+          "lockedprogress:1": 0,
+          "tasklogic:8": "AND",
+          "repeattime:3": -1,
+          "simultaneous:1": 0,
+          "icon:10": {
+            "id:8": "tconstruct:piggybackpack",
+            "Count:3": 1,
+            "Damage:2": 0,
+            "OreDict:8": ""
+          },
+          "globalshare:1": 0,
+          "questlogic:8": "AND",
+          "partysinglereward:1": 0,
+          "snd_update:8": "minecraft:entity.player.levelup",
+          "autoclaim:1": 0,
+          "ismain:1": 1,
+          "name:8": "Zombies is my friends",
+          "desc:8": "No Description"
+        }
+      },
+      "tasks:9": {
+        "0:10": {
+          "partialMatch:1": 1,
+          "ignoreNBT:1": 0,
+          "index:3": 0,
+          "requiredItems:9": {
+            "0:10": {
+              "id:8": "tconstruct:piggybackpack",
+              "Count:3": 1,
+              "OreDict:8": "",
+              "Damage:3": 0
+            },
+            "1:10": {
+              "id:8": "tconstruct:rack",
+              "Count:3": 3,
+              "tag:10": {
+                "textureBlock:10": {
+                  "id:8": "minecraft:wooden_slab",
+                  "Count:1": 1,
+                  "Damage:2": 0
+                }
+              },
+              "OreDict:8": "",
+              "Damage:3": 1
+            }
+          },
+          "taskID:8": "bq_standard:crafting"
+        }
+      },
+      "rewards:9": {
+        "0:10": {
+          "rewardID:8": "bq_standard:item",
+          "index:3": 0,
+          "rewards:9": {
+            "0:10": {
+              "id:8": "tconstruct:materials",
+              "Count:3": 1,
+              "OreDict:8": "",
+              "Damage:3": 19
+            }
+          }
+        }
+      }
     }
   },
   "questLines:9": {
@@ -917,81 +1150,93 @@
         },
         "1:10": {
           "size:3": 24,
-          "x:3": -234,
-          "y:3": 138,
+          "x:3": -228,
+          "y:3": 132,
           "id:3": 1
         },
         "2:10": {
           "size:3": 24,
-          "x:3": -234,
+          "x:3": -228,
           "y:3": 180,
           "id:3": 2
         },
         "3:10": {
           "size:3": 24,
-          "x:3": -192,
+          "x:3": -180,
           "y:3": 180,
           "id:3": 3
         },
         "4:10": {
           "size:3": 24,
-          "x:3": -150,
+          "x:3": -132,
           "y:3": 180,
           "id:3": 4
         },
         "5:10": {
           "size:3": 24,
-          "x:3": -108,
+          "x:3": -84,
           "y:3": 180,
           "id:3": 5
         },
         "6:10": {
           "size:3": 24,
-          "x:3": -66,
+          "x:3": -36,
           "y:3": 180,
           "id:3": 6
         },
         "7:10": {
           "size:3": 24,
-          "x:3": -24,
+          "x:3": 12,
           "y:3": 180,
           "id:3": 7
         },
         "8:10": {
           "size:3": 24,
-          "x:3": 18,
+          "x:3": 108,
           "y:3": 180,
           "id:3": 8
         },
         "9:10": {
           "size:3": 24,
-          "x:3": 60,
+          "x:3": 156,
           "y:3": 180,
           "id:3": 9
         },
         "10:10": {
           "size:3": 24,
-          "x:3": -66,
-          "y:3": 222,
+          "x:3": -84,
+          "y:3": 228,
           "id:3": 10
         },
         "11:10": {
           "size:3": 24,
-          "x:3": -108,
-          "y:3": 222,
+          "x:3": 108,
+          "y:3": 228,
           "id:3": 11
         },
         "12:10": {
           "size:3": 24,
-          "x:3": -24,
-          "y:3": 138,
+          "x:3": -36,
+          "y:3": 228,
           "id:3": 12
         },
         "13:10": {
           "size:3": 24,
-          "x:3": -24,
-          "y:3": 222,
+          "x:3": -84,
+          "y:3": 132,
           "id:3": 13
+        },
+        "14:10": {
+          "size:3": 24,
+          "x:3": -180,
+          "y:3": 228,
+          "id:3": 14
+        },
+        "15:10": {
+          "size:3": 24,
+          "x:3": 60,
+          "y:3": 180,
+          "id:3": 15
         }
       },
       "lineID:3": 0,
