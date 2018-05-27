@@ -2,10 +2,9 @@
 Модпак для версии 1.12.2 вдохновлённый сборкой FTB Infinity Evolved
 
 # Список модов
-Avaritia
+Avaritia\n
 Applied Energistics 2
 AE2 Stuff
-Better Advancements
 Better Questing
 Bibliocraft
 CraftTweaker
