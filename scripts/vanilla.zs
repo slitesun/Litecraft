@@ -1,6 +1,6 @@
 //Furnace remake
 recipes.remove(<minecraft:furnace>);
-recipes.addShaped(<minecraft:furnace>, [[<ore:compressed1xCobblestone>, <ore:compressed1xCobblestone>, <ore:compressed1xCobblestone>], [<ore:compressed1xCobblestone>, null, <ore:compressed1xCobblestone>], [<ore:compressed1xCobblestone>, <ore:compressed1xCobblestone>, <ore:compressed1xCobblestone>]]);
+recipes.addShaped(<minecraft:furnace>, [[<ore:compressed1xCobblestone>, <ore:compressed1xCobblestone>, <ore:compressed1xCobblestone>], [<ore:compressed1xCobblestone>, <minecraft:cobblestone>, <ore:compressed1xCobblestone>], [<ore:compressed1xCobblestone>, <ore:compressed1xCobblestone>, <ore:compressed1xCobblestone>]]);
 
 //Chest remake
 recipes.remove(<minecraft:chest>);
@@ -17,7 +17,7 @@ recipes.addShapeless(<minecraft:planks:5> * 2, [<minecraft:log:5>]);
 
 //Sticks remake
 recipes.remove(<minecraft:stick>);
-recipes.addShapeless(<minecraft:stick> * 2, [<minecraft:planks:*>]);
+recipes.addShaped(<minecraft:stick> * 2, [[<ore:plankWood>], [<ore:plankWood>]]);
 
 //Furnace disabler
 furnace.remove(<ore:ingotCopper>);
