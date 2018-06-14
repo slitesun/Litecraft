@@ -28,7 +28,7 @@
 		},
 		"nether_diamond_ore": {
 			"retrogen": false,
-			"enabled": true,
+			"enabled": false,
 			"feature": "default",
 			"replaces": "default",
 			"dimensions": [
@@ -40,9 +40,9 @@
 			"parameters": {
 				"size": 2,
 				"variation": 8,
-				"frequency": 12,
-				"minHeight": 0,
-				"maxHeight": 200
+				"frequency": 6,
+				"minHeight": 5,
+				"maxHeight": 20
 			},
 			"blocks": [
 				{
@@ -53,7 +53,7 @@
 		},
 		"nether_emerald_ore": {
 			"retrogen": false,
-			"enabled": true,
+			"enabled": false,
 			"feature": "default",
 			"replaces": "default",
 			"dimensions": [
@@ -63,11 +63,11 @@
 				"excludes": []
 			},
 			"parameters": {
-				"size": 4,
-				"variation": 8,
-				"frequency": 12,
-				"minHeight": 0,
-				"maxHeight": 200
+				"size": 2,
+				"variation": 0,
+				"frequency": 6,
+				"minHeight": 5,
+				"maxHeight": 30
 			},
 			"blocks": [
 				{
@@ -78,7 +78,7 @@
 		},
 		"nether_gold_ore": {
 			"retrogen": false,
-			"enabled": true,
+			"enabled": false,
 			"feature": "default",
 			"replaces": "default",
 			"dimensions": [
@@ -88,11 +88,11 @@
 				"excludes": []
 			},
 			"parameters": {
-				"size": 5,
+				"size": 12,
 				"variation": 8,
-				"frequency": 12,
-				"minHeight": 0,
-				"maxHeight": 200
+				"frequency": 2,
+				"minHeight": 60,
+				"maxHeight": 80
 			},
 			"blocks": [
 				{
@@ -113,11 +113,11 @@
 				"excludes": []
 			},
 			"parameters": {
-				"size": 10,
-				"variation": 8,
-				"frequency": 12,
-				"minHeight": 0,
-				"maxHeight": 200
+				"size": 20,
+				"variation": 10,
+				"frequency": 6,
+				"minHeight": 10,
+				"maxHeight": 40
 			},
 			"blocks": [
 				{
@@ -128,7 +128,7 @@
 		},
 		"nether_lapis_ore": {
 			"retrogen": false,
-			"enabled": true,
+			"enabled": false,
 			"feature": "default",
 			"replaces": "default",
 			"dimensions": [
@@ -138,11 +138,11 @@
 				"excludes": []
 			},
 			"parameters": {
-				"size": 8,
-				"variation": 8,
-				"frequency": 12,
-				"minHeight": 0,
-				"maxHeight": 96
+				"size": 6,
+				"variation": 10,
+				"frequency": 2,
+				"minHeight": 20,
+				"maxHeight": 50
 			},
 			"blocks": [
 				{
@@ -163,11 +163,11 @@
 				"excludes": []
 			},
 			"parameters": {
-				"size": 8,
-				"variation": 8,
-				"frequency": 12,
-				"minHeight": 0,
-				"maxHeight": 96
+				"size": 25,
+				"variation": 10,
+				"frequency": 2,
+				"minHeight": 10,
+				"maxHeight": 40
 			},
 			"blocks": [
 				{
@@ -238,11 +238,11 @@
 				"excludes": []
 			},
 			"parameters": {
-				"size": 10,
+				"size": 20,
 				"variation": 12,
-				"frequency": 20,
-				"minHeight": 0,
-				"maxHeight": 200
+				"frequency": 6,
+				"minHeight": 80,
+				"maxHeight": 120
 			},
 			"blocks": [
 				{
@@ -253,7 +253,7 @@
 		},
 		"nether_lead_ore": {
 			"retrogen": false,
-			"enabled": true,
+			"enabled": false,
 			"feature": "default",
 			"replaces": "default",
 			"dimensions": [
@@ -265,9 +265,9 @@
 			"parameters": {
 				"size": 8,
 				"variation": 12,
-				"frequency": 20,
-				"minHeight": 0,
-				"maxHeight": 200
+				"frequency": 6,
+				"minHeight": 30,
+				"maxHeight": 60
 			},
 			"blocks": [
 				{
@@ -313,11 +313,11 @@
 				"excludes": []
 			},
 			"parameters": {
-				"size": 6,
+				"size": 8,
 				"variation": 4,
-				"frequency": 10,
-				"minHeight": 0,
-				"maxHeight": 200
+				"frequency": 2,
+				"minHeight": 10,
+				"maxHeight": 40
 			},
 			"blocks": [
 				{
@@ -328,7 +328,7 @@
 		},
 		"nether_platinum_ore": {
 			"retrogen": false,
-			"enabled": true,
+			"enabled": false,
 			"feature": "default",
 			"replaces": "default",
 			"dimensions": [
@@ -340,9 +340,9 @@
 			"parameters": {
 				"size": 2,
 				"variation": 4,
-				"frequency": 10,
-				"minHeight": 0,
-				"maxHeight": 200
+				"frequency": 0.5,
+				"minHeight": 40,
+				"maxHeight": 50
 			},
 			"blocks": [
 				{
@@ -363,11 +363,11 @@
 				"excludes": []
 			},
 			"parameters": {
-				"size": 8,
+				"size": 4,
 				"variation": 8,
-				"frequency": 10,
-				"minHeight": 0,
-				"maxHeight": 200
+				"frequency": 4,
+				"minHeight": 30,
+				"maxHeight": 60
 			},
 			"blocks": [
 				{
@@ -378,7 +378,7 @@
 		},
 		"nether_tin_ore": {
 			"retrogen": false,
-			"enabled": true,
+			"enabled": false,
 			"feature": "default",
 			"replaces": "default",
 			"dimensions": [
@@ -388,11 +388,11 @@
 				"excludes": []
 			},
 			"parameters": {
-				"size": 10,
-				"variation": 12,
-				"frequency": 20,
-				"minHeight": 0,
-				"maxHeight": 200
+				"size": 20,
+				"variation": 10,
+				"frequency": 6,
+				"minHeight": 40,
+				"maxHeight": 120
 			},
 			"blocks": [
 				{
@@ -428,7 +428,7 @@
 		},
 		"nether_aluminum_ore": {
 			"retrogen": false,
-			"enabled": true,
+			"enabled": false,
 			"feature": "default",
 			"replaces": "default",
 			"dimensions": [
@@ -440,9 +440,9 @@
 			"parameters": {
 				"size": 10,
 				"variation": 8,
-				"frequency": 10,
-				"minHeight": 0,
-				"maxHeight": 200
+				"frequency": 4,
+				"minHeight": 50,
+				"maxHeight": 90
 			},
 			"blocks": [
 				{
@@ -528,7 +528,7 @@
 		},
 		"nether_magnesium_ore": {
 			"retrogen": false,
-			"enabled": true,
+			"enabled": false,
 			"feature": "default",
 			"replaces": "default",
 			"dimensions": [
@@ -588,11 +588,11 @@
 				"excludes": []
 			},
 			"parameters": {
-				"size": 10,
-				"variation": 8,
-				"frequency": 10,
-				"minHeight": 0,
-				"maxHeight": 200
+				"size": 2,
+				"variation": 4,
+				"frequency": 4,
+				"minHeight": 40,
+				"maxHeight": 50
 			},
 			"blocks": [
 				{
@@ -613,11 +613,11 @@
 				"excludes": []
 			},
 			"parameters": {
-				"size": 4,
+				"size": 1,
 				"variation": 4,
-				"frequency": 10,
-				"minHeight": 0,
-				"maxHeight": 200
+				"frequency": 2,
+				"minHeight": 20,
+				"maxHeight": 30
 			},
 			"blocks": [
 				{
@@ -690,9 +690,9 @@
 			"parameters": {
 				"size": 4,
 				"variation": 4,
-				"frequency": 10,
-				"minHeight": 0,
-				"maxHeight": 200
+				"frequency": 4,
+				"minHeight": 50,
+				"maxHeight": 90
 			},
 			"blocks": [
 				{
@@ -728,7 +728,7 @@
 		},
 		"nether_uranium_ore": {
 			"retrogen": false,
-			"enabled": true,
+			"enabled": false,
 			"feature": "default",
 			"replaces": "default",
 			"dimensions": [
@@ -738,11 +738,11 @@
 				"excludes": []
 			},
 			"parameters": {
-				"size": 2,
-				"variation": 4,
-				"frequency": 10,
-				"minHeight": 0,
-				"maxHeight": 200
+				"size": 10,
+				"variation": 12,
+				"frequency": 2,
+				"minHeight": 10,
+				"maxHeight": 40
 			},
 			"blocks": [
 				{
