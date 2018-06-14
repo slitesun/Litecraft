@@ -82,9 +82,9 @@
 			"parameters": {
 				"size": 10,
 				"variation": 8,
-				"frequency": 8,
-				"minHeight": 0,
-				"maxHeight": 96
+				"frequency": 4,
+				"minHeight": 50,
+				"maxHeight": 90
 			},
 			"blocks": [
 				{
@@ -218,11 +218,11 @@
 				"excludes": []
 			},
 			"parameters": {
-				"size": 1,
+				"size": 2,
 				"variation": 4,
-				"frequency": 8,
-				"minHeight": 0,
-				"maxHeight": 40
+				"frequency": 4,
+				"minHeight": 40,
+				"maxHeight": 50
 			},
 			"blocks": [
 				{
@@ -241,11 +241,11 @@
 				"excludes": []
 			},
 			"parameters": {
-				"size": 2,
+				"size": 1,
 				"variation": 4,
-				"frequency": 4,
-				"minHeight": 0,
-				"maxHeight": 32
+				"frequency": 2,
+				"minHeight": 20,
+				"maxHeight": 30
 			},
 			"blocks": [
 				{
@@ -333,11 +333,11 @@
 				"excludes": []
 			},
 			"parameters": {
-				"size": 2,
-				"variation": 4,
-				"frequency": 6,
-				"minHeight": 0,
-				"maxHeight": 32
+				"size": 10,
+				"variation": 12,
+				"frequency": 2,
+				"minHeight": 10,
+				"maxHeight": 40
 			},
 			"blocks": [
 				{
