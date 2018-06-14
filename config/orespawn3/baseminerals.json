@@ -6,14 +6,17 @@
 			"enabled": true,
 			"feature": "default",
 			"replaces": "default",
-			"dimensions": [],
+			"dimensions": [
+        1,
+        0
+      ],
 			"biomes": {
 				"excludes": []
 			},
 			"parameters": {
 				"size": 8,
 				"variation": 4,
-				"frequency": 8,
+				"frequency": 2,
 				"minHeight": 10,
 				"maxHeight": 40
 			},
@@ -36,9 +39,9 @@
 			"parameters": {
 				"size": 8,
 				"variation": 4,
-				"frequency": 8,
-				"minHeight": 0,
-				"maxHeight": 96
+				"frequency": 2,
+				"minHeight": 40,
+				"maxHeight": 80
 			},
 			"blocks": [
 				{
@@ -57,11 +60,11 @@
 				"excludes": []
 			},
 			"parameters": {
-				"size": 8,
-				"variation": 4,
-				"frequency": 8,
-				"minHeight": 0,
-				"maxHeight": 96
+				"size": 40,
+				"variation": 20,
+				"frequency": 4,
+				"minHeight": 50,
+				"maxHeight": 60
 			},
 			"blocks": [
 				{
@@ -75,16 +78,18 @@
 			"enabled": true,
 			"feature": "default",
 			"replaces": "default",
-			"dimensions": [],
+			"dimensions": [
+        -1
+      ],
 			"biomes": {
 				"excludes": []
 			},
 			"parameters": {
-				"size": 8,
+				"size": 20,
 				"variation": 4,
-				"frequency": 6,
-				"minHeight": 0,
-				"maxHeight": 32
+				"frequency": 8,
+				"minHeight": 5,
+				"maxHeight": 20
 			},
 			"blocks": [
 				{
@@ -106,8 +111,8 @@
 				"size": 8,
 				"variation": 4,
 				"frequency": 6,
-				"minHeight": 0,
-				"maxHeight": 96
+				"minHeight": 40,
+				"maxHeight": 60
 			},
 			"blocks": [
 				{
@@ -151,9 +156,9 @@
 			"parameters": {
 				"size": 8,
 				"variation": 4,
-				"frequency": 6,
-				"minHeight": 0,
-				"maxHeight": 96
+				"frequency": 2,
+				"minHeight": 40,
+				"maxHeight": 80
 			},
 			"blocks": [
 				{
