@@ -24,23 +24,23 @@ recipes.addShaped(<bigreactors:turbineglass>, [[null, <ore:stickSteel>, null], [
 
 //Контроллер реактора
 recipes.remove(<bigreactors:reactorcontroller>);
-recipes.addShaped(<bigreactors:reactorcontroller>, [[<ore:ingotRedstoneAlloy>, <ore:dustGlowstone>, <ore:ingotRedstoneAlloy>], [<ore:plateSignalum>, <ore:plateDiamond>, <ore:plateSignalum>], [<ore:plateSteel>, <bigreactors:reactorcasing>, <ore:plateSteel>]]);
+recipes.addShaped(<bigreactors:reactorcontroller>, [[<ore:ingotRedstoneAlloy>, <ore:dustGlowstone>, <ore:ingotRedstoneAlloy>], [<ore:plateSignalum>, <ore:plateDiamond>, <ore:plateSignalum>], [<ore:circuitBasic>, <bigreactors:reactorcasing>, <ore:circuitBasic>]]);
 
 //Контроллер турбины
 recipes.remove(<bigreactors:turbinecontroller>);
-recipes.addShaped(<bigreactors:turbinecontroller>, [[<bigreactors:ingotmetals:3>, <ore:dustGlowstone>, <bigreactors:ingotmetals:3>], [<ore:plateSignalum>, <ore:plateDiamond>, <ore:plateSignalum>], [<ore:plateSteel>, <bigreactors:reactorcasing>, <ore:plateSteel>]]);
+recipes.addShaped(<bigreactors:turbinecontroller>, [[<bigreactors:ingotmetals:3>, <ore:dustGlowstone>, <bigreactors:ingotmetals:3>], [<ore:plateSignalum>, <ore:plateDiamond>, <ore:plateSignalum>], [<ore:circuitBasic>, <bigreactors:reactorcasing>, <ore:circuitBasic>]]);
 
-//Reactor Redstone Flux Power Tap
+//Реакторная розетка
 recipes.remove(<bigreactors:reactorpowertaprf>);
-recipes.addShaped(<bigreactors:reactorpowertaprf>, [[null, <ore:ingotRedstoneAlloy>, null], [<ore:ingotRedstoneAlloy>, <bigreactors:turbinehousing>, <ore:ingotRedstoneAlloy>], [null, <ore:ingotRedstoneAlloy>, null]]);
+recipes.addShaped(<bigreactors:reactorpowertaprf>, [[null, <ore:ingotVibrantAlloy>, null], [<ore:ingotVibrantAlloy>, <bigreactors:turbinehousing>, <ore:ingotVibrantAlloy>], [null, <ore:ingotVibrantAlloy>, null]]);
 
-//Turbine Redstone Flux Power Tap
+//Турбинная розетка
 recipes.remove(<bigreactors:turbinepowertaprf>);
-recipes.addShaped(<bigreactors:turbinepowertaprf>, [[null, <ore:ingotRedstoneAlloy>, null], [<ore:ingotRedstoneAlloy>, <bigreactors:turbinehousing>, <ore:ingotRedstoneAlloy>], [null, <ore:ingotRedstoneAlloy>, null]]);
+recipes.addShaped(<bigreactors:turbinepowertaprf>, [[null, <ore:ingotVibrantAlloy>, null], [<ore:ingotVibrantAlloy>, <bigreactors:turbinehousing>, <ore:ingotVibrantAlloy>], [null, <ore:ingotVibrantAlloy>, null]]);
 
 //Реакторный порт красного камня
 recipes.remove(<bigreactors:reactorredstoneport>);
-recipes.addShaped(<bigreactors:reactorredstoneport>, [[null, <ore:ingotRedstoneAlloy>, null], [<ore:dustGold>, <bigreactors:turbinehousing>, <ore:dustGold>], [null, <ore:ingotRedstoneAlloy>, null]]);
+recipes.addShaped(<bigreactors:reactorredstoneport>, [[null, <ore:ingotRedstoneAlloy>, null], [<ore:gemRedstone>, <bigreactors:turbinehousing>, <ore:gemRedstone>], [null, <ore:ingotRedstoneAlloy>, null]]);
 
 //Охлаждающий порт реактора
 recipes.remove(<bigreactors:reactorcoolantport>);

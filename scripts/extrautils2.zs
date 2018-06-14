@@ -1,3 +1,6 @@
+//Remove Portal Deep Dark
+recipes.remove(<extrautils2:teleporter:1>);
+
 //Stone drum remake
 recipes.remove(<extrautils2:drum>);
 recipes.addShaped(<extrautils2:drum>, [[<ore:compressed1xCobblestone>, <minecraft:stone_slab>, <ore:compressed1xCobblestone>], [<ore:compressed1xCobblestone>, <minecraft:bucket>, <ore:compressed1xCobblestone>], [<ore:compressed1xCobblestone>, <minecraft:stone_slab>, <ore:compressed1xCobblestone>]]);
@@ -13,3 +16,4 @@ recipes.addShaped(<extrautils2:grocket>, [[null, null, null], [<minecraft:redsto
 //Fluid node remake
 recipes.remove(<extrautils2:grocket:2>);
 recipes.addShaped(<extrautils2:grocket:2>, [[null, null, null], [<minecraft:redstone>, <extrautils2:pipe>, <minecraft:redstone>], [<ore:compressed1xCobblestone>, <minecraft:bucket>, <ore:compressed1xCobblestone>]]);
+

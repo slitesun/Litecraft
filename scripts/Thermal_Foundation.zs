@@ -10,7 +10,7 @@ recipes.addShaped(<thermalexpansion:frame:64>, [[<ore:plateSteel>, <ore:gearTin>
 
 //Рамка энергетической ячейки
 recipes.remove(<thermalexpansion:frame:128>);
-recipes.addShaped(<thermalexpansion:frame:128>, [[<ore:plateSteel>, <ore:plateGold>, <ore:plateSteel>], [<ore:plateLead>, <ore:blockGlassHardened>, <ore:plateLead>], [<ore:plateSteel>, <ore:plateGold>, <ore:plateSteel>]]);
+recipes.addShaped(<thermalexpansion:frame:128>, [[<ore:stickSteel>, <ore:rodGold>, <ore:stickSteel>], [<ore:rodLead>, <ore:blockGlassHardened>, <ore:rodLead>], [<ore:stickSteel>, <ore:rodGold>, <ore:stickSteel>]]);
 
 //Наборы обновлений
 
@@ -29,3 +29,36 @@ recipes.addShaped(<thermalfoundation:upgrade:2>, [[null, <ore:plateSignalum>, nu
 //Резонирующий набор обновления
 recipes.remove(<thermalfoundation:upgrade:3>);
 recipes.addShaped(<thermalfoundation:upgrade:3>, [[null, <ore:plateEnderium>, null], [<ore:plateEnderium>, <ore:gearLumium>, <ore:plateEnderium>], [<ore:dustPyrotheum>, <ore:plateEnderium>, <ore:dustPyrotheum>]]);
+
+//Энергетическая ячейка
+recipes.remove(<thermalexpansion:cell>);
+recipes.addShaped(<thermalexpansion:cell>, [[<ore:ingotConductiveIron>, <ore:blockRedstone>, <ore:ingotConductiveIron>], [<thermalfoundation:material:513>, <thermalfoundation:material:515>, <thermalfoundation:material:514>], [<ore:battery>, <thermalexpansion:frame:128>, <ore:battery>]]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
