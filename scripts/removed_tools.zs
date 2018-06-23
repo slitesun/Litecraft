@@ -38,25 +38,6 @@ recipes.remove(<enderio:item_dark_steel_pickaxe>);
 recipes.remove(<enderio:item_dark_steel_axe>);
 recipes.remove(<enderio:item_dark_steel_bow>);
 
-//Galacticraft
-recipes.remove(<galacticraftcore:steel_pickaxe>);
-recipes.remove(<galacticraftcore:steel_sword>);
-recipes.remove(<galacticraftcore:steel_axe>);
-recipes.remove(<galacticraftcore:steel_hoe>);
-recipes.remove(<galacticraftcore:steel_shovel>);
-
-recipes.remove(<galacticraftplanets:desh_pick>);
-recipes.remove(<galacticraftplanets:desh_pick_slime>);
-recipes.remove(<galacticraftplanets:desh_sword>);
-recipes.remove(<galacticraftplanets:desh_axe>);
-recipes.remove(<galacticraftplanets:desh_spade>);
-recipes.remove(<galacticraftplanets:desh_hoe>);
-
-recipes.remove(<galacticraftplanets:titanium_pickaxe>);
-recipes.remove(<galacticraftplanets:titanium_sword>);
-recipes.remove(<galacticraftplanets:titanium_axe>);
-recipes.remove(<galacticraftplanets:titanium_shovel>);
-recipes.remove(<galacticraftplanets:titanium_hoe>);
 
 
 

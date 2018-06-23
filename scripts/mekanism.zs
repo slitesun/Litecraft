@@ -38,10 +38,42 @@ recipes.addShaped(<mekanism:machineblock3>, [[<ore:ingotRefinedObsidian>, <ore:c
 
 //Стальной корпус
 recipes.remove(<mekanism:basicblock:8>);
-recipes.addShaped(<mekanism:basicblock:8>, [[<ore:blockGlassHardened>, <ore:compressedSteel>, <ore:blockGlassHardened>], [<ore:compressedSteel>, <enderio:item_basic_capacitor:2>, <ore:compressedSteel>], [<ore:blockGlassHardened>, <ore:compressedSteel>, <ore:blockGlassHardened>]]);
+recipes.addShaped(<mekanism:basicblock:8>, [[<ore:blockGlassHardened>, <ore:plateSteel>, <ore:blockGlassHardened>], [<ore:plateSteel>, <enderio:item_basic_capacitor:2>, <ore:plateSteel>], [<ore:blockGlassHardened>, <ore:plateSteel>, <ore:blockGlassHardened>]]);
 
 //Металлургический наполнитель
 recipes.remove(<mekanism:machineblock:8>);
 recipes.addShaped(<mekanism:machineblock:8>, [[<enderio:item_alloy_ingot:1>, <thermalfoundation:upgrade:3>, <enderio:item_alloy_ingot:1>], [<mekanism:controlcircuit>, <mekanism:basicblock:8>, <mekanism:controlcircuit>], [<extrautils2:grocket:2>, <ore:ingotRedstoneAlloy>, <extrautils2:grocket>]]);
+
+//Обогащённый сплав
+mods.thermalexpansion.InductionSmelter.addRecipe(<mekanism:enrichedalloy>, <modernmetals:aluminum_ingot>, <minecraft:redstone>, 2000);
+
+//Укреплённый сплав
+mods.thermalexpansion.InductionSmelter.addRecipe(<mekanism:reinforcedalloy>, <mekanism:enrichedalloy>, <mekanism:otherdust>, 4000);
+
+//Атомный сплав
+mods.thermalexpansion.InductionSmelter.addRecipe(<mekanism:atomicalloy>, <mekanism:reinforcedalloy>, <mekanism:otherdust:5>, 6000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

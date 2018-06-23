@@ -29,11 +29,8 @@ furnace.remove(<basemetals:nickel_ingot>, <basemetals:nickel_ore>);
 furnace.remove(<basemetals:copper_ingot>, <basemetals:copper_ore>);
 furnace.remove(<basemetals:lead_ingot>, <basemetals:lead_ore>);
 
-furnace.remove(<modernmetals:titanium_ingot>, <modernmetals:titanium_ore>);
 furnace.remove(<modernmetals:uranium_ingot>, <modernmetals:uranium_ore>);
 furnace.remove(<modernmetals:plutonium_ingot>, <modernmetals:plutonium_ore>);
-furnace.remove(<modernmetals:aluminum_ingot>, <modernmetals:aluminum_ore>);
-furnace.remove(<modernmetals:osmium_ingot>, <modernmetals:osmium_ore>);
 
 furnace.remove(<minecraft:quartz>, <minecraft:quartz_ore>);
 furnace.remove(<minecraft:emerald>, <minecraft:emerald_ore>);
@@ -43,41 +40,28 @@ furnace.remove(<minecraft:redstone>, <minecraft:redstone_ore>);
 furnace.remove(<minecraft:gold_ingot>, <minecraft:gold_ore>);
 furnace.remove(<minecraft:iron_ingot>, <minecraft:iron_ore>);
 
-//Copper
-furnace.remove(<galacticraftcore:basic_item:3>, <galacticraftplanets:mars>);
-furnace.remove(<galacticraftcore:basic_item:3>, <galacticraftplanets:venus:7>);
-
-//Tin
-furnace.remove(<galacticraftcore:basic_item:4>, <galacticraftplanets:mars:1>);
-furnace.remove(<galacticraftcore:basic_item:4>, <galacticraftplanets:venus:11>);
-
-//Desh
-furnace.remove(<galacticraftplanets:item_basic_mars:2>, <galacticraftplanets:mars:2>);
-
-//Iron
-furnace.remove(<minecraft:iron_ingot>, <galacticraftplanets:mars:3>);
-furnace.remove(<minecraft:iron_ingot>, <galacticraftplanets:asteroids_block:5>);
-
-//Aluminium
-furnace.remove(<galacticraftcore:basic_item:5>, <galacticraftplanets:asteroids_block:3>);
-furnace.remove(<galacticraftcore:basic_item:5>, <galacticraftplanets:venus:6>);
-
-//Titanium
-furnace.remove(<galacticraftplanets:item_basic_asteroids>, <galacticraftplanets:asteroids_block:4>);
-
-//Lead
-furnace.remove(<galacticraftplanets:basic_item_venus:1>, <galacticraftplanets:venus:8>);
-
-//Quartz
-furnace.remove(<minecraft:quartz>, <galacticraftplanets:venus:9>);
+furnace.remove(<ore:ingotAluminum>);
+furnace.remove(<ore:ingotTitanium>);
+furnace.remove(<ore:ingotOsmium>);
+furnace.remove(<ore:ingotSteel>);
+furnace.remove(<ore:ingotStainlessSteel>);
+furnace.remove(<ore:ingotChromium>);
+furnace.remove(<ore:ingotManganese>);
+furnace.remove(<immersiveengineering:material:19>);
+furnace.remove(<bigreactors:ingotmetals:2>);
+furnace.remove(<ore:ingotTitaniumAluminide>);
+furnace.remove(<ore:ingotTitaniumIridium>);
 
 //Ardite
-furnace.remove(<tconstruct:ingots:1>, <tconstruct:ore:1>);
+furnace.remove(<tconstruct:ore:1>);
 
 //Cobalt
 furnace.remove(<tconstruct:ingots>, <tconstruct:ore>);
 
-
+//Bread processing
+recipes.remove(<minecraft:bread>);
+furnace.remove(<minecraft:bread>);
+furnace.addRecipe(<minecraft:bread>, <harvestcraft:doughitem>);
 
 
 
