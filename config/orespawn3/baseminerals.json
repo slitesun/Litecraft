@@ -29,7 +29,7 @@
 		},
 		"niter_ore": {
 			"retrogen": false,
-			"enabled": true,
+			"enabled": false,
 			"feature": "default",
 			"replaces": "default",
 			"dimensions": [],
@@ -62,7 +62,7 @@
 			"parameters": {
 				"size": 40,
 				"variation": 20,
-				"frequency": 4,
+				"frequency": 1,
 				"minHeight": 50,
 				"maxHeight": 60
 			},
@@ -78,16 +78,14 @@
 			"enabled": true,
 			"feature": "default",
 			"replaces": "default",
-			"dimensions": [
-        -1
-      ],
+			"dimensions": [],
 			"biomes": {
 				"excludes": []
 			},
 			"parameters": {
-				"size": 20,
+				"size": 10,
 				"variation": 4,
-				"frequency": 8,
+				"frequency": 2,
 				"minHeight": 5,
 				"maxHeight": 20
 			},

@@ -115,7 +115,7 @@
 			"parameters": {
 				"size": 20,
 				"variation": 10,
-				"frequency": 6,
+				"frequency": 3,
 				"minHeight": 10,
 				"maxHeight": 40
 			},
@@ -165,7 +165,7 @@
 			"parameters": {
 				"size": 25,
 				"variation": 10,
-				"frequency": 2,
+				"frequency": 1,
 				"minHeight": 10,
 				"maxHeight": 40
 			},
@@ -240,7 +240,7 @@
 			"parameters": {
 				"size": 20,
 				"variation": 12,
-				"frequency": 6,
+				"frequency": 3,
 				"minHeight": 80,
 				"maxHeight": 120
 			},
@@ -315,7 +315,7 @@
 			"parameters": {
 				"size": 8,
 				"variation": 4,
-				"frequency": 2,
+				"frequency": 1,
 				"minHeight": 10,
 				"maxHeight": 40
 			},
@@ -365,7 +365,7 @@
 			"parameters": {
 				"size": 4,
 				"variation": 8,
-				"frequency": 4,
+				"frequency": 2,
 				"minHeight": 30,
 				"maxHeight": 60
 			},
@@ -590,7 +590,7 @@
 			"parameters": {
 				"size": 2,
 				"variation": 4,
-				"frequency": 4,
+				"frequency": 2,
 				"minHeight": 40,
 				"maxHeight": 50
 			},

@@ -255,7 +255,7 @@
 			"parameters": {
 				"size": 2,
 				"variation": 4,
-				"frequency": 0.5,
+				"frequency": 1,
 				"minHeight": 40,
 				"maxHeight": 50
 			},

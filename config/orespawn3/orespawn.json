@@ -168,10 +168,7 @@
 			"enabled": true,
 			"feature": "default",
 			"replaces": "default",
-			"dimensions": [
-        1,
-        0
-      ],
+			"dimensions": [],
 			"biomes": {
 				"excludes": []
 			},
@@ -194,16 +191,13 @@
 			"enabled": true,
 			"feature": "default",
 			"replaces": "default",
-			"dimensions": [
-        1,
-        0
-      ],
+			"dimensions": [],
 			"biomes": {
 				"includes": [ "MOUNTAIN" ]
 			},
 			"parameters": {
 				"size": 1,
-				"variation": 0,
+				"variation": 1,
 				"frequency": 8,
 				"minHeight": 5,
 				"maxHeight": 30
