@@ -85,7 +85,7 @@ mods.thermalexpansion.Pulverizer.addRecipe(<bigreactors:minerals> * 2, <bigreact
 //Графит
 //mods.thermalexpansion.Centrifuge.addRecipe(WeightedItemStack[] outputs, IItemStack input, ILiquidStack fluid, int energy);
 mods.thermalexpansion.Centrifuge.addRecipe([<bigreactors:dustmetals:2>], <immersiveengineering:material:17> * 8, null, 8000);
-
+mods.thermalexpansion.InductionSmelter.addRecipe(<bigreactors:ingotmetals:2>, <bigreactors:dustmetals:2>, null, 11000);
 
 
 
