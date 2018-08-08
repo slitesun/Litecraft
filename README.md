@@ -7,7 +7,7 @@
 3) Applied Energistics2
 4) Base Metals
 5) Base Minerals 
-6) BetterQuesting-3.5.258.jar
+6) Better Questing
 7) BiblioCraft
 8) CraftTweaker 2
 9) Draconic Evolution
@@ -46,7 +46,7 @@
 42) Thermal Expansion
 43) Thermal Foundation
 44) Thermal Innovation
-45) Tinkers JEI-1.0.jar
+45) Tinkers JEI
 46) Tinker Tool Leveling 
 47) Waila Harvestability
 48) Xaeros Minimap
