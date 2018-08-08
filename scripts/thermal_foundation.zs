@@ -1,12 +1,21 @@
+//
+var circuit = <advancedrocketry:ic>;
+var reception_coil = <thermalfoundation:material:513>;
+var transmission_coil = <thermalfoundation:material:514>;
+var conductance_coil = <thermalfoundation:material:515>;
+var hammer = <immersiveengineering:tool>;
+var mechanical_component = <immersiveengineering:material:9>;
+
+
 //Рамки
 
 //Рамка механизма
 recipes.remove(<thermalexpansion:frame>);
-recipes.addShaped(<thermalexpansion:frame>, [[<ore:ingotSteel>, <ore:ingotHOPGraphite>, <ore:ingotSteel>], [<enderio:item_basic_capacitor>, <ore:blockGlassHardened>, <enderio:item_basic_capacitor>], [<ore:ingotSteel>, <ore:ingotHOPGraphite>, <ore:ingotSteel>]]);
+recipes.addShaped(<thermalexpansion:frame>, [[<ore:plateSteel>, <ore:ingotHOPGraphite>, <ore:plateSteel>], [<enderio:item_basic_capacitor>, <ore:blockGlassHardened>, <enderio:item_basic_capacitor>], [<ore:plateSteel>, <ore:ingotHOPGraphite>, <ore:plateSteel>]]);
 
 //Рамка устройства
 recipes.remove(<thermalexpansion:frame:64>);
-recipes.addShaped(<thermalexpansion:frame:64>, [[<ore:ingotSteel>, <mekanism:enrichedalloy>, <ore:ingotSteel>], [<enderio:item_basic_capacitor>, <ore:blockGlassHardened>, <enderio:item_basic_capacitor>], [<ore:ingotSteel>, <mekanism:enrichedalloy>, <ore:ingotSteel>]]);
+recipes.addShaped(<thermalexpansion:frame:64>, [[<ore:plateSteel>, <mekanism:enrichedalloy>, <ore:plateSteel>], [<enderio:item_basic_capacitor>, <ore:blockGlassHardened>, <enderio:item_basic_capacitor>], [<ore:plateSteel>, <mekanism:enrichedalloy>, <ore:plateSteel>]]);
 
 //Рамка энергетической ячейки
 recipes.remove(<thermalexpansion:frame:128>);
@@ -32,7 +41,7 @@ recipes.addShaped(<thermalfoundation:upgrade:3>, [[null, <ore:ingotEnderium>, nu
 
 //Энергетическая ячейка
 recipes.remove(<thermalexpansion:cell>);
-recipes.addShaped(<thermalexpansion:cell>, [[<ore:ingotConductiveIron>, <ore:blockRedstone>, <ore:ingotConductiveIron>], [<thermalfoundation:material:513>, <thermalfoundation:material:515>, <thermalfoundation:material:514>], [<ore:battery>, <thermalexpansion:frame:128>, <ore:battery>]]);
+recipes.addShaped(<thermalexpansion:cell>, [[<ore:ingotConductiveIron>, <ore:blockRedstoneAlloy>, <ore:ingotConductiveIron>], [reception_coil, conductance_coil, transmission_coil], [<ore:battery>, <thermalexpansion:frame:128>, <ore:battery>]]);
 
 //Синаловая смесь
 recipes.remove(<thermalfoundation:material:101>);
@@ -68,11 +77,11 @@ recipes.addShaped(<thermalexpansion:capacitor:4>, [[<ore:ingotLumium>, <ore:ingo
 
 //Головка дрели
 recipes.remove(<thermalfoundation:material:656>);
-recipes.addShaped(<thermalfoundation:material:656>, [[<ore:dustDiamond>, <ore:plateSteel>, <ore:dustDiamond>], [<ore:dustDiamond>, <ore:plateSteel>, <ore:dustDiamond>], [<ore:plateSteel>, <immersiveengineering:tool>, <ore:plateSteel>]]);
+recipes.addShaped(<thermalfoundation:material:656>, [[<ore:dustDiamond>, <ore:plateSteel>, <ore:dustDiamond>], [<ore:dustDiamond>, <ore:plateSteel>, <ore:dustDiamond>], [<ore:plateSteel>, hammer, <ore:plateSteel>]]);
 
 //Лезвие пилы
 recipes.remove(<thermalfoundation:material:657>);
-recipes.addShaped(<thermalfoundation:material:657>, [[<ore:dustDiamond>, <ore:plateSteel>, <ore:dustDiamond>], [<ore:plateSteel>, <immersiveengineering:tool>, <ore:plateSteel>], [<ore:dustDiamond>, <ore:plateSteel>, <ore:dustDiamond>]]);
+recipes.addShaped(<thermalfoundation:material:657>, [[<ore:dustDiamond>, <ore:plateSteel>, <ore:dustDiamond>], [<ore:plateSteel>, hammer, <ore:plateSteel>], [<ore:dustDiamond>, <ore:plateSteel>, <ore:dustDiamond>]]);
 
 //Фито-Гро
 recipes.addShapeless(<thermalfoundation:fertilizer> * 4, [<ore:pulpWood>, <ore:pulpWood>, <ore:dustPhosphorus>, <ore:itemSlag>]);
@@ -86,67 +95,67 @@ recipes.addShapeless(<thermalfoundation:fertilizer:1> * 16, [<ore:dustCharcoal>,
 
 //Красная печь
 recipes.remove(<thermalexpansion:machine>);
-recipes.addShaped(<thermalexpansion:machine>, [[<ore:ingotConductiveIron>, <thermalfoundation:material:513>, <ore:ingotConductiveIron>], [<ore:ingotConductiveIron>, <thermalexpansion:frame>, <ore:ingotConductiveIron>], [<ore:wireCopper>, <ore:circuitBasic>, <ore:wireCopper>]]); 
+recipes.addShaped(<thermalexpansion:machine>, [[<ore:ingotConductiveIron>, reception_coil, <ore:ingotConductiveIron>], [<ore:ingotConductiveIron>, <thermalexpansion:frame>, <ore:ingotConductiveIron>], [<ore:wireCopper>, circuit, <ore:wireCopper>]]); 
 
 //Измельчитель
 recipes.remove(<thermalexpansion:machine:1>);
-recipes.addShaped(<thermalexpansion:machine:1>, [[<ore:gemDiamond>, <ore:gearSteel>, <ore:gemDiamond>], [<ore:wireCopper>, <thermalexpansion:frame>, <ore:wireCopper>], [<ore:circuitBasic>, <ore:blockMotor>, <ore:circuitBasic>]]);
+recipes.addShaped(<thermalexpansion:machine:1>, [[<ore:gemDiamond>, <ore:gearSteel>, <ore:gemDiamond>], [<ore:wireCopper>, <thermalexpansion:frame>, <ore:wireCopper>], [circuit, <libvulpes:motor>, circuit]]);
 
 //Лесопилка
 recipes.remove(<thermalexpansion:machine:2>);
-recipes.addShaped(<thermalexpansion:machine:2>, [[<ore:gearSteel>, <advancedrocketry:sawblade>, <ore:gearSteel>], [<ore:wireCopper>, <ore:blockMotor>, <ore:wireCopper>], [<ore:circuitBasic>, <thermalexpansion:frame>, <ore:circuitBasic>]]);
+recipes.addShaped(<thermalexpansion:machine:2>, [[<ore:gearSteel>, <advancedrocketry:sawblade>, <ore:gearSteel>], [<ore:wireCopper>, <libvulpes:motor>, <ore:wireCopper>], [circuit, <thermalexpansion:frame>, circuit]]);
 
 //Индукционная плавильня
 recipes.remove(<thermalexpansion:machine:3>);
-recipes.addShaped(<thermalexpansion:machine:3>, [[<ore:ingotEnergeticAlloy>, <thermalfoundation:material:513>, <ore:ingotEnergeticAlloy>], [<ore:ingotEnergeticAlloy>, <thermalexpansion:frame>, <ore:ingotEnergeticAlloy>], [<ore:wireElectrum>, <ore:circuitBasic>, <ore:wireElectrum>]]);
+recipes.addShaped(<thermalexpansion:machine:3>, [[<ore:ingotEnergeticAlloy>, reception_coil, <ore:ingotEnergeticAlloy>], [<ore:ingotEnergeticAlloy>, <thermalexpansion:frame>, <ore:ingotEnergeticAlloy>], [<ore:wireElectrum>, circuit, <ore:wireElectrum>]]);
 
 //Фитогенный светильник
 recipes.remove(<thermalexpansion:machine:4>);
-recipes.addShaped(<thermalexpansion:machine:4>, [[<ore:wireCopper>, <thermalfoundation:material:513>, <ore:wireCopper>], [<enderio:block_electric_light>, <thermalexpansion:frame>, <enderio:block_electric_light>], [<ore:circuitBasic>, <ore:plateLumium>, <ore:circuitBasic>]]);
+recipes.addShaped(<thermalexpansion:machine:4>, [[null, <enderio:block_electric_light>, null], [<ore:wireCopper>, reception_coil, <ore:wireCopper>], [circuit, <thermalexpansion:frame>, <ore:plateLumium>]]);
 
 //Компактор
 recipes.remove(<thermalexpansion:machine:5>);
-recipes.addShaped(<thermalexpansion:machine:5>, [[<ore:wireCopper>, <ore:circuitBasic>, <ore:wireCopper>], [<ore:blockMotor>, <thermalexpansion:frame>, <ore:blockMotor>], [<immersiveengineering:material:9>, <ore:slabSteel>, <immersiveengineering:material:9>]]);
+recipes.addShaped(<thermalexpansion:machine:5>, [[<ore:wireCopper>, circuit, <ore:wireCopper>], [<libvulpes:motor>, <thermalexpansion:frame>, <libvulpes:motor>], [mechanical_component, <ore:slabSteel>, mechanical_component]]);
 
 //Магмовый тигель
 recipes.remove(<thermalexpansion:machine:6>);
-recipes.addShaped(<thermalexpansion:machine:6>, [[<ore:ingotEnergeticAlloy>, <ore:circuitBasic>, <ore:ingotEnergeticAlloy>], [<ore:wireElectrum>, <thermalexpansion:frame>, <ore:wireElectrum>], [<thermalfoundation:material:513>, <advancedrocketry:iquartzcrucible>, <thermalfoundation:material:515>]]);
+recipes.addShaped(<thermalexpansion:machine:6>, [[<ore:ingotEnergeticAlloy>, circuit, <ore:ingotEnergeticAlloy>], [<ore:wireElectrum>, <thermalexpansion:frame>, <ore:wireElectrum>], [reception_coil, <advancedrocketry:iquartzcrucible>, conductance_coil]]);
 
 //Дистиллятор
 recipes.remove(<thermalexpansion:machine:7>);
-recipes.addShaped(<thermalexpansion:machine:7>, [[<ore:blockGlass>, <ore:circuitBasic>, <ore:blockGlass>], [<thermaldynamics:duct_16>, <thermalexpansion:frame>, <thermalexpansion:tank>], [<ore:ingotConductiveIron>, <thermalfoundation:material:513>, <ore:ingotConductiveIron>]]);
+recipes.addShaped(<thermalexpansion:machine:7>, [[<ore:blockGlass>, circuit, <ore:blockGlass>], [<thermaldynamics:duct_16>, <thermalexpansion:frame>, <thermalexpansion:tank>], [<ore:ingotConductiveIron>, reception_coil, <ore:ingotConductiveIron>]]);
 
 //Распределитель жидкостей
 recipes.remove(<thermalexpansion:machine:8>);
-recipes.addShaped(<thermalexpansion:machine:8>, [[<ore:blockGlass>, <ore:circuitBasic>, <ore:blockGlass>], [<thermaldynamics:duct_16>, <thermalexpansion:frame>, <thermaldynamics:duct_16>], [<ore:wireCopper>, <thermalexpansion:tank>, <ore:wireCopper>]]);
+recipes.addShaped(<thermalexpansion:machine:8>, [[<ore:blockGlass>, circuit, <ore:blockGlass>], [<thermaldynamics:duct_16>, <thermalexpansion:frame>, <thermaldynamics:duct_16>], [<ore:wireCopper>, <thermalexpansion:tank>, <ore:wireCopper>]]);
 
 //Энергетический зарядник
 recipes.remove(<thermalexpansion:machine:9>);
-recipes.addShaped(<thermalexpansion:machine:9>, [[<immersiveengineering:wirecoil:1>, <thermalfoundation:material:515>, <immersiveengineering:wirecoil:1>], [<thermalfoundation:material:514>, <thermalexpansion:frame>, <thermalfoundation:material:514>], [<ore:circuitBasic>, <thermalfoundation:material:513>, <ore:circuitBasic>]]);
+recipes.addShaped(<thermalexpansion:machine:9>, [[<ore:wireElectrum>, conductance_coil, <ore:wireElectrum>], [transmission_coil, <thermalexpansion:frame>, transmission_coil], [circuit, reception_coil, circuit]]);
 
 //Центробежный разделитель
 recipes.remove(<thermalexpansion:machine:10>);
-recipes.addShaped(<thermalexpansion:machine:10>, [[<ore:blockMotor>, <ore:circuitBasic>, <ore:blockMotor>], [<immersiveengineering:material:9>, <thermalexpansion:frame>, <immersiveengineering:material:9>], [<ore:blockGlassHardened>, <ore:blockGlassHardened>, <ore:blockGlassHardened>]]);
+recipes.addShaped(<thermalexpansion:machine:10>, [[<libvulpes:motor>, circuit, <libvulpes:motor>], [mechanical_component, <thermalexpansion:frame>, mechanical_component], [<ore:blockGlassHardened>, <ore:blockGlassHardened>, <ore:blockGlassHardened>]]);
 
 //Цикличный сборщик
 recipes.remove(<thermalexpansion:machine:11>);
-recipes.addShaped(<thermalexpansion:machine:11>, [[<immersiveengineering:material:9>, <thermalfoundation:material:513>, <immersiveengineering:material:9>], [<ore:circuitBasic>, <thermalexpansion:frame>, <ore:circuitBasic>], [<immersiveengineering:material:9>, <ore:wireCopper>, <immersiveengineering:material:9>]]);
+recipes.addShaped(<thermalexpansion:machine:11>, [[mechanical_component, reception_coil, mechanical_component], [circuit, <thermalexpansion:frame>, circuit], [mechanical_component, <ore:wireCopper>, mechanical_component]]);
 
 //Алхимическая зельеварка
 recipes.remove(<thermalexpansion:machine:12>);
-recipes.addShaped(<thermalexpansion:machine:12>, [[<ore:rodBlaze>, <ore:plateConstantan>, <ore:rodBlaze>], [<thermalfoundation:glass_alloy:4>, <thermalexpansion:frame>, <thermalfoundation:glass_alloy:4>], [<ore:plateConstantan>, <ore:circuitBasic>, <ore:plateConstantan>]]);
+recipes.addShaped(<thermalexpansion:machine:12>, [[null, <ore:rodBlaze>, null], [<ore:blockGlass>, <thermalexpansion:frame>, <ore:blockGlass>], [<ore:plateConstantan>, circuit, <ore:plateConstantan>]]);
 
 //Тайный энсоцеллатор
 recipes.remove(<thermalexpansion:machine:13>);
-recipes.addShaped(<thermalexpansion:machine:13>, [[<ore:circuitBasic>, <ore:plateLapis>, <ore:circuitBasic>], [<ore:plateConstantan>, <thermalexpansion:frame>, <ore:plateConstantan>], [<ore:plateLapis>, <enderio:block_enchanter>, <ore:plateLapis>]]);
+recipes.addShaped(<thermalexpansion:machine:13>, [[null, circuit, null], [<ore:plateConstantan>, <thermalexpansion:frame>, <ore:plateConstantan>], [<ore:plateLapis>, <enderio:block_enchanter>, <ore:plateLapis>]]);
 
 //Ледниковый осадитель
 recipes.remove(<thermalexpansion:machine:14>);
-recipes.addShaped(<thermalexpansion:machine:14>, [[<ore:plateInvar>, <ore:dustCryotheum>, <ore:plateInvar>], [<ore:plateInvar>, <thermalexpansion:frame>, <ore:plateInvar>], [<ore:circuitBasic>, <advancedrocketry:iquartzcrucible>, <ore:circuitBasic>]]);
+recipes.addShaped(<thermalexpansion:machine:14>, [[<ore:plateInvar>, <ore:dustCryotheum>, <ore:plateInvar>], [<ore:plateInvar>, <thermalexpansion:frame>, <ore:plateInvar>], [circuit, <advancedrocketry:iquartzcrucible>, circuit]]);
 
 //Вулканический пресс
 recipes.remove(<thermalexpansion:machine:15>);
-recipes.addShaped(<thermalexpansion:machine:15>, [[<ore:plateInvar>, <thermalexpansion:tank>, <ore:plateInvar>], [<ore:plateInvar>, <thermalexpansion:frame>, <ore:plateInvar>], [<ore:circuitBasic>, <advancedrocketry:iquartzcrucible>, <ore:circuitBasic>]]);
+recipes.addShaped(<thermalexpansion:machine:15>, [[<ore:plateInvar>, <thermalexpansion:tank>, <ore:plateInvar>], [<ore:plateInvar>, <thermalexpansion:frame>, <ore:plateInvar>], [circuit, <advancedrocketry:iquartzcrucible>, circuit]]);
 
 
 

@@ -1,10 +1,13 @@
+//
+var grout = <tconstruct:soil>;
+
 //Coke-oven remake
 recipes.remove(<immersiveengineering:stone_decoration>);
-recipes.addShaped(<immersiveengineering:stone_decoration> * 3, [[<minecraft:clay_ball>, <minecraft:brick>, <minecraft:clay_ball>], [<minecraft:brick>, <rustic:fluid_bottle>.withTag({Fluid: {FluidName: "ironberryjuice", Amount: 1000}}), <minecraft:brick>], [<minecraft:clay_ball>, <minecraft:brick>, <minecraft:clay_ball>]]);
+recipes.addShapeless(<immersiveengineering:stone_decoration> * 3, [grout, <minecraft:brick>, grout, <minecraft:brick>, <rustic:fluid_bottle>.withTag({Fluid: {FluidName: "ironberryjuice", Amount: 1000}}), <minecraft:brick>, grout, <minecraft:brick>, grout]);
 
 //Blast-bricks remake
 recipes.remove(<immersiveengineering:stone_decoration:1>);
-recipes.addShaped(<immersiveengineering:stone_decoration:1> * 3, [[<minecraft:brick_block>, <rustic:fluid_bottle>.withTag({Fluid: {FluidName: "ironberryjuice", Amount: 1000}}), <minecraft:brick_block>], [<ore:gravel>, <tconstruct:edible:33>, <ore:gravel>], [<minecraft:brick_block>, <ore:gravel>, <minecraft:brick_block>]]);
+recipes.addShapeless(<immersiveengineering:stone_decoration:1> * 3, [<ore:ingotBrick>, <ore:ingotBrickSeared>, <ore:ingotBrick>, grout, <rustic:fluid_bottle>.withTag({Fluid: {FluidName: "ironberryjuice", Amount: 1000}}), grout, <ore:ingotBrick>, <ore:ingotBrickSeared>, <ore:ingotBrick>]);
 
 //Graphite processing
-mods.thermalexpansion.InductionSmelter.addRecipe(<immersiveengineering:material:19>, <immersiveengineering:material:18>, null, 11000);
+mods.thermalexpansion.InductionSmelter.addRecipe(<immersiveengineering:material:19>, null, <immersiveengineering:material:18>, 4000);

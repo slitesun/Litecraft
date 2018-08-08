@@ -48,7 +48,9 @@ furnace.remove(<ore:ingotStainlessSteel>);
 furnace.remove(<ore:ingotChromium>);
 furnace.remove(<ore:ingotManganese>);
 furnace.remove(<ore:ingotIridium>);
+//HOP Graphite
 furnace.remove(<immersiveengineering:material:19>);
+//Graphite
 furnace.remove(<bigreactors:ingotmetals:2>);
 furnace.remove(<ore:ingotTitaniumAluminide>);
 furnace.remove(<ore:ingotTitaniumIridium>);

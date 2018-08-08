@@ -1,6 +1,6 @@
 //Grout remake
 recipes.remove(<tconstruct:soil>);
-recipes.addShaped(<tconstruct:soil> * 8, [[<ore:gravel>, <minecraft:clay>, <ore:gravel>], [<ore:sand>, <rustic:fluid_bottle>.withTag({Fluid: {FluidName: "ironberryjuice", Amount: 1000}}), <ore:sand>], [<ore:gravel>, <minecraft:clay>, <ore:gravel>]]);
+recipes.addShapeless(<tconstruct:soil> * 4, [<ore:dustGypsum>, <rustic:fluid_bottle>.withTag({Fluid: {FluidName: "ironberryjuice", Amount: 1000}}), <ore:dustGypsum>, <ore:itemClay>, <ore:itemClay>, <ore:itemClay>, <minecraft:sand>, <minecraft:sand>, <minecraft:sand>]);
 
 //Rebalance ore processing
 mods.tconstruct.Melting.removeRecipe(<liquid:aluminum>, <modernmetals:aluminum_ore>);

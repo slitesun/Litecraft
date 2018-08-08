@@ -1,3 +1,16 @@
+//
+var interface = <advancedrocketry:misc>;
+var fluids_IO_plate = <advancedrocketry:ic:5>;
+var items_IO_plate = <advancedrocketry:ic:4>;
+
+var transfer_node_fluids = <extrautils2:grocket:2>;
+var transfer_node_items = <extrautils2:grocket>;
+
+var graphite_dust = <bigreactors:dustmetals:2>;
+var graphite_ingot = <bigreactors:ingotmetals:2>;
+
+var coke_dust = <immersiveengineering:material:17>;
+
 //Ядро корпуса реактора
 recipes.remove(<bigreactors:reactorcasingcores>);
 recipes.addShaped(<bigreactors:reactorcasingcores>, [[<ore:stickSteel>, <ore:dustGraphite>, <ore:stickSteel>], [<ore:rodGold>, <mekanism:reinforcedalloy>, <ore:rodGold>], [<ore:stickSteel>, <ore:dustGraphite>, <ore:stickSteel>]]);
@@ -24,11 +37,11 @@ recipes.addShapeless(<bigreactors:turbineglass>, [<bigreactors:turbinehousing>, 
 
 //Контроллер реактора
 recipes.remove(<bigreactors:reactorcontroller>);
-recipes.addShaped(<bigreactors:reactorcontroller>, [[<mekanism:reinforcedalloy>, <ore:dustGlowstone>, <mekanism:reinforcedalloy>], [<ore:plateSignalum>, <advancedrocketry:misc>, <ore:plateSignalum>], [<ore:circuitElite>, <bigreactors:reactorcasing>, <ore:circuitElite>]]);
+recipes.addShaped(<bigreactors:reactorcontroller>, [[<mekanism:reinforcedalloy>, <ore:dustGlowstone>, <mekanism:reinforcedalloy>], [<ore:plateSignalum>, interface, <ore:plateSignalum>], [<ore:circuitElite>, <bigreactors:reactorcasing>, <ore:circuitElite>]]);
 
 //Контроллер турбины
 recipes.remove(<bigreactors:turbinecontroller>);
-recipes.addShaped(<bigreactors:turbinecontroller>, [[<ore:ingotPlutonium>, <ore:dustGlowstone>, <ore:ingotPlutonium>], [<ore:plateSignalum>, <advancedrocketry:misc>, <ore:plateSignalum>], [<ore:circuitElite>, <bigreactors:reactorcasing>, <ore:circuitElite>]]);
+recipes.addShaped(<bigreactors:turbinecontroller>, [[<ore:ingotPlutonium>, <ore:dustGlowstone>, <ore:ingotPlutonium>], [<ore:plateSignalum>, interface, <ore:plateSignalum>], [<ore:circuitElite>, <bigreactors:reactorcasing>, <ore:circuitElite>]]);
 
 //Реакторная розетка
 recipes.remove(<bigreactors:reactorpowertaprf>);
@@ -44,11 +57,11 @@ recipes.addShaped(<bigreactors:reactorredstoneport>, [[null, <ore:ingotRedstoneA
 
 //Охлаждающий порт реактора
 recipes.remove(<bigreactors:reactorcoolantport>);
-recipes.addShaped(<bigreactors:reactorcoolantport>, [[null, <extrautils2:grocket:2>, null], [null, <bigreactors:reactorcasing>, null], [<advancedrocketry:ic:5>, <extrautils2:grocket:2>, <advancedrocketry:ic:5>]]);
+recipes.addShaped(<bigreactors:reactorcoolantport>, [[null, transfer_node_fluids, null], [null, <bigreactors:reactorcasing>, null], [fluids_IO_plate, transfer_node_fluids, fluids_IO_plate]]);
 
 //Жидкостный порт турбины
 recipes.remove(<bigreactors:turbinefluidport>);
-recipes.addShaped(<bigreactors:turbinefluidport>, [[null, <extrautils2:grocket:2>, null], [null, <bigreactors:turbinehousing>, null], [<advancedrocketry:ic:5>, <extrautils2:grocket:2>, <advancedrocketry:ic:5>]]);
+recipes.addShaped(<bigreactors:turbinefluidport>, [[null, transfer_node_fluids, null], [null, <bigreactors:turbinehousing>, null], [fluids_IO_plate, transfer_node_fluids, fluids_IO_plate]]);
 
 //Топливный стержень
 recipes.remove(<bigreactors:reactorfuelrod>);
@@ -60,7 +73,7 @@ recipes.addShaped(<bigreactors:reactorcontrolrod>, [[null, <extrautils2:grocket>
 
 //Порт доступа
 recipes.remove(<bigreactors:reactoraccessport>);
-recipes.addShaped(<bigreactors:reactoraccessport>, [[null, <mekanism:reinforcedalloy>, null], [<extrautils2:grocket>, <minecraft:chest>, <bigreactors:reactorcasing>], [<advancedrocketry:ic:4>, <mekanism:reinforcedalloy>, <advancedrocketry:ic:4>]]);
+recipes.addShaped(<bigreactors:reactoraccessport>, [[null, <mekanism:reinforcedalloy>, null], [transfer_node_items, <minecraft:chest>, <bigreactors:reactorcasing>], [<advancedrocketry:ic:4>, <mekanism:reinforcedalloy>, <advancedrocketry:ic:4>]]);
 
 //Вал ротора турбины
 recipes.remove(<bigreactors:turbinerotorshaft>);
@@ -84,8 +97,8 @@ mods.thermalexpansion.Pulverizer.addRecipe(<bigreactors:minerals> * 2, <bigreact
 
 //Графит
 //mods.thermalexpansion.Centrifuge.addRecipe(WeightedItemStack[] outputs, IItemStack input, ILiquidStack fluid, int energy);
-mods.thermalexpansion.Centrifuge.addRecipe([<bigreactors:dustmetals:2>], <immersiveengineering:material:17> * 8, null, 8000);
-mods.thermalexpansion.InductionSmelter.addRecipe(<bigreactors:ingotmetals:2>, <bigreactors:dustmetals:2>, null, 11000);
+mods.thermalexpansion.Centrifuge.addRecipe([graphite_dust], coke_dust * 8, null, 8000);
+mods.thermalexpansion.InductionSmelter.addRecipe(graphite_ingot, graphite_dust, null, 11000);
 
 
 
