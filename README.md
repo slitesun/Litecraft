@@ -34,18 +34,18 @@
 30) OreSpawn
 31) Pam's HarvestCraft
 32) PlusTiC
-33) Redstone Arsenal
+33) Litecraftutils
 34) Resource Loader
 35) Rustic
 36) Simply Jetpacks 2
 37) Standard Expansion
 38) Storage Drawers
 39) TConstruct
-40) Thermal Cultivation
+40) Biomes 'O' Plenty
 41) Thermal Dynamics
 42) Thermal Expansion
 43) Thermal Foundation
-44) Thermal Innovation
+44) Modular Powersuits
 45) Tinkers JEI
 46) Tinker Tool Leveling 
 47) Waila Harvestability
