@@ -1,0 +1,248 @@
+<!-->
+	<Recipe timeRequired="NUMBER" power="NUMBER">
+		<input>
+			<fluidStack>FLUID NAME SIZE</fluidStack>
+			<itemStack>ITEM_NAME SIZE META</itemStack>
+			<oreDict>OREDICT_NAME SIZE</oreDict>
+        </input>
+		<output>
+			<fluidStack>FLUID_NAME SIZE</fluidStack>
+			<itemStack>ITEM_NAME SIZE META</itemStack>
+			<oreDict>OREDICT_NAME SIZE</oreDict>
+		</output>
+	</Recipe>
+	
+	Can have Multiple In/Outputs
+	Some Machines can only Accept either Fluids or Items
+	
+	timeRequired="NUMBER"	how long a Recipe takes, Unit is in Ticks.
+	power="NUMBER" how much Power the Recipes takes per Tick. Unit is in RF.
+	
+	The "useDefault" attribute will prevent loading of recipes if set to "false"
+<!-->
+<Recipes useDefault="true">
+	<Recipe timeRequired="300" power ="20">
+		<input>
+			<oreDict>ingotCupronickel</oreDict>
+		</input>
+		<output>
+			<itemStack>basemetals:cupronickel_rod 2</itemStack>
+		</output>
+	</Recipe>
+	<Recipe timeRequired="300" power ="20">
+		<input>
+			<oreDict>ingotCobalt</oreDict>
+		</input>
+		<output>
+			<itemStack>jaopca:item_stickcobalt 2</itemStack>
+		</output>
+	</Recipe>
+	<Recipe timeRequired="300" power ="20">
+		<input>
+			<oreDict>ingotYellorium</oreDict>
+		</input>
+		<output>
+			<itemStack>jaopca:item_stickyellorium 2</itemStack>
+		</output>
+	</Recipe>
+	<Recipe timeRequired="300" power ="20">
+		<input>
+			<oreDict>ingotUranium</oreDict>
+		</input>
+		<output>
+			<itemStack>modernmetals:uranium_rod 2</itemStack>
+		</output>
+	</Recipe>
+	<Recipe timeRequired="300" power ="20">
+		<input>
+			<oreDict>ingotPlatinum</oreDict>
+		</input>
+		<output>
+			<itemStack>basemetals:platinum_rod 2</itemStack>
+		</output>
+	</Recipe>
+	<Recipe timeRequired="300" power ="20">
+		<input>
+			<oreDict>ingotTitanium</oreDict>
+		</input>
+		<output>
+			<itemStack>modernmetals:titanium_rod 2</itemStack>
+		</output>
+	</Recipe>
+	<Recipe timeRequired="300" power ="20">
+		<input>
+			<oreDict>ingotLead</oreDict>
+		</input>
+		<output>
+			<itemStack>basemetals:lead_rod 2</itemStack>
+		</output>
+	</Recipe>
+	<Recipe timeRequired="300" power ="20">
+		<input>
+			<oreDict>ingotCopper</oreDict>
+		</input>
+		<output>
+			<itemStack>basemetals:copper_rod 2</itemStack>
+		</output>
+	</Recipe>
+	<Recipe timeRequired="300" power ="20">
+		<input>
+			<oreDict>ingotDraconium</oreDict>
+		</input>
+		<output>
+			<itemStack>jaopca:item_stickdraconium 2</itemStack>
+		</output>
+	</Recipe>
+	<Recipe timeRequired="300" power ="20">
+		<input>
+			<oreDict>ingotBronze</oreDict>
+		</input>
+		<output>
+			<itemStack>basemetals:bronze_rod 2</itemStack>
+		</output>
+	</Recipe>
+	<Recipe timeRequired="300" power ="20">
+		<input>
+			<oreDict>ingotGold</oreDict>
+		</input>
+		<output>
+			<itemStack>basemetals:gold_rod 2</itemStack>
+		</output>
+	</Recipe>
+	<Recipe timeRequired="300" power ="20">
+		<input>
+			<oreDict>ingotTitaniumAluminide</oreDict>
+		</input>
+		<output>
+			<itemStack>advancedrocketry:productrod 2</itemStack>
+		</output>
+	</Recipe>
+	<Recipe timeRequired="300" power ="20">
+		<input>
+			<oreDict>ingotMithril</oreDict>
+		</input>
+		<output>
+			<itemStack>basemetals:mithril_rod 2</itemStack>
+		</output>
+	</Recipe>
+	<Recipe timeRequired="300" power ="20">
+		<input>
+			<oreDict>ingotArdite</oreDict>
+		</input>
+		<output>
+			<itemStack>jaopca:item_stickardite 2</itemStack>
+		</output>
+	</Recipe>
+	<Recipe timeRequired="300" power ="20">
+		<input>
+			<oreDict>ingotObsidian</oreDict>
+		</input>
+		<output>
+			<itemStack>basemetals:obsidian_rod 2</itemStack>
+		</output>
+	</Recipe>
+	<Recipe timeRequired="300" power ="20">
+		<input>
+			<oreDict>ingotAluminium</oreDict>
+		</input>
+		<output>
+			<itemStack>modernmetals:aluminum_rod 2</itemStack>
+		</output>
+	</Recipe>
+	<Recipe timeRequired="300" power ="20">
+		<input>
+			<oreDict>ingotSteel</oreDict>
+		</input>
+		<output>
+			<itemStack>basemetals:steel_rod 2</itemStack>
+		</output>
+	</Recipe>
+	<Recipe timeRequired="300" power ="20">
+		<input>
+			<oreDict>ingotElectrum</oreDict>
+		</input>
+		<output>
+			<itemStack>basemetals:electrum_rod 2</itemStack>
+		</output>
+	</Recipe>
+	<Recipe timeRequired="300" power ="20">
+		<input>
+			<oreDict>ingotOsmium</oreDict>
+		</input>
+		<output>
+			<itemStack>modernmetals:osmium_rod 2</itemStack>
+		</output>
+	</Recipe>
+	<Recipe timeRequired="300" power ="20">
+		<input>
+			<oreDict>ingotSilver</oreDict>
+		</input>
+		<output>
+			<itemStack>basemetals:silver_rod 2</itemStack>
+		</output>
+	</Recipe>
+	<Recipe timeRequired="300" power ="20">
+		<input>
+			<oreDict>ingotAluminumbrass</oreDict>
+		</input>
+		<output>
+			<itemStack>modernmetals:aluminumbrass_rod 2</itemStack>
+		</output>
+	</Recipe>
+	<Recipe timeRequired="300" power ="20">
+		<input>
+			<oreDict>ingotTin</oreDict>
+		</input>
+		<output>
+			<itemStack>basemetals:tin_rod 2</itemStack>
+		</output>
+	</Recipe>
+	<Recipe timeRequired="300" power ="20">
+		<input>
+			<oreDict>ingotInvar</oreDict>
+		</input>
+		<output>
+			<itemStack>basemetals:invar_rod 2</itemStack>
+		</output>
+	</Recipe>
+	<Recipe timeRequired="300" power ="20">
+		<input>
+			<oreDict>ingotNickel</oreDict>
+		</input>
+		<output>
+			<itemStack>basemetals:nickel_rod 2</itemStack>
+		</output>
+	</Recipe>
+	<Recipe timeRequired="300" power ="20">
+		<input>
+			<oreDict>ingotIridium</oreDict>
+		</input>
+		<output>
+			<itemStack>libvulpes:productrod 2 10</itemStack>
+		</output>
+	</Recipe>
+	<Recipe timeRequired="300" power ="20">
+		<input>
+			<oreDict>ingotPlutonium</oreDict>
+		</input>
+		<output>
+			<itemStack>modernmetals:plutonium_rod 2</itemStack>
+		</output>
+	</Recipe>
+	<Recipe timeRequired="300" power ="20">
+		<input>
+			<oreDict>ingotTitaniumIridium</oreDict>
+		</input>
+		<output>
+			<itemStack>advancedrocketry:productrod 2 1</itemStack>
+		</output>
+	</Recipe>
+	<Recipe timeRequired="300" power ="100">
+		<input>
+			<oreDict>ingotIron</oreDict>
+		</input>
+		<output>
+			<itemStack>libvulpes:productrod 2 1</itemStack>
+		</output>
+	</Recipe>
+</Recipes>
