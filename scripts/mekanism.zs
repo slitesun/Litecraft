@@ -11,20 +11,14 @@ var retrieval_node_items = <extrautils2:grocket:3>;
 //Энергетические кубы
 recipes.remove(<mekanism:energycube>);
 
-//Базовая микросхема
-recipes.addShaped(<mekanism:controlcircuit>, [[<immersiveengineering:material:27>, <ore:nuggetConductiveIron>, <enderio:item_basic_capacitor>], [<ore:gemRedstone>, <ore:wireCopper>, <ore:ingotEnergeticAlloy>]]);
-
 //Продвинутая микросхема
 recipes.remove(<mekanism:controlcircuit:1>);
-recipes.addShaped(<mekanism:controlcircuit:1>, [[<immersiveengineering:material:27>, <mekanism:controlcircuit>, <enderio:item_basic_capacitor:1>], [<ore:gemRedstone>, <ore:wireAluminium>, <ore:alloyAdvanced>]]);
 
 //Элитная микросхема
 recipes.remove(<mekanism:controlcircuit:2>);
-recipes.addShaped(<mekanism:controlcircuit:2>, [[<immersiveengineering:material:27>, <mekanism:controlcircuit:1>, <enderio:item_basic_capacitor:1>], [<ore:gemRedstone>, <ore:wireElectrum>, <ore:alloyElite>]]);
 
 //Совершенная микросхема
 recipes.remove(<mekanism:controlcircuit:3>);
-recipes.addShaped(<mekanism:controlcircuit:3>, [[<immersiveengineering:material:27>, <mekanism:controlcircuit:2>, <enderio:item_basic_capacitor:2>], [<extrautils2:suncrystal>, <ore:wireElectrum>, <ore:alloyUltimate>]]);
 
 //Энергетический планшет
 recipes.remove(<mekanism:energytablet>);

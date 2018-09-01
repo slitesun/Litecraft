@@ -1,4 +1,7 @@
-//
+import crafttweaker.item.IItemStack;
+
+val minerals = [<baseminerals:phosphorus_powder>, <thermalfoundation:material:771>, <immersiveengineering:material:25>, <mekanism:otherdust:3>, <thermalfoundation:material:772>, <immersiveengineering:material:24>, <biomesoplenty:ash>] as IItemStack[];
+
 var circuit = <advancedrocketry:ic>;
 var reception_coil = <thermalfoundation:material:513>;
 var transmission_coil = <thermalfoundation:material:514>;
@@ -6,6 +9,20 @@ var conductance_coil = <thermalfoundation:material:515>;
 var hammer = <immersiveengineering:tool>;
 var mechanical_component = <immersiveengineering:material:9>;
 
+//Усиленный набор обновления
+recipes.remove(<thermalfoundation:upgrade>);
+
+//Укреплённый набор обновления
+recipes.remove(<thermalfoundation:upgrade:1>);
+
+//Синаловый набор обновления
+recipes.remove(<thermalfoundation:upgrade:2>);
+
+//Резонирующий набор обновления
+recipes.remove(<thermalfoundation:upgrade:3>);
+
+//Compressed sawdust
+recipes.remove(<thermalfoundation:material:801>);
 
 //Рамки
 
@@ -15,29 +32,11 @@ recipes.addShaped(<thermalexpansion:frame>, [[<ore:plateSteel>, <ore:ingotHOPGra
 
 //Рамка устройства
 recipes.remove(<thermalexpansion:frame:64>);
-recipes.addShaped(<thermalexpansion:frame:64>, [[<ore:plateSteel>, <mekanism:enrichedalloy>, <ore:plateSteel>], [<enderio:item_basic_capacitor>, <ore:blockGlassHardened>, <enderio:item_basic_capacitor>], [<ore:plateSteel>, <mekanism:enrichedalloy>, <ore:plateSteel>]]);
+recipes.addShaped(<thermalexpansion:frame:64>, [[<ore:plateSteel>, <ore:alloyAdvanced>, <ore:plateSteel>], [<enderio:item_basic_capacitor>, <ore:blockGlassHardened>, <enderio:item_basic_capacitor>], [<ore:plateSteel>, <ore:alloyAdvanced>, <ore:plateSteel>]]);
 
 //Рамка энергетической ячейки
 recipes.remove(<thermalexpansion:frame:128>);
-recipes.addShaped(<thermalexpansion:frame:128>, [[<ore:rodSteel>, <ore:rodGold>, <ore:rodSteel>], [<ore:rodLead>, <ore:blockGlassHardened>, <ore:rodLead>], [<ore:rodSteel>, <ore:rodGold>, <ore:rodSteel>]]);
-
-//Наборы обновлений
-
-//Усиленный набор обновления
-recipes.remove(<thermalfoundation:upgrade>);
-recipes.addShaped(<thermalfoundation:upgrade>, [[null, <ore:ingotAluminum>, null], [<ore:ingotAluminum>, <ore:gearInvar>, <ore:ingotAluminum>], [<ore:ingotConductiveIron>, <ore:ingotAluminum>, <ore:ingotConductiveIron>]]);
-
-//Укреплённый набор обновления
-recipes.remove(<thermalfoundation:upgrade:1>);
-recipes.addShaped(<thermalfoundation:upgrade:1>, [[null, <ore:ingotStainlessSteel>, null], [<ore:ingotStainlessSteel>, <ore:gearManganese>, <ore:ingotStainlessSteel>], [<ore:ingotEnergeticAlloy>, <ore:ingotStainlessSteel>, <ore:ingotEnergeticAlloy>]]);
-
-//Синаловый набор обновления
-recipes.remove(<thermalfoundation:upgrade:2>);
-recipes.addShaped(<thermalfoundation:upgrade:2>, [[null, <ore:ingotSignalum>, null], [<ore:ingotSignalum>, <ore:gearChromium>, <ore:ingotSignalum>], [<ore:ingotPulsatingIron>, <ore:ingotSignalum>, <ore:ingotPulsatingIron>]]);
-
-//Резонирующий набор обновления
-recipes.remove(<thermalfoundation:upgrade:3>);
-recipes.addShaped(<thermalfoundation:upgrade:3>, [[null, <ore:ingotEnderium>, null], [<ore:ingotEnderium>, <ore:gearLumium>, <ore:ingotEnderium>], [<ore:ingotVibrantAlloy>, <ore:ingotEnderium>, <ore:ingotVibrantAlloy>]]);
+recipes.addShaped(<thermalexpansion:frame:128>, [[<ore:stickSteel>, <ore:rodGold>, <ore:stickSteel>], [<ore:rodLead>, <ore:blockGlassHardened>, <ore:rodLead>], [<ore:stickSteel>, <ore:rodGold>, <ore:stickSteel>]]);
 
 //Энергетическая ячейка
 recipes.remove(<thermalexpansion:cell>);
@@ -65,7 +64,7 @@ recipes.addShaped(<thermalexpansion:capacitor:1>, [[null, <ore:ingotConductiveIr
 
 //Флаксовый конденсатор(укреплённый)
 recipes.remove(<thermalexpansion:capacitor:2>);
-recipes.addShaped(<thermalexpansion:capacitor:2>, [[<ore:ingotElectricalSteel>, <ore:ingotEnergeticAlloy>, <ore:ingotElectricalSteel>], [<ore:ingotStainlessSteel>, <ore:ingotEnergeticAlloy>, <ore:ingotStainlessSteel>], [<ore:ingotStainlessSteel>, <enderio:block_cap_bank:2>, <ore:ingotStainlessSteel>]]);
+recipes.addShaped(<thermalexpansion:capacitor:2>, [[<ore:ingotElectricalSteel>, <ore:ingotEnergeticAlloy>, <ore:ingotElectricalSteel>], [<ore:plateStainlesssteel>, <ore:ingotEnergeticAlloy>, <ore:plateStainlesssteel>], [<ore:plateStainlesssteel>, <enderio:block_cap_bank:2>, <ore:plateStainlesssteel>]]);
 
 //Флаксовый конденсатор(синаловый)
 recipes.remove(<thermalexpansion:capacitor:3>);
@@ -83,13 +82,19 @@ recipes.addShaped(<thermalfoundation:material:656>, [[<ore:dustDiamond>, <ore:pl
 recipes.remove(<thermalfoundation:material:657>);
 recipes.addShaped(<thermalfoundation:material:657>, [[<ore:dustDiamond>, <ore:plateSteel>, <ore:dustDiamond>], [<ore:plateSteel>, hammer, <ore:plateSteel>], [<ore:dustDiamond>, <ore:plateSteel>, <ore:dustDiamond>]]);
 
-//Фито-Гро
-recipes.addShapeless(<thermalfoundation:fertilizer> * 4, [<ore:pulpWood>, <ore:pulpWood>, <ore:dustPhosphorus>, <ore:itemSlag>]);
-recipes.addShapeless(<thermalfoundation:fertilizer> * 16, [<ore:dustCharcoal>, <ore:dustPhosphorus>, <ore:itemSlag>]);
+recipes.remove(<thermalfoundation:fertilizer>);
+recipes.remove(<thermalfoundation:fertilizer:1>);
 
-//Обогащённый Фито-Гро
-recipes.addShapeless(<thermalfoundation:fertilizer:1> * 4, [<ore:pulpWood>, <ore:pulpWood>, <ore:dustPhosphorus>, <ore:itemSlagRich>]);
-recipes.addShapeless(<thermalfoundation:fertilizer:1> * 16, [<ore:dustCharcoal>, <ore:dustPhosphorus>, <ore:itemSlagRich>]);
+for e in minerals {
+
+  //Фито-Гро
+  recipes.addShapeless(<thermalfoundation:fertilizer> * 4, [<ore:pulpWood>, <ore:pulpWood>, e, <ore:itemSlag>]);
+  recipes.addShapeless(<thermalfoundation:fertilizer> * 16, [<ore:dustCharcoal>, e, <ore:itemSlag>]);
+
+  //Обогащённый Фито-Гро
+  recipes.addShapeless(<thermalfoundation:fertilizer:1> * 4, [<ore:pulpWood>, <ore:pulpWood>, e, <ore:itemSlagRich>]);
+  recipes.addShapeless(<thermalfoundation:fertilizer:1> * 16, [<ore:dustCharcoal>, e, <ore:itemSlagRich>]);
+}
 
 //Рецепты машин
 
@@ -157,20 +162,42 @@ recipes.addShaped(<thermalexpansion:machine:14>, [[<ore:plateInvar>, <ore:dustCr
 recipes.remove(<thermalexpansion:machine:15>);
 recipes.addShaped(<thermalexpansion:machine:15>, [[<ore:plateInvar>, <thermalexpansion:tank>, <ore:plateInvar>], [<ore:plateInvar>, <thermalexpansion:frame>, <ore:plateInvar>], [circuit, <advancedrocketry:iquartzcrucible>, circuit]]);
 
+//Generators
 
+//Steam Dynamo
+recipes.remove(<thermalexpansion:dynamo>);
+recipes.addShaped(<thermalexpansion:dynamo>, [[null, transmission_coil, null], [<ore:gearBronze>, <ore:alloyAdvanced>, <ore:plateSteel>], [<ore:plateSteel>, <thermalexpansion:frame>, <ore:gearBronze>]]);
 
+//Magmatic Dynamo
+recipes.remove(<thermalexpansion:dynamo:1>);
+recipes.addShaped(<thermalexpansion:dynamo:1>, [[null, transmission_coil, null], [<ore:gearInvar>, <ore:alloyAdvanced>, <ore:plateInvar>], [<ore:plateInvar>, <thermalexpansion:frame>, <ore:gearInvar>]]);
 
+//Compression Dynamo
+recipes.remove(<thermalexpansion:dynamo:2>);
+recipes.addShaped(<thermalexpansion:dynamo:2>, [[null, transmission_coil, null], [<ore:gearTin>, <ore:alloyAdvanced>, <ore:plateTin>], [<ore:plateTin>, <thermalexpansion:frame>, <ore:gearTin>]]);
 
+//Reactant Dynamo
+recipes.remove(<thermalexpansion:dynamo:3>);
+recipes.addShaped(<thermalexpansion:dynamo:3>, [[null, transmission_coil, null], [<ore:gearLead>, <ore:alloyAdvanced>, <ore:plateLead>], [<ore:plateLead>, <thermalexpansion:frame>, <ore:gearLead>]]);
 
+//Enervation Dynamo
+recipes.remove(<thermalexpansion:dynamo:4>);
+recipes.addShaped(<thermalexpansion:dynamo:4>, [[null, transmission_coil, null], [<ore:gearElectrum>, <ore:alloyAdvanced>, <ore:plateElectrum>], [<ore:plateElectrum>, <thermalexpansion:frame>, <ore:gearElectrum>]]);
 
+//Numismatic Dynamo
+recipes.remove(<thermalexpansion:dynamo:5>);
+recipes.addShaped(<thermalexpansion:dynamo:5>, [[null, transmission_coil, null], [<ore:gearConstantan>, <ore:alloyAdvanced>, <ore:plateConstantan>], [<ore:plateConstantan>, <thermalexpansion:frame>, <ore:gearConstantan>]]);
 
+//Coils
 
+recipes.remove(reception_coil);
+recipes.addShaped(reception_coil * 4, [[null, <ore:casingAluminum>, null], [<ore:coilGold>, <ore:stickSteel>, <ore:coilGold>], [null, <ore:casingAluminum>, null]]);
 
+recipes.remove(transmission_coil);
+recipes.addShaped(transmission_coil * 4, [[null, <ore:casingAluminum>, null], [<ore:coilAluminum>, <ore:stickSteel>, <ore:coilAluminum>], [null, <ore:casingAluminum>, null]]);
 
-
-
-
-
+recipes.remove(conductance_coil);
+recipes.addShaped(conductance_coil * 4, [[null, <ore:casingAluminum>, null], [<ore:coilCopper>, <ore:stickSteel>, <ore:coilCopper>], [null, <ore:casingAluminum>, null]]);
 
 
 

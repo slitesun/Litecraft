@@ -56,3 +56,7 @@ mods.tconstruct.Melting.addRecipe(<liquid:ardite> * 144, <tconstruct:ore:1>);
 mods.tconstruct.Melting.removeRecipe(<liquid:cobalt>, <tconstruct:ore>);
 mods.tconstruct.Melting.addRecipe(<liquid:cobalt> * 144, <tconstruct:ore>);
 
+mods.tconstruct.Alloy.removeRecipe(<liquid:enderium>);
+mods.tconstruct.Alloy.removeRecipe(<liquid:lumium>);
+mods.tconstruct.Alloy.removeRecipe(<liquid:signalum>);
+

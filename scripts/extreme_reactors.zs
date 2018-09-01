@@ -11,6 +11,8 @@ var graphite_ingot = <bigreactors:ingotmetals:2>;
 
 var coke_dust = <immersiveengineering:material:17>;
 
+var slag = <thermalfoundation:material:864>;
+
 //Ядро корпуса реактора
 recipes.remove(<bigreactors:reactorcasingcores>);
 recipes.addShaped(<bigreactors:reactorcasingcores>, [[<ore:stickSteel>, <ore:dustGraphite>, <ore:stickSteel>], [<ore:rodGold>, <mekanism:reinforcedalloy>, <ore:rodGold>], [<ore:stickSteel>, <ore:dustGraphite>, <ore:stickSteel>]]);
@@ -97,8 +99,8 @@ mods.thermalexpansion.Pulverizer.addRecipe(<bigreactors:minerals> * 2, <bigreact
 
 //Графит
 //mods.thermalexpansion.Centrifuge.addRecipe(WeightedItemStack[] outputs, IItemStack input, ILiquidStack fluid, int energy);
-mods.thermalexpansion.Centrifuge.addRecipe([graphite_dust], coke_dust * 8, null, 8000);
-mods.thermalexpansion.InductionSmelter.addRecipe(graphite_ingot, graphite_dust, null, 11000);
+mods.thermalexpansion.Centrifuge.addRecipe([graphite_dust], coke_dust * 8, null, 1000);
+mods.thermalexpansion.InductionSmelter.addRecipe(graphite_ingot, <minecraft:sand>, graphite_dust, 1000, slag, 25);
 
 
 

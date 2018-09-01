@@ -5,6 +5,11 @@ var graphite_dust_big_reactors = <bigreactors:dustmetals:2>;
 
 var concrete = <tconstruct:soil>;
 
+var charcoal = <minecraft:coal:1>;
+
+//Coal generation
+recipes.remove(<libvulpes:coalgenerator>);
+
 //Basic Circuit
 recipes.addShaped(<advancedrocketry:ic>, [[<ore:plateSteel>, <ore:electronTube>, <ore:plateSteel>], [<enderio:item_basic_capacitor>, <ore:ingotRedstoneAlloy>, <enderio:item_basic_capacitor>], [<ore:electronTube>, circuit_board, <ore:electronTube>]]);
 
@@ -22,7 +27,7 @@ recipes.remove(<advancedrocketry:ic:5>);
 recipes.addShaped(<advancedrocketry:ic:5>, [[<ore:dustRedstone>, <ore:electronTube>, <ore:dustRedstone>], [<ore:dustLapis>, circuit_board, <ore:dustLapis>], [<ore:dustLapis>, <ore:plateSteel>, <ore:dustLapis>]]);
 
 //Карбоновый кирпичик
-furnace.addRecipe(carbon_brick * 64, <basemetals:diamond_powder>);
+furnace.addRecipe(carbon_brick, charcoal);
 furnace.addRecipe(carbon_brick, <minecraft:coal>);
 
 //Структурный блок

@@ -64,6 +64,8 @@ furnace.remove(<tconstruct:ingots>, <tconstruct:ore>);
 //Bread processing
 recipes.remove(<minecraft:bread>);
 furnace.remove(<minecraft:bread>);
+furnace.remove(<minecraft:coal:1>);
+
 furnace.addRecipe(<minecraft:bread>, <harvestcraft:doughitem>);
 
 
