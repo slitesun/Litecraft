@@ -1,6 +1,8 @@
+var bottle_iron_berry_juice = <rustic:fluid_bottle>.withTag({Fluid: {FluidName: "ironberryjuice", Amount: 1000}});
+
 //Grout remake
 recipes.remove(<tconstruct:soil>);
-recipes.addShapeless(<tconstruct:soil> * 4, [<ore:dustGypsum>, <rustic:fluid_bottle>.withTag({Fluid: {FluidName: "ironberryjuice", Amount: 1000}}), <ore:dustGypsum>, <ore:itemClay>, <ore:itemClay>, <ore:itemClay>, <minecraft:sand>, <minecraft:sand>, <minecraft:sand>]);
+recipes.addShapeless(<tconstruct:soil> * 4, [<ore:dustGypsum>, bottle_iron_berry_juice.transformReplace(<minecraft:glass_bottle>), <ore:dustGypsum>, <ore:itemClay>, <ore:itemClay>, <ore:itemClay>, <minecraft:sand>, <minecraft:sand>, <minecraft:sand>]);
 
 //Rebalance ore processing
 mods.tconstruct.Melting.removeRecipe(<liquid:aluminum>, <modernmetals:aluminum_ore>);
@@ -49,14 +51,16 @@ mods.tconstruct.Melting.removeRecipe(<liquid:uranium>, <modernmetals:uranium_ore
 mods.tconstruct.Melting.addRecipe(<liquid:uranium> * 144, <modernmetals:uranium_ore>);
 
 //Ardite ore
+furnace.remove(<tconstruct:ore:1>);
 mods.tconstruct.Melting.removeRecipe(<liquid:ardite>, <tconstruct:ore:1>);
 mods.tconstruct.Melting.addRecipe(<liquid:ardite> * 144, <tconstruct:ore:1>);
 
 //Cobalt ore
+furnace.remove(<tconstruct:ingots>, <tconstruct:ore>);
 mods.tconstruct.Melting.removeRecipe(<liquid:cobalt>, <tconstruct:ore>);
 mods.tconstruct.Melting.addRecipe(<liquid:cobalt> * 144, <tconstruct:ore>);
 
 mods.tconstruct.Alloy.removeRecipe(<liquid:enderium>);
 mods.tconstruct.Alloy.removeRecipe(<liquid:lumium>);
 mods.tconstruct.Alloy.removeRecipe(<liquid:signalum>);
-
+mods.tconstruct.Alloy.removeRecipe(<liquid:steel>);

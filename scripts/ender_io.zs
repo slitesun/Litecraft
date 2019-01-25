@@ -1,7 +1,10 @@
-//
 var benitoite = <bigreactors:minerals:1>;
 var anglesite = <bigreactors:minerals>;
 var lumium_ingot = <thermalfoundation:material:166>;
+
+recipes.remove(<enderio:block_solar_panel:1>);
+recipes.remove(<enderio:block_solar_panel:2>);
+recipes.remove(<enderio:block_solar_panel:3>);
 
 //Dual-wings remake
 recipes.remove(<enderio:item_material:6>);
@@ -39,4 +42,3 @@ recipes.addShapeless(<enderio:item_material:21>, [<ore:toolMortarandpestle>, <mi
 
 //End Steel
 mods.thermalexpansion.InductionSmelter.addRecipe(<enderio:item_alloy_ingot:8>, lumium_ingot, <minecraft:end_stone> * 4, 4000);
-

@@ -1,18 +1,15 @@
-//
 var circuit_board = <immersiveengineering:material:27>;
 var carbon_brick = <advancedrocketry:misc:1>;
 var graphite_dust_big_reactors = <bigreactors:dustmetals:2>;
 
 var concrete = <tconstruct:soil>;
 
-var charcoal = <minecraft:coal:1>;
 
 //Coal generation
 recipes.remove(<libvulpes:coalgenerator>);
 
 //Basic Circuit
 recipes.addShaped(<advancedrocketry:ic>, [[<ore:plateSteel>, <ore:electronTube>, <ore:plateSteel>], [<enderio:item_basic_capacitor>, <ore:ingotRedstoneAlloy>, <enderio:item_basic_capacitor>], [<ore:electronTube>, circuit_board, <ore:electronTube>]]);
-
 
 //Схема управления
 recipes.remove(<advancedrocketry:ic:3>);
@@ -27,8 +24,7 @@ recipes.remove(<advancedrocketry:ic:5>);
 recipes.addShaped(<advancedrocketry:ic:5>, [[<ore:dustRedstone>, <ore:electronTube>, <ore:dustRedstone>], [<ore:dustLapis>, circuit_board, <ore:dustLapis>], [<ore:dustLapis>, <ore:plateSteel>, <ore:dustLapis>]]);
 
 //Карбоновый кирпичик
-furnace.addRecipe(carbon_brick, charcoal);
-furnace.addRecipe(carbon_brick, <minecraft:coal>);
+furnace.addRecipe(carbon_brick, <customitems:dust_carbon>);
 
 //Структурный блок
 recipes.remove(<libvulpes:structuremachine>);
@@ -51,36 +47,3 @@ mods.thermalexpansion.InductionSmelter.addRecipe(<advancedrocketry:productingot>
 
 //Титано-иридиевый сплав
 mods.thermalexpansion.InductionSmelter.addRecipe(<advancedrocketry:productingot:1> * 2, <modernmetals:aluminum_ingot>, <modernmetals:iridium_ingot>, 20000);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

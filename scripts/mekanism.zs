@@ -1,6 +1,11 @@
-//
+// Created by Miha_77
+
+import mods.thermalexpansion.InductionSmelter;
+
 var steel_casing = <mekanism:basicblock:8>;
 var refined_obsidian = <mekanism:otherdust:5>;
+var signalum_ingot = <thermalfoundation:material:165>;
+var enderium_ingot = <thermalfoundation:material:167>;
 
 var resonant_upgrade = <thermalfoundation:upgrade:3>;
 
@@ -20,6 +25,11 @@ recipes.remove(<mekanism:controlcircuit:2>);
 //Совершенная микросхема
 recipes.remove(<mekanism:controlcircuit:3>);
 
+//Слиток очищенного обсидиана
+recipes.remove(<mekanism:ingot>);
+recipes.addShaped(<mekanism:ingot>, [[<mekanism:nugget>, <mekanism:nugget>, <mekanism:nugget>], [<mekanism:nugget>, <mekanism:nugget>, <mekanism:nugget>], [<mekanism:nugget>, <mekanism:nugget>, <mekanism:nugget>]]);
+recipes.addShapeless(<mekanism:ingot> * 9, [<mekanism:basicblock:2>]);
+
 //Энергетический планшет
 recipes.remove(<mekanism:energytablet>);
 recipes.addShaped(<mekanism:energytablet>, [[<enderio:item_basic_capacitor>, <thermalexpansion:capacitor>, <enderio:item_basic_capacitor>], [<ore:ingotConductiveIron>, <ore:wireCopper>, <ore:ingotConductiveIron>]]);
@@ -34,7 +44,7 @@ recipes.addShaped(<mekanism:basicblock:7> * 3, [[<ore:ingotRefinedObsidian>, <or
 
 //Телепорт
 recipes.remove(<mekanism:machineblock:11>);
-recipes.addShaped(<mekanism:machineblock:11>, [[<ore:ingotRefinedObsidian>, <thermalfoundation:material:515>, <ore:ingotRefinedObsidian>], [<mekanism:teleportationcore>, steel_casing, <mekanism:teleportationcore>], [<ore:circuitBasic>, <enderio:block_cap_bank:2>, <ore:circuitBasic>]]);
+recipes.addShaped(<mekanism:machineblock:11>, [[<customitems:plate_osgloglas>, <thermalfoundation:material:515>, <customitems:plate_osgloglas>], [<mekanism:teleportationcore>, steel_casing, <mekanism:teleportationcore>], [<ore:circuitBasic>, <enderio:block_cap_bank:2>, <ore:circuitBasic>]]);
 
 //Квантовый телепорт
 recipes.remove(<mekanism:machineblock3>);
@@ -42,42 +52,17 @@ recipes.addShaped(<mekanism:machineblock3>, [[<ore:ingotRefinedObsidian>, <ore:c
 
 //Стальной корпус
 recipes.remove(steel_casing);
-recipes.addShaped(steel_casing, [[<ore:blockGlassHardened>, <ore:plateSteel>, <ore:blockGlassHardened>], [<ore:plateSteel>, <enderio:item_basic_capacitor:2>, <ore:plateSteel>], [<ore:blockGlassHardened>, <ore:plateSteel>, <ore:blockGlassHardened>]]);
+recipes.addShaped(steel_casing, [[<ore:plateStainlesssteel>, <customitems:plate_osgloglas>, <ore:plateStainlesssteel>], [<ore:plateStainlesssteel>, <mekanism:controlcircuit>, <ore:plateStainlesssteel>], [<ore:plateStainlesssteel>, <customitems:plate_osgloglas>, <ore:plateStainlesssteel>]]);
 
 //Металлургический наполнитель
 recipes.remove(<mekanism:machineblock:8>);
 recipes.addShaped(<mekanism:machineblock:8>, [[<ore:ingotEnergeticAlloy>, resonant_upgrade, <ore:ingotEnergeticAlloy>], [<ore:circuitBasic>, steel_casing, <ore:circuitBasic>], [transfer_node_fluids, <ore:ingotRedstoneAlloy>, transfer_node_items]]);
 
 //Обогащённый сплав
-mods.thermalexpansion.InductionSmelter.addRecipe(<mekanism:enrichedalloy>, <modernmetals:aluminum_ingot>, <minecraft:redstone>, 2000);
+InductionSmelter.addRecipe(<mekanism:enrichedalloy>, <modernmetals:stainlesssteel_ingot>, <minecraft:redstone> * 4, 4000);
 
 //Укреплённый сплав
-mods.thermalexpansion.InductionSmelter.addRecipe(<mekanism:reinforcedalloy>, <mekanism:enrichedalloy>, <basemetals:diamond_powder>, 4000);
+InductionSmelter.addRecipe(<mekanism:reinforcedalloy>, signalum_ingot, <basemetals:diamond_powder> * 4, 5000);
 
 //Атомный сплав
-mods.thermalexpansion.InductionSmelter.addRecipe(<mekanism:atomicalloy>, <mekanism:reinforcedalloy>, refined_obsidian, 6000);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+InductionSmelter.addRecipe(<mekanism:atomicalloy>, enderium_ingot, refined_obsidian * 4, 6000);

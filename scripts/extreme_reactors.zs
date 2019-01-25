@@ -1,4 +1,3 @@
-//
 var interface = <advancedrocketry:misc>;
 var fluids_IO_plate = <advancedrocketry:ic:5>;
 var items_IO_plate = <advancedrocketry:ic:4>;
@@ -12,6 +11,9 @@ var graphite_ingot = <bigreactors:ingotmetals:2>;
 var coke_dust = <immersiveengineering:material:17>;
 
 var slag = <thermalfoundation:material:864>;
+
+//Graphite
+furnace.remove(<bigreactors:ingotmetals:2>);
 
 //Ядро корпуса реактора
 recipes.remove(<bigreactors:reactorcasingcores>);
@@ -89,8 +91,6 @@ recipes.addShaped(<bigreactors:turbinebearing>, [[<bigreactors:turbinerotorshaft
 recipes.remove(<bigreactors:turbinerotorblade>);
 recipes.addShaped(<bigreactors:turbinerotorblade>, [[<ore:plateTitaniumIridium>, <ore:plateTitaniumIridium>, <ore:plateTitaniumIridium>]]);
 
-
-
 //Бенитоит
 mods.thermalexpansion.Pulverizer.addRecipe(<bigreactors:minerals:1> * 2, <bigreactors:brore:2>, 4000);
 
@@ -98,20 +98,5 @@ mods.thermalexpansion.Pulverizer.addRecipe(<bigreactors:minerals:1> * 2, <bigrea
 mods.thermalexpansion.Pulverizer.addRecipe(<bigreactors:minerals> * 2, <bigreactors:brore:1>, 4000);
 
 //Графит
-//mods.thermalexpansion.Centrifuge.addRecipe(WeightedItemStack[] outputs, IItemStack input, ILiquidStack fluid, int energy);
 mods.thermalexpansion.Centrifuge.addRecipe([graphite_dust], coke_dust * 8, null, 1000);
 mods.thermalexpansion.InductionSmelter.addRecipe(graphite_ingot, <minecraft:sand>, graphite_dust, 1000, slag, 25);
-
-
-
-
-
-
-
-
-
-
-
-
-
-

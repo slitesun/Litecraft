@@ -1,8 +1,6 @@
-//
 var machine_block_eu = <extrautils2:machine>;
 var items_IO_plate = <advancedrocketry:ic:4>;
 var iron_mechanical_component = <immersiveengineering:material:8>;
-
 
 //Контроллер ящика
 recipes.remove(<storagedrawers:controller>);

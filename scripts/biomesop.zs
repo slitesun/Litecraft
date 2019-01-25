@@ -65,4 +65,3 @@ recipes.addShapeless(<biomesoplenty:planks_0:10> * 2, [<biomesoplenty:log_2:6>])
 //Bamboo stick
 recipes.remove(<biomesoplenty:bamboo>);
 recipes.addShaped(<biomesoplenty:bamboo> * 4, [[<ore:logWood>], [<ore:logWood>]]);
-

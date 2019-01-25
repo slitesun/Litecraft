@@ -1,41 +1,14 @@
-//Удалённые инструменты. Во имя печенек!
+import crafttweaker.item.IItemStack;
 
-//Ванилла
+val tools = [
+  <minecraft:wooden_pickaxe>, <minecraft:stone_pickaxe>, <minecraft:iron_pickaxe>, <minecraft:golden_pickaxe>, <minecraft:diamond_pickaxe>, 
+  <minecraft:wooden_sword>, <minecraft:stone_sword>, <minecraft:iron_sword>, <minecraft:golden_sword>, <minecraft:diamond_sword>, 
+  <minecraft:wooden_axe>, <minecraft:stone_axe>, <minecraft:iron_axe>, <minecraft:golden_axe>, <minecraft:diamond_axe>, 
+  <minecraft:wooden_shovel>, <minecraft:stone_shovel>, <minecraft:iron_shovel>, <minecraft:golden_shovel>, <minecraft:diamond_shovel>, 
+  <minecraft:bow>, 
+  <enderio:item_dark_steel_pickaxe>, <enderio:item_dark_steel_axe>, <enderio:item_dark_steel_bow>, <enderio:item_dark_steel_sword>
+] as IItemStack[];
 
-//Кирки
-recipes.remove(<minecraft:wooden_pickaxe>);
-recipes.remove(<minecraft:stone_pickaxe>);
-recipes.remove(<minecraft:iron_pickaxe>);
-recipes.remove(<minecraft:golden_pickaxe>);
-recipes.remove(<minecraft:diamond_pickaxe>);
-
-//Мечи
-recipes.remove(<minecraft:wooden_sword>);
-recipes.remove(<minecraft:stone_sword>);
-recipes.remove(<minecraft:iron_sword>);
-recipes.remove(<minecraft:golden_sword>);
-recipes.remove(<minecraft:diamond_sword>);
-
-//Топоры
-recipes.remove(<minecraft:wooden_axe>);
-recipes.remove(<minecraft:stone_axe>);
-recipes.remove(<minecraft:iron_axe>);
-recipes.remove(<minecraft:golden_axe>);
-recipes.remove(<minecraft:diamond_axe>);
-
-//Лопаты
-recipes.remove(<minecraft:wooden_shovel>);
-recipes.remove(<minecraft:stone_shovel>);
-recipes.remove(<minecraft:iron_shovel>);
-recipes.remove(<minecraft:golden_shovel>);
-recipes.remove(<minecraft:diamond_shovel>);
-
-//лук
-recipes.remove(<minecraft:bow>);
-
-//ЭИО
-recipes.remove(<enderio:item_dark_steel_pickaxe>);
-recipes.remove(<enderio:item_dark_steel_axe>);
-recipes.remove(<enderio:item_dark_steel_bow>);
-recipes.remove(<enderio:item_dark_steel_sword>);
-
+for e in tools {
+ recipes.remove(e); 
+}

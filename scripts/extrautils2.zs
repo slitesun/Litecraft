@@ -2,7 +2,7 @@
 recipes.remove(<extrautils2:teleporter:1>);
 
 //Sun crystall
-recipes.remove(<extrautils2:suncrystal>);
+recipes.remove(<extrautils2:suncrystal:250>);
 
 //Stone drum remake
 recipes.remove(<extrautils2:drum>);

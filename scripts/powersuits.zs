@@ -29,11 +29,10 @@ val magnet = <powersuits:powerarmorcomponent:19>;
 val computer_chip = <powersuits:powerarmorcomponent:20>;
 
 val array_removed = [
-
   bucket_liquid_nitrogen, <powersuits:powerarmor_head>, <powersuits:powerarmor_torso>, <powersuits:powerarmor_legs>, <powersuits:powerarmor_feet>, 
   wiring, solenoid, servo, glider_wing, ion_thruster, capasitor_lv, capasitor_mv, capasitor_hv, capasitor_ev, iron_plating, 
   diamond_plating, field_emitter, laser_emitter, control_circuit, solar_panel, magnet, 
-  computer_chip, <powersuits:tile.tinkertable>
+  computer_chip, <powersuits:tile.tinkertable>, <powersuits:power_fist>
 ] as IItemStack[];
 
 for e in array_removed {
