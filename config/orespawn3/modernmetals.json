@@ -126,9 +126,9 @@
 				"excludes": []
 			},
 			"parameters": {
-				"size": 4,
+				"size": 3,
 				"variation": 8,
-				"frequency": 2,
+				"frequency": 1,
 				"minHeight": 10,
 				"maxHeight": 40
 			},
@@ -149,9 +149,9 @@
 				"excludes": []
 			},
 			"parameters": {
-				"size": 4,
-				"variation": 4,
-				"frequency": 2,
+				"size": 3,
+				"variation": 0,
+				"frequency": 1,
 				"minHeight": 40,
 				"maxHeight": 50
 			},
@@ -210,7 +210,7 @@
 		},
 		"osmium_ore": {
 			"retrogen": false,
-			"enabled": true,
+			"enabled": false,
 			"feature": "default",
 			"replaces": "default",
 			"dimensions": [],
