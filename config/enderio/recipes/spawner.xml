@@ -3,11 +3,31 @@
 
 <!-- 
 
-These are the build-in recipes. You cannot change this file, it is a
+These are the built-in recipes. You cannot change this file, it is a
 reference for you only and will be generated every time the game starts.
 
-For more information, see base.xml.
+To make changes to the recipes, copy the recipes you want to change to
+a file in the 'user' folder.
 
+You can also disable all built-in recipes with the setting "loadCoreRecipes"
+in the Ender IO config file, so that only your files in the 'user' folder will
+be loaded. Please be advised that a number of recipes are absolutely needed,
+so you will have to copy those over into a 'user' file for the game to load.
+
+Recipes that have entities that cannot be
+found in-game are either skipped or an error, depending on their "required"
+attribute.
+
+More information on the syntax can be found in the recipes.xsd file. An
+XML editor will display that as tooltips when editing this file.
+
+ -->
+
+<!-- 
+  Sorry, this config is a mix between Powered Spawner and Soul Vial.
+  "disabled", "costMultiplier" and "clone" are for the Powered Spawner, "soulvial" is for the Soul Vial
+  Bad planning by me
+     -Henry
  -->
 
   <recipe name="Spawner, defaults" required="true">
@@ -16,6 +36,7 @@ For more information, see base.xml.
       <entity name="minecraft:herobrine" costMultiplier="1" disabled="false"/>
       -->
       <entity name="*"                             costMultiplier="1.0" disabled="false"/> <!-- default -->
+      <entity name="*boss*"                        soulvial="false"/> <!-- all modded bosses -->
       <entity name="minecraft:bat"                 costMultiplier="0.5" disabled="false"/> <!-- Bat -->
       <entity name="minecraft:blaze"               costMultiplier="5.0" disabled="false"/> <!-- Blaze -->
       <entity name="minecraft:cave_spider"         costMultiplier="1.0" disabled="false"/> <!-- Cave Spider -->
@@ -23,7 +44,7 @@ For more information, see base.xml.
       <entity name="minecraft:cow"                 costMultiplier="0.5" disabled="false"/> <!-- Cow -->
       <entity name="minecraft:creeper"             costMultiplier="1.5" disabled="false"/> <!-- Creeper -->
       <entity name="minecraft:donkey"              costMultiplier="1.0" disabled="false"/> <!-- Donkey -->
-      <entity name="minecraft:elder_guardian"      costMultiplier="10"  disabled="true"/> <!-- Elder Guardian -->
+      <entity name="minecraft:elder_guardian"      costMultiplier="10"  disabled="true" soulvial="false"/> <!-- Elder Guardian -->
       <entity name="minecraft:enderman"            costMultiplier="10"  disabled="false"/> <!-- Enderman -->
       <entity name="minecraft:endermite"           costMultiplier="0.3" disabled="false"/> <!-- Endermite -->
       <entity name="minecraft:evocation_illager"   costMultiplier="25"  disabled="true"/> <!-- Evoker -->
@@ -46,16 +67,16 @@ For more information, see base.xml.
       <entity name="minecraft:skeleton"            costMultiplier="2.0" disabled="false"/> <!-- Skeleton -->
       <entity name="minecraft:skeleton_horse"      costMultiplier="2.0" disabled="false"/> <!-- Skeleton Horse -->
       <entity name="minecraft:slime"               costMultiplier="5.0" disabled="false"/> <!-- Slime -->
-      <entity name="minecraft:snowman"             costMultiplier="1.0" disabled="false"/> <!-- Snow Golem -->
+      <entity name="minecraft:snowman"             costMultiplier="1.0" disabled="true"/> <!-- Snow Golem -->
       <entity name="minecraft:spider"              costMultiplier="1.0" disabled="false"/> <!-- Spider -->
       <entity name="minecraft:squid"               costMultiplier="0.5" disabled="false"/> <!-- Squid -->
       <entity name="minecraft:stray"               costMultiplier="3.0" disabled="false"/> <!-- Stray -->
       <entity name="minecraft:vex"                 costMultiplier="1.0" disabled="false"/> <!-- Vex -->
       <entity name="minecraft:villager"            costMultiplier="1.0" disabled="true"/> <!-- Villager -->
       <entity name="minecraft:villager_golem"      costMultiplier="10"  disabled="true"/> <!-- Iron Golem -->
-      <entity name="minecraft:vindication_illager" costMultiplier="30"  disabled="false"/> <!-- Vindicator -->
+      <entity name="minecraft:vindication_illager" costMultiplier="15"  disabled="false"/> <!-- Vindicator -->
       <entity name="minecraft:witch"               costMultiplier="5.0" disabled="false"/> <!-- Witch -->
-      <entity name="minecraft:wither"              costMultiplier="50"  disabled="true"/> <!-- Wither -->
+      <entity name="minecraft:wither"              costMultiplier="50"  disabled="true" soulvial="false"/> <!-- Wither -->
       <entity name="minecraft:wither_skeleton"     costMultiplier="20"  disabled="false"/> <!-- Wither Skeleton -->
       <entity name="minecraft:wolf"                costMultiplier="1.0" disabled="false"/> <!-- Wolf -->
       <entity name="minecraft:zombie"              costMultiplier="1.0" disabled="false"/> <!-- Zombie -->
@@ -66,6 +87,7 @@ For more information, see base.xml.
     </spawning>
   </recipe>
 
+<!-- TODO 1.13: Remove the old zoo -->
   <recipe name="Spawner, Ender Zoo" required="false">
     <spawning>
       <entity name="enderzoo:concussioncreeper"    costMultiplier="1.5" disabled="false"/>
@@ -82,7 +104,7 @@ For more information, see base.xml.
 
   <recipe name="Spawner, Chickens" required="false">
     <spawning>
-      <entity name="chickens:chickenschicken"      costMultiplier="30" disabled="false"/>
+      <entity name="chickens:chickenschicken"      costMultiplier="30" disabled="false" clone="true"/>
     </spawning>
   </recipe>
 
@@ -123,7 +145,7 @@ For more information, see base.xml.
 
   <recipe name="Spawner, Meecreeps" required="false">
     <spawning>
-      <entity name="meecreeps:meecreeps" costMultiplier="1.0" disabled="true"/>
+      <entity name="meecreeps:meecreeps" costMultiplier="1.0" disabled="true" soulvial="false"/>
     </spawning>
   </recipe>
 

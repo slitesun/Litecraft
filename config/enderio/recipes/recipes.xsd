@@ -28,7 +28,7 @@
                       to prevent replacing good aliases with bad ones.
                     </documentation>
                   </annotation>
-                </element>
+                </element>
               </sequence>
               <attribute name="name" type="string" use="required">
                 <annotation>
@@ -38,7 +38,7 @@
                   </documentation>
                 </annotation>
               </attribute>
-              <attribute name="item" type="string" use="required">
+              <attribute name="item" type="enderio:ThingsString" use="required">
                 <annotation>
                   <documentation>A descriptor naming an item, block, ordict or another alias.</documentation>
                 </annotation>
@@ -53,7 +53,7 @@
               </documentation>
             </annotation>
             <complexType>
-              <sequence>
+              <sequence minOccurs="0" maxOccurs="1">
                 <element minOccurs="0" maxOccurs="unbounded" name="config" type="enderio:configComplexType">
                   <annotation>
                     <documentation>
@@ -67,9 +67,9 @@
                       Restricts this recipe to only be used if the given game element can (not) be found in the game.
                     </documentation>
                   </annotation>
-                </element>
-                <choice minOccurs="1" maxOccurs="1">
-                  <element minOccurs="1" maxOccurs="unbounded" name="crafting">
+                </element>
+                <choice minOccurs="1" maxOccurs="unbounded">
+                  <element minOccurs="1" maxOccurs="1" name="crafting">
                     <annotation>
                       <documentation>Crafting variants are crafted in a crafting table.</documentation>
                     </annotation>
@@ -104,7 +104,7 @@
                                     <documentation>An item to be used for crafting.</documentation>
                                   </annotation>
                                   <complexType>
-                                    <attribute use="optional" name="name" type="string" />
+                                    <attribute use="optional" name="name" type="enderio:ThingsString" />
                                   </complexType>
                                 </element>
                               </sequence>
@@ -135,7 +135,7 @@
                                     <documentation>An item to be used for crafting.</documentation>
                                   </annotation>
                                   <complexType>
-                                    <attribute use="optional" name="name" type="string" />
+                                    <attribute use="optional" name="name" type="enderio:ThingsString" />
                                   </complexType>
                                 </element>
                               </sequence>
@@ -160,19 +160,15 @@
                                   <attribute use="optional" name="value" type="boolean" />
                                 </complexType>
                               </element>
-                              <element minOccurs="0" maxOccurs="unbounded" name="dependency">
+                              <element minOccurs="0" maxOccurs="unbounded" name="dependency" type="enderio:dependencyComplexType">
                                 <annotation>
                                   <documentation>
                                     Restricts this output to only be used if the given game element can (not) be found in the game.
                                   </documentation>
                                 </annotation>
-                                <complexType>
-                                  <attribute use="required" name="item" type="string" />
-                                  <attribute use="optional" name="reverse" type="boolean" />
-                                </complexType>
                               </element>
                             </sequence>
-                            <attribute use="required" name="name" type="string" />
+                            <attribute use="required" name="name" type="enderio:ThingsString" />
                             <attribute use="optional" name="amount">
                               <simpleType>
                                 <restriction base="int">
@@ -194,7 +190,7 @@
                       </attribute>
                     </complexType>
                   </element>
-                  <element minOccurs="1" maxOccurs="unbounded" name="smelting">
+                  <element minOccurs="1" maxOccurs="1" name="smelting">
                     <annotation>
                       <documentation>Smelting variants are crafted in a furnace (or alloy smelter in furnace mode).</documentation>
                     </annotation>
@@ -244,19 +240,15 @@
                                   <attribute use="optional" name="value" type="boolean" />
                                 </complexType>
                               </element>
-                              <element minOccurs="0" maxOccurs="unbounded" name="dependency">
+                              <element minOccurs="0" maxOccurs="unbounded" name="dependency" type="enderio:dependencyComplexType">
                                 <annotation>
                                   <documentation>
                                     Restricts this output to only be used if the given game element can (not) be found in the game.
                                   </documentation>
                                 </annotation>
-                                <complexType>
-                                  <attribute use="required" name="item" type="string" />
-                                  <attribute use="optional" name="reverse" type="boolean" />
-                                </complexType>
                               </element>
                             </sequence>
-                            <attribute use="required" name="name" type="string" />
+                            <attribute use="required" name="name" type="enderio:ThingsString" />
                             <attribute use="optional" name="amount">
                               <simpleType>
                                 <annotation>
@@ -303,7 +295,7 @@
                       </attribute>
                     </complexType>
                   </element>
-                  <element name="casting" minOccurs="1" maxOccurs="unbounded">
+                  <element name="casting" minOccurs="1" maxOccurs="1">
                     <annotation>
                       <documentation>Smelting variants are crafted in Tinkers' casting table.</documentation>
                     </annotation>
@@ -330,7 +322,7 @@
                             </documentation>
                           </annotation>
                           <complexType>
-                            <attribute use="required" name="name" type="string" />
+                            <attribute use="required" name="name" type="enderio:ThingsString" />
                             <attribute name="amount" use="optional">
                               <annotation>
                                 <documentation>
@@ -351,7 +343,7 @@
                             <documentation>The Tinkers cast to use.</documentation>
                           </annotation>
                           <complexType>
-                            <attribute use="required" name="name" type="string" />
+                            <attribute use="required" name="name" type="enderio:ThingsString" />
                             <attribute name="consumed" type="boolean" use="optional" default="false">
                               <annotation>
                                 <documentation>Should the cast be consumed?</documentation>
@@ -364,13 +356,13 @@
                             <documentation>The result of the casting process.</documentation>
                           </annotation>
                           <complexType>
-                            <attribute use="required" name="name" type="string" />
+                            <attribute use="required" name="name" type="enderio:ThingsString" />
                           </complexType>
                         </element>
                       </sequence>
                     </complexType>
                   </element>
-                  <element name="enchanting" minOccurs="1" maxOccurs="unbounded">
+                  <element name="enchanting" minOccurs="1" maxOccurs="1">
                     <annotation>
                       <documentation>Enchantment recipes used in the Enchanter.</documentation>
                     </annotation>
@@ -395,7 +387,7 @@
                             <documentation>When this item is used in the Enchanter it will give this recipe.</documentation>
                           </annotation>
                           <complexType>
-                            <attribute use="required" name="name" type="string" />
+                            <attribute use="required" name="name" type="enderio:ThingsString" />
                             <attribute name="amount" use="optional">
                               <annotation>
                                 <documentation>
@@ -411,8 +403,11 @@
                             </attribute>
                             <attribute name="nbt" type="string" use="optional">
                               <annotation>
-                                <documentation>An NBT tag in the same syntax Minecraft uses for recipes, the give command, etc.</documentation>
-                              </annotation></attribute>
+                                <documentation>
+                                  An NBT tag in the same syntax Minecraft uses for recipes, the give command, etc.
+                                </documentation>
+                              </annotation>
+                            </attribute>
                           </complexType>
                         </element>
                         <element minOccurs="1" maxOccurs="1" name="enchantment">
@@ -438,7 +433,7 @@
                       </sequence>
                     </complexType>
                   </element>
-                  <element name="spawning" maxOccurs="unbounded" minOccurs="1">
+                  <element name="spawning" maxOccurs="1" minOccurs="1">
                     <complexType>
                       <annotation>
                         <documentation>Spawn recipes to be used in the powered spawner.</documentation>
@@ -460,7 +455,7 @@
                         </element>
                         <element minOccurs="1" maxOccurs="unbounded" name="entity">
                           <annotation>
-                            <documentation>When this item is used in the Enchanter it will give this recipe.</documentation>
+                            <documentation>The settings for one type of entity.</documentation>
                           </annotation>
                           <complexType>
                             <attribute use="required" name="name" type="string" />
@@ -481,12 +476,27 @@
                                 <documentation>Entities that are disabled cannot be spawned by powered spawners.</documentation>
                               </annotation>
                             </attribute>
+                            <attribute name="clone" type="boolean" use="optional" default="false">
+                              <annotation>
+                                <documentation>
+                                  When set to true, the entity cannot be spawned and must be cloned from a captured entity instead
+                                  (Attention: Possibility of item duping!)
+                                </documentation>
+                              </annotation>
+                            </attribute>
+                            <attribute name="soulvial" type="boolean" use="optional" default="true">
+                              <annotation>
+                                <documentation>
+                                  Specifies if this mob can be captured with a soul vial (default is yes)
+                                </documentation>
+                              </annotation>
+                            </attribute>
                           </complexType>
                         </element>
                       </sequence>
                     </complexType>
                   </element>
-                  <element minOccurs="1" maxOccurs="unbounded" name="alloying">
+                  <element minOccurs="1" maxOccurs="1" name="alloying">
                     <annotation>
                       <documentation>Alloying variants are crafted in an alloy smelter.</documentation>
                     </annotation>
@@ -508,7 +518,7 @@
                         </element>
                         <element minOccurs="1" maxOccurs="3" name="input">
                           <complexType>
-                            <attribute use="required" name="name" type="string" />
+                            <attribute use="required" name="name" type="enderio:ThingsString" />
                             <attribute name="amount" use="optional">
                               <annotation>
                                 <documentation>Number of input items needed.</documentation>
@@ -519,6 +529,13 @@
                                   <minInclusive value="1" />
                                 </restriction>
                               </simpleType>
+                            </attribute>
+                            <attribute name="nbt" type="string" use="optional">
+                              <annotation>
+                                <documentation>
+                                  An NBT tag in the same syntax Minecraft uses for recipes, the give command, etc.
+                                </documentation>
+                              </annotation>
                             </attribute>
                           </complexType>
                         </element>
@@ -543,7 +560,7 @@
                                 </annotation>
                               </element>
                             </sequence>
-                            <attribute use="required" name="name" type="string" />
+                            <attribute use="required" name="name" type="enderio:ThingsString" />
                             <attribute use="optional" name="amount">
                               <simpleType>
                                 <annotation>
@@ -584,7 +601,7 @@
                       </attribute>
                     </complexType>
                   </element>
-                  <element name="sagmilling" maxOccurs="unbounded" minOccurs="1">
+                  <element name="sagmilling" maxOccurs="1" minOccurs="1">
                     <annotation>
                       <documentation>Sagmilling recipes are used in a Sag Mill.</documentation>
                     </annotation>
@@ -606,7 +623,7 @@
                         </element>
                         <element minOccurs="1" maxOccurs="1" name="input">
                           <complexType>
-                            <attribute use="required" name="name" type="string" />
+                            <attribute use="required" name="name" type="enderio:ThingsString" />
                           </complexType>
                         </element>
                         <element minOccurs="1" maxOccurs="unbounded" name="output">
@@ -630,7 +647,7 @@
                                 </annotation>
                               </element>
                             </sequence>
-                            <attribute use="required" name="name" type="string" />
+                            <attribute use="required" name="name" type="enderio:ThingsString" />
                             <attribute use="optional" name="amount">
                               <simpleType>
                                 <annotation>
@@ -698,12 +715,19 @@
                       </attribute>
                     </complexType>
                   </element>
-                  <element name="slicing" type="enderio:slicingType" maxOccurs="unbounded" minOccurs="1">
+                  <element name="slicing" type="enderio:slicingType" maxOccurs="1" minOccurs="1">
                     <annotation>
                       <documentation>Recipe for the Slice'n'Splice</documentation>
                     </annotation>
                   </element>
-                  <element name="fermenting" type="enderio:fermentingType" maxOccurs="unbounded" minOccurs="1"></element>
+                  <element name="fermenting" type="enderio:fermentingType" maxOccurs="1" minOccurs="1"></element>
+                  <element name="soulbinding" type="enderio:soulbindingType" minOccurs="1" maxOccurs="1">
+                    <annotation>
+                      <documentation>A recipe for the Soul Binder.</documentation>
+                    </annotation>
+                  </element>
+                  <element name="brewing" type="enderio:brewingType" minOccurs="1" maxOccurs="1"></element>
+                  <element name="tanking" type="enderio:tankingType" minOccurs="1" maxOccurs="1"></element>
                 </choice>
               </sequence>
               <attribute use="optional" name="required" type="boolean">
@@ -727,6 +751,7 @@
             </complexType>
           </element>
           <element name="grindingball" type="enderio:GrindingType"></element>
+          <element name="capacitor" type="enderio:CapacitorType"></element>
         </choice>
       </sequence>
     </complexType>
@@ -737,17 +762,29 @@
     <attribute use="optional" name="value" type="boolean"></attribute>
   </complexType>
   <complexType name="dependencyComplexType">
-    <attribute use="required" name="item" type="string"></attribute>
-    <attribute use="optional" name="reverse" type="boolean"></attribute>
-  </complexType>
-
+        <annotation>
+          <documentation>Either item or mod must be given. A dependency is met (or not met if reverse is set) if the item (if given) exists and the mod (if given) is loaded.</documentation>
+        </annotation>
+        <attribute use="optional" name="item" type="string">
+      <annotation>
+        <documentation>The ID of an item that must exist in the game</documentation>
+      </annotation></attribute>
+    <attribute name="mod" type="string" use="optional">
+      <annotation>
+        <documentation>The ID of a mod that must be loaded</documentation>
+      </annotation></attribute>
+    <attribute use="optional" name="reverse" type="boolean">
+      <annotation>
+        <documentation>When set to true, the dependency is reversed, i.e. the item/mod most not exist</documentation>
+      </annotation></attribute>
+  </complexType>
   <complexType name="slicingType">
     <sequence>
       <element name="config" type="enderio:configComplexType" maxOccurs="unbounded" minOccurs="0"></element>
       <element name="dependency" type="enderio:dependencyComplexType" maxOccurs="unbounded" minOccurs="0"></element>
       <element name="input" minOccurs="6" maxOccurs="6">
         <complexType>
-          <attribute use="required" name="name" type="string" />
+          <attribute use="required" name="name" type="enderio:ThingsString" />
           <attribute name="nbt" type="string" use="optional"></attribute>
         </complexType>
       </element>
@@ -768,7 +805,7 @@
                                 </annotation>
                               </element>
                             </sequence>
-                            <attribute use="required" name="name" type="string" />
+                            <attribute use="required" name="name" type="enderio:ThingsString" />
       </complexType></element>
     </sequence>
     <attribute name="energy" use="required">
@@ -798,7 +835,7 @@
       <element name="dependency" type="enderio:dependencyComplexType" minOccurs="0" maxOccurs="unbounded"></element>
       <element name="item" minOccurs="1" maxOccurs="1">
         <complexType>
-          <attribute name="name" type="string" use="required"></attribute>
+          <attribute name="name" type="enderio:ThingsString" use="required"></attribute>
         </complexType>
       </element>
     </sequence>
@@ -859,7 +896,7 @@
           <sequence>
             <element name="input" minOccurs="1" maxOccurs="unbounded">
               <complexType>
-                <attribute name="name" type="string" use="required"></attribute>
+                <attribute name="name" type="enderio:ThingsString" use="required"></attribute>
                 <attribute name="multiplier" type="float" use="optional" default="1.0"></attribute>
               </complexType></element>
           </sequence>
@@ -884,4 +921,277 @@
       </simpleType>
     </attribute>
   </complexType>
+
+  <complexType name="CapacitorType">
+    <annotation>
+      <documentation>Capacitor Keys</documentation>
+    </annotation>
+    <sequence>
+      <element name="config" type="enderio:configComplexType" minOccurs="0" maxOccurs="unbounded"></element>
+      <element name="dependency" type="enderio:dependencyComplexType" minOccurs="0" maxOccurs="unbounded"></element>
+      <choice minOccurs="0" maxOccurs="1">
+        <element name="scaler" minOccurs="1" maxOccurs="1">
+          <complexType>
+            <attribute name="name" use="required">
+              <simpleType>
+                <restriction base="enderio:ScalerString" />
+              </simpleType>
+            </attribute>
+          </complexType>
+        </element>
+        <element name="indexed" minOccurs="1" maxOccurs="1">
+          <complexType>
+            <sequence>
+              <element name="data" minOccurs="1" maxOccurs="unbounded">
+                <complexType>
+                  <attribute name="value" type="float" use="required"></attribute>
+                </complexType>
+              </element>
+            </sequence>
+            <attribute name="step" type="float" use="optional" default="1"></attribute>
+          </complexType>
+        </element>
+      </choice>
+    </sequence>
+    <attribute name="key" use="required">
+      <simpleType>
+        <restriction base="string">
+          <pattern value="[a-z][a-z0-9]*:[^:]+"></pattern>
+        </restriction>
+      </simpleType>
+    </attribute>
+    <attribute name="required" type="boolean" use="optional" default="true"></attribute>
+    <attribute name="disabled" type="boolean" use="optional" default="false"></attribute>
+    <attribute name="base" type="int" use="required"></attribute>
+    <attribute name="scaler" type="enderio:ScalerString" use="optional"></attribute>
+  </complexType>
+  <simpleType name="ScalerString">
+    <restriction base="string">
+                  <pattern value="IDENTITY"></pattern>
+                  <pattern value="LINEAR_0_8"></pattern>
+                  <pattern value="QUADRATIC"></pattern>
+                  <pattern value="QUADRATIC_1_8"></pattern>
+                  <pattern value="CUBIC"></pattern>
+                  <pattern value="OCTADIC_1_8"></pattern>
+                  <pattern value="POWER"></pattern>
+                  <pattern value="CHARGE"></pattern>
+                  <pattern value="SPEED"></pattern>
+                  <pattern value="POWER10"></pattern>
+                  <pattern value="RANGE"></pattern>
+                  <pattern value="FIXED"></pattern>
+                  <pattern value="SPAWNER"></pattern>
+                  <pattern value="BURNTIME"></pattern>
+                  <pattern value="CHEMICAL"></pattern>
+                  <pattern value="DROPOFF"></pattern>
+                  <pattern value="CENT"></pattern>
+                  <pattern value="idx:([1-9]\d*(\.\d+)?|0\.\d+)(:([1-9]\d*|0)(\.\d+)?)+"></pattern>
+                  <pattern value="idx\(([1-9]\d*(\.\d+)?|0\.\d+)\)(:?([1-9]\d*|0)(\.\d+)?)(:([1-9]\d*|0)(\.\d+)?)*"></pattern>
+                </restriction>
+  </simpleType>
+
+  <complexType name="soulbindingType">
+    <annotation>
+      <documentation>A Soul Binder recipe.</documentation>
+    </annotation>
+    <sequence>
+      <element name="config" type="enderio:configComplexType" maxOccurs="unbounded" minOccurs="0"></element>
+      <element name="dependency" type="enderio:dependencyComplexType" maxOccurs="unbounded" minOccurs="0"></element>
+      <element name="input" minOccurs="1" maxOccurs="1">
+        <annotation>
+          <documentation>The item that is the input.</documentation>
+        </annotation>
+        <complexType>
+          <attribute use="required" name="name" type="enderio:ThingsString" />
+          <attribute name="nbt" type="string" use="optional"></attribute>
+        </complexType>
+      </element>
+      <element minOccurs="0" maxOccurs="unbounded" name="soul">
+        <annotation>
+          <documentation>
+            The soul that is the input. All souls must be in Soul Vials, so you only specify the soul itself here.
+          </documentation>
+        </annotation>
+        <complexType>
+          <attribute use="required" name="name" type="string" />
+        </complexType>
+      </element>
+      <element name="output" minOccurs="1" maxOccurs="1">
+        <annotation>
+          <documentation>The item to produce.</documentation>
+        </annotation>
+        <complexType>
+          <sequence>
+            <element minOccurs="0" maxOccurs="unbounded" name="config" type="enderio:configComplexType">
+              <annotation>
+                <documentation>Restricts this output to only be used if the given config value has the given value.</documentation>
+              </annotation>
+            </element>
+            <element minOccurs="0" maxOccurs="unbounded" name="dependency" type="enderio:dependencyComplexType">
+              <annotation>
+                <documentation>
+                  Restricts this output to only be used if the given game element can (not) be found in the game.
+                </documentation>
+              </annotation>
+            </element>
+          </sequence>
+          <attribute use="required" name="name" type="enderio:ThingsString" />
+        </complexType>
+      </element>
+    </sequence>
+    <attribute name="energy" use="required">
+      <annotation>
+        <documentation>The amount of energy running this recipe takes.</documentation>
+      </annotation>
+      <simpleType>
+        <restriction base="int">
+          <minExclusive value="0"></minExclusive>
+        </restriction>
+      </simpleType>
+    </attribute>
+    <attribute name="levels" use="required">
+      <annotation>
+        <documentation>The amount of XP levels running this recipe takes.</documentation>
+      </annotation>
+      <simpleType>
+        <restriction base="int">
+          <minExclusive value="1"></minExclusive>
+          <maxInclusive value="21862"></maxInclusive>
+        </restriction>
+      </simpleType>
+    </attribute>
+    <attribute name="logic" use="optional" default="NONE">
+      <simpleType>
+        <restriction base="string">
+          <enumeration value="NONE"></enumeration>
+          <enumeration value="APPLY"></enumeration>
+          <enumeration value="FILTER"></enumeration>
+        </restriction>
+      </simpleType>
+    </attribute>
+    <attribute name="souls" use="optional" default="LISTED">
+            <annotation>
+              <documentation>Which souls can be used with this recipe:
+
+* LISTED: Souls will be given with the 'soul' tag
+* ALL: All souls can be used
+* SPAWNABLE: All souls that can be used with the Powered Spawner can be used.</documentation>
+            </annotation>
+            <simpleType>
+        <restriction base="string">
+          <enumeration value="LISTED"></enumeration>
+          <enumeration value="ALL"></enumeration>
+          <enumeration value="SPAWNABLE"></enumeration>
+        </restriction>
+      </simpleType>
+    </attribute>
+  </complexType>
+  
+  <complexType name="brewingType">
+    <annotation>
+      <documentation>A Brewing recipe.</documentation>
+    </annotation>
+    <sequence>
+      <element name="config" type="enderio:configComplexType" maxOccurs="unbounded" minOccurs="0"></element>
+      <element name="dependency" type="enderio:dependencyComplexType" maxOccurs="unbounded" minOccurs="0"></element>
+      <element name="input" type="enderio:potionType" minOccurs="1" maxOccurs="1"></element>
+      <element name="reagent" minOccurs="1" maxOccurs="1">
+        <annotation>
+          <documentation>The item that is the input.</documentation>
+        </annotation>
+        <complexType>
+          <attribute use="required" name="name" type="enderio:ThingsString" />
+          <attribute name="nbt" type="string" use="optional"></attribute>
+        </complexType>
+      </element>
+      <element name="output" type="enderio:potionType" minOccurs="1" maxOccurs="1"></element>
+    </sequence>
+  </complexType>
+
+  <complexType name="tankingType">
+    <annotation>
+      <documentation>A filling or emptying recipe for the tank.</documentation>
+    </annotation>
+    <sequence>
+      <element name="config" type="enderio:configComplexType" maxOccurs="unbounded" minOccurs="0"></element>
+      <element name="dependency" type="enderio:dependencyComplexType" maxOccurs="unbounded" minOccurs="0"></element>
+      <element name="input" type="enderio:itemType" minOccurs="1" maxOccurs="1"></element>
+      <element name="fluid" type="enderio:fluidType" minOccurs="1" maxOccurs="1"></element>
+      <element name="output" type="enderio:itemType" minOccurs="0" maxOccurs="1"></element>
+    </sequence>
+    <attribute name="type" use="required">
+      <simpleType>
+        <restriction base="string">
+          <enumeration value="FILL"></enumeration>
+          <enumeration value="EMPTY"></enumeration>
+        </restriction>
+      </simpleType>
+    </attribute>
+    <attribute name="logic" use="optional" default="NONE">
+      <simpleType>
+        <restriction base="string">
+          <enumeration value="NONE"></enumeration>
+          <enumeration value="XPBOTTLE"></enumeration>
+          <enumeration value="XP"></enumeration>
+        </restriction>
+      </simpleType>
+    </attribute>
+  </complexType>
+
+  <complexType name="potionType">
+    <attribute name="potion" type="string" use="required">
+      <annotation>
+        <documentation>The resource ID of a potion.</documentation>
+      </annotation></attribute>
+  </complexType>
+
+  <complexType name="fluidType">
+    <attribute name="name" type="string" use="required">
+      <annotation>
+        <documentation>The ID of a fluid.</documentation>
+      </annotation>
+    </attribute>
+    <attribute name="nbt" type="string" use="optional">
+      <annotation>
+        <documentation>NBT for the fluid stack.</documentation>
+      </annotation></attribute>
+    <attribute name="amount" use="optional" default="1000">
+      <annotation>
+        <documentation>Amount of fluid in mB.</documentation>
+      </annotation>
+      <simpleType>
+        <restriction base="int">
+          <minInclusive value="0"></minInclusive>
+        </restriction>
+      </simpleType>
+    </attribute>
+  </complexType>
+  <complexType name="itemType">
+    <attribute use="required" name="name" type="enderio:ThingsString" />
+    <attribute name="nbt" type="string" use="optional" />
+  </complexType>
+
+
+  <simpleType name="ThingsString">
+        <annotation>
+          <documentation>A string that specifies one or more items, consisting of a comma-separated list of item specifiers. Specifiers may be prefixed with a "+" or "-", the latter removes that item from the list.
+
+If this is used as an input, all items in the list will be used. If it is used as an output, only the first one is used. The list can contain non-existing items as long as there also is at least one existing one.
+
+Each specifuer can be one of 4 things:
+
+(1) An alias, e.g. "IRON"
+
+(2) An oredict name, e.g. "ingotIron". Oredict names can be prefixed with "oredict:" to prevent confusion, e.g. "oredict:ingotIron"
+
+(3) The resource location of a block, e.g. "minecraft:stone". Block resource locations may be prefixed with "block:" to prevent confusion, e.g. "block:minecraft:stone". In recipes these will only work if that block has a corresponding item that is internally linked to the block.
+
+(4) The resource location of an item, e.g. "minecraft:iron_ingot". Item resource locations may be prefixed with "item:" to prevent confusion, e.g. "item:minecraft:iron_ingot". A number of items have blocks with the same name that are NOT linked, for them the "item:" prefix is required. Items can further be limited to specific meta values by postfixing with ":(number)", e.g. "item:minecraft:stone:3".
+
+</documentation>
+        </annotation>
+        <restriction base="string">
+      <pattern value="((\+|\-)?(([A-Z0-9_]+)|(((item:)?([a-z][a-z0-9_-]*:)?[a-z][a-z0-9_-]*(:(\*|\d+))?))|((block:)?([a-z][a-z0-9_-]*:)?[a-z][a-z0-9_-]*)|((oredict:)?[a-zA-Z][A-Za-z0-9_-]*)))(,\s*(\+|\-)?(([A-Z0-9_]+)|(((item:)?([a-z][a-z0-9_-]*:)?[a-z][a-z0-9_-]*(:(\*|\d+))?))|((block:)?([a-z][a-z0-9_-]*:)?[a-z][a-z0-9_-]*)|((oredict:)?[a-zA-Z][A-Za-z0-9_-]*)))*"></pattern>
+      <whiteSpace value="collapse"></whiteSpace>
+    </restriction>
+  </simpleType>
 </schema>

@@ -3,15 +3,17 @@
 
 <!-- 
 
-These are the build-in recipes. You cannot change this file, it is a
+These are the built-in recipes. You cannot change this file, it is a
 reference for you only and will be generated every time the game starts.
 
 To make changes to the recipes, copy the recipes you want to change to
 a file in the 'user' folder. To disable a recipe, add an attribute "disabled"
 and set it to true, e.g.: <recipe name="Gear" disabled="true" />
 
-You can also disabled all build in recipes, so that only your files in the
-'user' folder will be loaded.
+You can also disable all built-in recipes with the setting "loadCoreRecipes"
+in the Ender IO config file, so that only your files in the 'user' folder will
+be loaded. Please be advised that a number of recipes are absolutely needed,
+so you will have to copy those over into a 'user' file for the game to load.
 
 Item specifications can reference an alias, an ore dictionary name, a
 block or an item. You can force the type by prefixing the value with
@@ -85,6 +87,12 @@ XML editor will display that as tooltips when editing this file.
 <grindingball name="End Steel Ball" grinding="1.4" chance="2.4" power="0.7" durability="75000" >
   <item name="ballEndSteel"/>
 </grindingball>
+
+<grindingball name="Construction Alloy Ball" grinding="1.0" chance="0.25" power="0.25" durability="12000" >
+  <item name="CONSTRUCTION_ALLOY_BALL"/>
+</grindingball>
+
+<!-- Thermal Grinding Balls -->
 
 <grindingball name="Signalum Ball" grinding="1.2" chance="1.65" power="0.35" durability="100000" >
   <item name="SIGNALUM_BALL"/>
@@ -427,6 +435,43 @@ XML editor will display that as tooltips when editing this file.
     <casting>
       <input name="ingotGold" amount="2"/>
       <cast name="SOULARIUM_BALL" consumed="true"/>
+      <output name="tconstruct:cast_custom:2"/>
+    </casting>
+  </recipe>
+
+  <recipe name="Construction Alloy Ball Crafting" required="true">
+    <crafting>
+      <grid>
+        <item/><item name="CONSTRUCTION_ALLOY"/><item/>
+        <item name="CONSTRUCTION_ALLOY"/><item name="CONSTRUCTION_ALLOY"/><item name="CONSTRUCTION_ALLOY"/>
+        <item/><item name="CONSTRUCTION_ALLOY"/><item/>
+      </grid>
+      <output name="CONSTRUCTION_ALLOY_BALL" amount="24"/>
+    </crafting>
+  </recipe>
+
+  <recipe name="Construction Alloy Casting" required="true">
+    <dependency item="tconstruct:cast_custom:2"/>
+    <casting>
+      <input name="CONSTRUCTION_ALLOY_NUGGET" amount="1.875"/><!-- 30mB -->
+      <cast name="tconstruct:cast_custom:2"/>
+      <output name="CONSTRUCTION_ALLOY_BALL"/>
+    </casting>
+  </recipe>
+
+  <recipe name="Construction Alloy Ball Smelting" required="true">
+    <dependency item="tconstruct:cast_custom:2"/>
+    <smelting tinkers="true" vanilla="false">
+      <input name="CONSTRUCTION_ALLOY_BALL" amount="24"/>
+      <output name="CONSTRUCTION_ALLOY" amount="5"/>
+    </smelting>
+  </recipe>
+
+  <recipe name="Construction Alloy Ball Reverse Casting" required="true">
+    <dependency item="tconstruct:cast_custom:2"/>
+    <casting>
+      <input name="ingotGold" amount="2"/>
+      <cast name="CONSTRUCTION_ALLOY_BALL" consumed="true"/>
       <output name="tconstruct:cast_custom:2"/>
     </casting>
   </recipe>

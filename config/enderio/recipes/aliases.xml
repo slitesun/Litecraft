@@ -3,14 +3,16 @@
 
 <!-- 
 
-These are the build-in aliases. You cannot change this file, it is a
+These are the built-in aliases. You cannot change this file, it is a
 reference for you only and will be generated every time the game starts.
 
 To make changes to the aliases, copy the aliases you want to change to
 a file in the 'user' folder.
 
-You can also disabled all build in recipes, so that only your files in the
-'user' folder will be loaded.
+You can also disable all built-in recipes with the setting "loadCoreRecipes"
+in the Ender IO config file, so that only your files in the 'user' folder will
+be loaded. Please be advised that a number of recipes are absolutely needed,
+so you will have to copy those over into a 'user' file for the game to load.
 
 Item specifications can reference an alias, an ore dictionary name, a
 block or an item. You can force the type by prefixing the value with
@@ -29,12 +31,16 @@ XML editor will display that as tooltips when editing this file.
   <alias name="ENHANCED_CHASSIS" item="itemEnhancedMachineChassi" />
   <alias name="UNSOULED_CHASSIS" item="itemUnsouledMachineChassi" />
   <alias name="CHASSIPARTS" item="itemChassiParts" />
+  <alias name="END_STEEL_CHASSIS" item="itemEndSteelMachineChassi" />
+  <alias name="SIMPLE_CHASSIPARTS" item="itemSimpleChassiParts" />
+  <alias name="ENHANCED_CHASSIPARTS" item="itemEnhancedChassiParts" />
 
   <alias name="GEAR_WOOD" item="gearWood" />
   <alias name="GEAR_STONE" item="gearStone" />
   <alias name="GEAR_IRON" item="gearIronInfinity" />
   <alias name="GEAR_ENERGIZED" item="gearEnergized" />
   <alias name="GEAR_VIBRANT" item="gearVibrant" />
+  <alias name="GEAR_DARKSTEEL" item="gearDark" />
 
   <alias name="GLIDER_WING" item="itemGliderWing" />
   <alias name="GLIDER_WINGS" item="itemGliderWings" />
@@ -50,7 +56,7 @@ XML editor will display that as tooltips when editing this file.
   <alias name="WEATHER_CRYSTAL" item="itemWeatherCrystal" />
   <alias name="PRECIENT_CRYSTAL" item="itemPrecientCrystal" />
   <alias name="PRECIENT_POWDER" item="itemPrecientPowder" />
-  <alias name="VIBRANT_POWDER" item="itemPulsatingPowder" />
+  <alias name="VIBRANT_POWDER" item="itemVibrantPowder" />
   <alias name="ENDER_CYSTAL_POWDER" item="itemEnderCrystalPowder" />
   <alias name="NUTRITIOUS_STICK" item="itemNutritiousStick" />
 
@@ -68,6 +74,7 @@ XML editor will display that as tooltips when editing this file.
   <alias name="POWDER_COBALT" item="dustCobalt" />
   <alias name="POWDER_INFINITY" item="dustBedrock" />
   <alias name="POWDER_QUARTZ" item="dustNetherQuartz" />
+  <alias name="POWDER_PULSATING" item="itemPulsatingPowder" />
   
   <!-- Note: ORGANIC_GREEN_DYE and ORGANIC_BROWN_DYE are added automatically -->
   
@@ -82,9 +89,9 @@ XML editor will display that as tooltips when editing this file.
   <alias name="SKELETAL_CONTRACTOR" item="skullSkeletalContractor" />
   <alias name="GUARDIAN_DIODE" item="skullGuardianDiode" />
 
-  <alias name="CAPACITOR1" item="enderio:item_basic_capacitor:0" />
-  <alias name="CAPACITOR2" item="enderio:item_basic_capacitor:1" />
-  <alias name="CAPACITOR3" item="enderio:item_basic_capacitor:2" />
+  <alias name="CAPACITOR1" item="enderio:item_basic_capacitor:0,enderio:item_capacitor_silver" />
+  <alias name="CAPACITOR2" item="enderio:item_basic_capacitor:1,enderio:item_capacitor_energetic_silver" />
+  <alias name="CAPACITOR3" item="enderio:item_basic_capacitor:2,enderio:item_capacitor_vivid" />
 
   <alias name="FUSED_QUARTZ" item="oredict:fusedQuartz" />
   <alias name="FUSED_GLASS" item="oredict:fusedGlass" />
@@ -102,6 +109,7 @@ XML editor will display that as tooltips when editing this file.
   <alias name="DARK_STEEL_NUGGET" item="nuggetDarkSteel" />
   <alias name="SOULARIUM_NUGGET" item="nuggetSoularium" />
   <alias name="END_STEEL_NUGGET" item="nuggetEndSteel" />
+  <alias name="CONSTRUCTION_ALLOY_NUGGET" item="nuggetConstructionAlloy" />
 
   <alias name="ELECTRICAL_STEEL" item="ingotElectricalSteel" />
   <alias name="ENERGETIC_ALLOY" item="ingotEnergeticAlloy" />
@@ -112,6 +120,8 @@ XML editor will display that as tooltips when editing this file.
   <alias name="DARK_STEEL" item="ingotDarkSteel" />
   <alias name="SOULARIUM" item="ingotSoularium" />
   <alias name="END_STEEL" item="ingotEndSteel" />
+  <alias name="CONSTRUCTION_ALLOY" item="ingotConstructionAlloy" />
+  <alias name="IRON" item="ingotConstructionAlloy,ingotIron" />
   
   <alias name="ELECTRICAL_STEEL_BALL" item="ballElectricalSteel" />
   <alias name="ENERGETIC_ALLOY_BALL" item="ballEnergeticAlloy" />
@@ -122,6 +132,7 @@ XML editor will display that as tooltips when editing this file.
   <alias name="DARK_STEEL_BALL" item="ballDarkSteel" />
   <alias name="SOULARIUM_BALL" item="ballSoularium" />
   <alias name="END_STEEL_BALL" item="ballEndSteel" />
+  <alias name="CONSTRUCTION_ALLOY_BALL" item="ballConstructionAlloy" />
 
   <alias name="ELECTRICAL_STEEL_BLOCK" item="blockElectricalSteel" />
   <alias name="ENERGETIC_ALLOY_BLOCK" item="blockEnergeticAlloy" />
@@ -182,4 +193,14 @@ XML editor will display that as tooltips when editing this file.
   <alias name="ENDERIUM_BALL" item="itemGrindingBallEnderium" />
   <alias name="LUMIUM_BALL" item="itemGrindingBallLumium" />
 
+  <alias name="REDSTONE_FILTER_BASE" item="itemRedstoneFilterBase" />
+  <alias name="REDSTONE_FILTER_AND" item="enderio:item_redstone_and_filter" />
+  <alias name="REDSTONE_FILTER_OR" item="enderio:item_redstone_or_filter" />
+  <alias name="REDSTONE_FILTER_XOR" item="enderio:item_redstone_xor_filter" />
+  <alias name="REDSTONE_FILTER_NAND" item="enderio:item_redstone_nand_filter" />
+  <alias name="REDSTONE_FILTER_NOR" item="enderio:item_redstone_nor_filter" />
+  <alias name="REDSTONE_FILTER_XNOR" item="enderio:item_redstone_xnor_filter" />
+
+  <alias name="REMOTE_AWARENESS_UPGRADE" item="itemRemoteAwarenessUpgrade" />
+  <alias name="INFINITY_GOOP" item="itemInfinityGoop" />
 </enderio:recipes>

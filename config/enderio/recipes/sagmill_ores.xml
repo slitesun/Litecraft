@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <enderio:recipes xmlns:enderio="http://enderio.com/recipes" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://enderio.com/recipes recipes.xsd ">
 
+<!-- 
+
+These are the built-in recipes. You cannot change this file, it is a
+reference for you only and will be generated every time the game starts.
+
+To make changes to the recipes, copy the recipes you want to change to
+a file in the 'user' folder. To disable a recipe, add an attribute "disabled"
+and set it to true, e.g.: <recipe name="Gear" disabled="true" />
+
+You can also disable all built-in recipes with the setting "loadCoreRecipes"
+in the Ender IO config file, so that only your files in the 'user' folder will
+be loaded. Please be advised that a number of recipes are absolutely needed,
+so you will have to copy those over into a 'user' file for the game to load.
+
+Item specifications can reference an alias, an ore dictionary name, a
+block or an item. You can force the type by prefixing the value with
+"oredict:", "block:" or "item:". Recipes that have items that cannot be
+found in-game are either skipped or an error, depending on their "required"
+attribute.
+
+More information on the syntax can be found in the recipes.xsd file. An
+XML editor will display that as tooltips when editing this file.
+
+ -->
+
   <!-- Iron -->
 
   <recipe name="Sagmill: oreIron Ore" required="true">
@@ -546,7 +571,7 @@
 
   <recipe name="Sagmill: oreDiamond Ore" required="true">
     <sagmilling energy="3600">
-      <input name="oreDiamond" />
+      <input name="oreDiamond, -railcraft:ore:2" />
       <output name="gemDiamond" amount="2" />
       <output name="gemDiamond" chance="0.25" />
       <output name="dustCoal" chance="0.05" />
@@ -575,7 +600,7 @@
 
   <recipe name="Sagmill: oreEmerald Ore" required="true">
     <sagmilling energy="3600">
-      <input name="oreEmerald" />
+      <input name="oreEmerald, -railcraft:ore:3" />
       <output name="gemEmerald" amount="2" />
       <output name="gemEmerald" chance="0.25" />
       <output name="oredict:cobblestone" chance="0.15" />
@@ -602,7 +627,7 @@
 
   <recipe name="Sagmill: oreLapis Ore" required="true">
     <sagmilling energy="3600">
-      <input name="oreLapis" />
+      <input name="oreLapis, -railcraft:ore:4" />
       <output name="minecraft:dye:4" amount="8" />
       <output name="minecraft:dye:4" chance="0.2" />
       <output name="oredict:cobblestone" chance="0.15" />
@@ -627,9 +652,9 @@
 
   <!-- Quartz -->
 
-  <recipe name="Sagmill: oreQuartz Ore" required="true">
+  <recipe name="Sagmill: quartz_ore Ore" required="true">
     <sagmilling energy="3600">
-      <input name="oreQuartz" />
+      <input name="minecraft:quartz_ore" />
       <output name="gemQuartz" amount="2" />
       <output name="POWDER_QUARTZ" chance="0.1" />
       <output name="minecraft:netherrack" chance="0.15" />
@@ -643,11 +668,11 @@
     </sagmilling>
   </recipe>
 
-  <!-- Apatite (Forestry) -->
-
-  <recipe name="Sagmill: oreApatite Ore" required="false">
+ <!-- Apatite -->
+ 
+  <recipe name="Sagmill: Forestry Apatite Ore" required="false">
     <sagmilling energy="3600">
-      <input name="oreApatite" />
+      <input name="forestry:resources:0" />
       <output name="gemApatite" amount="12" />
       <output name="dustSulfur" chance="0.1" required="false" />
       <output name="oredict:cobblestone" chance="0.15" />
@@ -669,7 +694,19 @@
       <output name="oreApatite" amount="4" />
     </sagmilling>
   </recipe>
+ 
+   <!-- Apatite (Other) -->
 
+  <recipe name="Sagmill: oreApatite Ore" required="false">
+    <sagmilling energy="3600">
+      <input name="oreApatite, -forestry:resources:0, -silentgems:gemorelight:7" />
+      <output name="gemApatite" amount="2" />
+      <output name="gemApatite" chance="0.5" />
+      <output name="dustSulfur" chance="0.1" required="false" />
+      <output name="oredict:cobblestone" chance="0.15" />
+    </sagmilling>
+  </recipe>
+ 
   <!-- CertusQuartz (AE2) -->
 
   <recipe name="Sagmill: appliedenergistics2:quartz_ore Ore" required="false">
@@ -755,7 +792,7 @@
     <sagmilling energy="3600">
       <input name="oreSaltpeter" />
       <output name="dustSaltpeter" amount="4" />
-      <output name="oredict:cobblestone" chance="0.15" />
+      <output name="minecraft:sand" chance="0.15" />
     </sagmilling>
   </recipe>
 
@@ -838,7 +875,7 @@
 
   <recipe name="Sagmill: oreTanzanite Ore" required="false">
     <sagmilling energy="3600">
-      <input name="oreTanzanite" />
+      <input name="oreTanzanite, -silentgems:gemoredark:10" />
       <output name="gemTanzanite" amount="2" />
       <output name="gemTanzanite" chance="0.5" />
       <output name="oredict:cobblestone" chance="0.15" />
@@ -858,7 +895,7 @@
 
   <recipe name="Sagmill: oreMalachite Ore" required="false">
     <sagmilling energy="3600">
-      <input name="oreMalachite" />
+      <input name="oreMalachite, -silentgems:gemoredark:6" />
       <output name="gemMalachite" amount="2" />
       <output name="gemMalachite" chance="0.5" />
       <output name="oredict:cobblestone" chance="0.15" />
@@ -2610,18 +2647,6 @@
     </sagmilling>
   </recipe>
 
-
-<!-- Temp Fix For Exnihilo having wrong oredict -->
-  
-  <recipe name="Sagmill: Yellorium Ore" required="false">
-    <sagmilling energy="3600">
-      <input name="oreYellorium" />
-      <output name="dustYellorium" amount="2" />
-      <output name="dustCyanite" chance="0.05" required="false" />
-      <output name="oredict:cobblestone" chance="0.15" />
-    </sagmilling>
-  </recipe>
-  
 <!-- Tiny Progessions -->
   
   <recipe name="Sagmill: Tiny Progressions Lava Ore" required="false">
@@ -2630,7 +2655,7 @@
       <output name="gemLava" amount="2" />
       <output name="gemLava" chance="0.75" amount="2" />
       <output name="gemLava" chance="0.5"/>
-      <output name="oredict:cobblestone" chance="0.15" />
+      <output name="minecraft:cobblestone" chance="0.15" />
     </sagmilling>
   </recipe>
   
@@ -2659,7 +2684,7 @@
 
   <recipe name="Sagmill: Resonate End Stone" required="false">
     <sagmilling energy="5000">
-      <input name="oreFluidEnder" />
+      <input name="oreClathrateEnder" />
       <output name="crystalEnder" amount="2" />
       <output name="crystalEnder" amount="2" chance="0.25" />
       <output name="minecraft:end_stone" chance="0.15" />
@@ -2668,17 +2693,27 @@
 
   <recipe name="Sagmill: Oil Sand" required="false">
     <sagmilling energy="2000">
-      <input name="oreFluidCrudeOilSand" />
+      <input name="thermalfoundation:ore_fluid:0" />
       <output name="crystalCrudeOil" amount="2" />
       <output name="crystalCrudeOil" amount="2" chance="0.25" />
       <output name="thermalfoundation:material:833" amount="1" chance="0.15"/>
       <output name="minecraft:sand" chance="0.15" />
     </sagmilling>
   </recipe>
+ 
+  <recipe name="Sagmill: Oil Red Sand" required="false">
+    <sagmilling energy="2000">
+      <input name="thermalfoundation:ore_fluid:5" />
+      <output name="crystalCrudeOil" amount="2" />
+      <output name="crystalCrudeOil" amount="2" chance="0.25" />
+      <output name="thermalfoundation:material:833" amount="1" chance="0.15"/>
+      <output name="minecraft:sand:1" chance="0.15" />
+    </sagmilling>
+  </recipe>
 
   <recipe name="Sagmill: Oil Shale" required="false">
     <sagmilling energy="2000">
-      <input name="oreFluidCrudeOilShale" />
+      <input name="oreClathrateOilShale" />
       <output name="crystalCrudeOil" amount="2" />
       <output name="crystalCrudeOil" amount="2" chance="0.25" />
       <output name="minecraft:flint" amount="1" chance="0.15"/>
@@ -2688,7 +2723,7 @@
 
   <recipe name="Sagmill: Destabilized Redstone Ore" required="false">
     <sagmilling energy="3600">
-      <input name="oreFluidRedstone" />
+      <input name="oreClathrateRedstone" />
       <output name="crystalRedstone" amount="2" />
       <output name="crystalRedstone" amount="2" chance="0.25" />
       <output name="itemCinnabar" amount="1" chance="0.5"/>
@@ -2698,10 +2733,10 @@
   
   <recipe name="Sagmill: Energized Glowstone Ore" required="false">
     <sagmilling energy="2000">
-      <input name="oreFluidGlowstone" />
+      <input name="oreClathrateGlowstone" />
       <output name="crystalGlowstone" amount="2" />
       <output name="crystalGlowstone" amount="2" chance="0.25" />
-      <output name="dustSulfer" amount="1" chance="0.5"/>
+      <output name="dustSulfur" amount="1" chance="0.5"/>
       <output name="minecraft:netherrack" chance="0.15" />
     </sagmilling>
   </recipe>
@@ -2711,7 +2746,7 @@
     <sagmilling energy="3600">
       <input name="oreIridium" />
       <output name="dustIridium" amount="2" />
-      <output name="minecraft:stone" chance="0.15" />
+      <output name="minecraft:cobblestone" chance="0.15" />
       <output name="dustPlatinum" chance="0.1" required="false" />
     </sagmilling>
   </recipe>
@@ -2721,7 +2756,7 @@
     <sagmilling energy="3600">
       <input name="oreThorium" />
       <output name="dustThorium" amount="2" />
-      <output name="minecraft:stone" chance="0.15" />
+      <output name="minecraft:cobblestone" chance="0.15" />
       <output name="dustUranium" chance="0.1"/>
     </sagmilling>
   </recipe>
@@ -2730,7 +2765,7 @@
     <sagmilling energy="3600">
       <input name="oreBoron" />
       <output name="dustBoron" amount="2" />
-      <output name="minecraft:stone" chance="0.15" />
+      <output name="minecraft:cobblestone" chance="0.15" />
       <output name="dustLithium" chance="0.1"/>
     </sagmilling>
   </recipe>
@@ -2739,7 +2774,7 @@
     <sagmilling energy="3600">
       <input name="oreLithium" />
       <output name="dustLithium" amount="2" />
-      <output name="minecraft:stone" chance="0.15" />
+      <output name="minecraft:cobblestone" chance="0.15" />
       <output name="dustBoron" chance="0.1"/>
     </sagmilling>
   </recipe>
@@ -2749,7 +2784,7 @@
     <sagmilling energy="3600">
       <input name="oreBauxite" />
       <output name="dustBauxite" amount="2" />
-      <output name="minecraft:stone" chance="0.15" />
+      <output name="minecraft:cobblestone" chance="0.15" />
       <output name="dustAluminum" chance="0.1"/>
     </sagmilling>
   </recipe>
@@ -2759,7 +2794,7 @@
       <input name="oreGalena" />
       <output name="dustGalena" amount="2" />
       <output name="dustSulfur" chance="0.25" />
-      <output name="minecraft:stone" chance="0.15" />
+      <output name="minecraft:cobblestone" chance="0.15" />
       <output name="dustSilver" chance="0.1"/>
     </sagmilling>
   </recipe>
@@ -2802,7 +2837,7 @@
 
   <recipe name="Sagmill: Sodalite Ore" required="false">
     <sagmilling energy="3600">
-      <input name="oreSodalite" />
+      <input name="oreSodalite, -silentgems:gemorelight:10" />
       <output name="dustSodalite" amount="2" />
       <output name="minecraft:endstone" chance="0.15" />
       <output name="dustAluminium" chance="0.1" />
@@ -2814,7 +2849,7 @@
     <sagmilling energy="3600">
       <input name="oreAstralStarmetal" />
       <output name="dustAstralStarmetal" amount="2" />
-      <output name="minecraft:stone" chance="0.15" />
+      <output name="minecraft:cobblestone" chance="0.15" />
     </sagmilling>
   </recipe>
 
@@ -2823,7 +2858,7 @@
     <sagmilling energy="3600">
       <input name="oreDilithium" />
       <output name="dustDilithium" amount="2"/>
-      <output name="minecraft:stone" chance="0.15" />
+      <output name="minecraft:cobblestone" chance="0.15" />
     </sagmilling>
   </recipe>
 
@@ -2831,7 +2866,17 @@
     <sagmilling energy="3600">
       <input name="oreTritanium" />
       <output name="dustTritanium" amount="2"/>
-      <output name="minecraft:stone" chance="0.15" />
+      <output name="minecraft:cobblestone" chance="0.15" />
+    </sagmilling>
+  </recipe>
+
+  <!-- Thaumcraft -->
+  <recipe name="Sagmill: Thaumcraft Quartz Ore" required="false">
+    <sagmilling energy="3600">
+      <input name="thaumcraft:ore_quartz" />
+      <output name="gemQuartz" amount="2" />
+      <output name="POWDER_QUARTZ" chance="0.1" />
+      <output name="minecraft:cobblestone" chance="0.15" />
     </sagmilling>
   </recipe>
 

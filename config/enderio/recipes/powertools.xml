@@ -3,15 +3,17 @@
 
 <!-- 
 
-These are the build-in recipes. You cannot change this file, it is a
+These are the built-in recipes. You cannot change this file, it is a
 reference for you only and will be generated every time the game starts.
 
 To make changes to the recipes, copy the recipes you want to change to
 a file in the 'user' folder. To disable a recipe, add an attribute "disabled"
 and set it to true, e.g.: <recipe name="Gear" disabled="true" />
 
-You can also disabled all build in recipes, so that only your files in the
-'user' folder will be loaded.
+You can also disable all built-in recipes with the setting "loadCoreRecipes"
+in the Ender IO config file, so that only your files in the 'user' folder will
+be loaded. Please be advised that a number of recipes are absolutely needed,
+so you will have to copy those over into a 'user' file for the game to load.
 
 Item specifications can reference an alias, an ore dictionary name, a
 block or an item. You can force the type by prefixing the value with
@@ -27,9 +29,9 @@ XML editor will display that as tooltips when editing this file.
   <recipe name="Capacitor Bank, simple" required="true">
     <crafting>
       <grid size="3x3">
-        <item name="ingotIron" /><item name="CAPACITOR1" /><item name="ingotIron" />
+        <item name="IRON" /><item name="CAPACITOR1" /><item name="IRON" />
         <item name="CAPACITOR1" /><item name="blockRedstone" /><item name="CAPACITOR1" />
-        <item name="ingotIron" /><item name="CAPACITOR1" /><item name="ingotIron" />
+        <item name="IRON" /><item name="CAPACITOR1" /><item name="IRON" />
       </grid>
       <output name="CAP_BANK_1" />
     </crafting>
@@ -57,6 +59,39 @@ XML editor will display that as tooltips when editing this file.
     </crafting>
   </recipe>
 
+  <recipe name="Inventory Charger, Basic" required="true">
+    <crafting>
+      <grid size="3x3">
+        <item name="DARK_STEEL" /><item name="ELECTRICAL_STEEL" /><item name="DARK_STEEL" />
+        <item name="itemWirelessDish" /><item name="ENDER_RESONATOR" /><item name="itemWirelessDish" />
+        <item name="DARK_STEEL" /><item name="CAP_BANK_1" /><item name="DARK_STEEL" />
+      </grid>
+      <output name="enderio:item_inventory_charger_basic" />
+    </crafting>
+  </recipe>
+  
+  <recipe name="Inventory Charger" required="true">
+    <crafting>
+      <grid size="3x3">
+        <item name="DARK_STEEL" /><item name="ELECTRICAL_STEEL" /><item name="DARK_STEEL" />
+        <item name="itemWirelessDish" /><item name="ENDER_RESONATOR" /><item name="itemWirelessDish" />
+        <item name="DARK_STEEL" /><item name="CAP_BANK_2" /><item name="DARK_STEEL" />
+      </grid>
+      <output name="enderio:item_inventory_charger" />
+    </crafting>
+  </recipe>
+  
+  <recipe name="Inventory Charger, Vibrant" required="true">
+    <crafting>
+      <grid size="3x3">
+        <item name="DARK_STEEL" /><item name="ELECTRICAL_STEEL" /><item name="DARK_STEEL" />
+        <item name="itemWirelessDish" /><item name="ENDER_RESONATOR" /><item name="itemWirelessDish" />
+        <item name="DARK_STEEL" /><item name="CAP_BANK_3" /><item name="DARK_STEEL" />
+      </grid>
+      <output name="enderio:item_inventory_charger_vibrant" />
+    </crafting>
+  </recipe>
+  
   <recipe name="Energy Monitor" required="true">
     <crafting>
       <grid size="3x3">
@@ -82,12 +117,18 @@ XML editor will display that as tooltips when editing this file.
   <recipe name="RF Gauge" required="true">
     <crafting>
       <grid size="3x3">
-        <item name="ingotIron" /><item /><item name="ingotIron" />
+        <item name="IRON" /><item /><item name="IRON" />
         <item name="ELECTRICAL_STEEL" /><item name="CONDUIT_PROBE" /><item name="ELECTRICAL_STEEL" />
-        <item name="ingotIron" /><item /><item name="ingotIron" />
+        <item name="IRON" /><item /><item name="IRON" />
       </grid>
       <output name="enderio:block_gauge" />
     </crafting>
   </recipe>
+
+  <capacitor key="enderio:block_power_monitor/intake" base="10" scaler="FIXED" />
+
+  <capacitor key="enderio:block_power_monitor/buffer" base="1000" scaler="FIXED" />
+
+  <capacitor key="enderio:block_power_monitor/use" base="5" scaler="FIXED" />
 
 </enderio:recipes>
