@@ -22,8 +22,6 @@ furnace.remove(<ore:ingotArdite>);
 
 // --- Manyullyn
 furnace.remove(<tconstruct:ingots:2>);
-// -
-AlloySmelter.removeRecipe(<tconstruct:ingots:2>);
 
 
 // --- Adding Recipe ---

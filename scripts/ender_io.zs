@@ -73,66 +73,36 @@ recipes.remove(<enderio:item_material>);
 
 // --- Industrial Machine Chassis
 recipes.remove(<enderio:item_material:1>);
-// - 
-AlloySmelter.removeRecipe(<enderio:item_material:1>);
 
 // --- Soul Machine Chassis
 recipes.remove(<enderio:item_material:53>);
-// - 
-AlloySmelter.removeRecipe(<enderio:item_material:53>);
 
 // --- Enhanced Machine Chassis
 recipes.remove(<enderio:item_material:54>);
-// - 
-AlloySmelter.removeRecipe(<enderio:item_material:54>);
 
 // --- End Steel Chassis
 recipes.remove(<enderio:item_material:66>);
 
 // --- Electrical Steel
 furnace.remove(<ore:ingotElectricalSteel>);
-//-
-AlloySmelter.removeRecipe(<enderio:item_alloy_ingot>);
 
 // --- Energetic Alloy
 furnace.remove(<ore:ingotEnergeticAlloy>);
-//-
-AlloySmelter.removeRecipe(<enderio:item_alloy_ingot:1>);
 
 // --- Vibrant Alloy
 furnace.remove(<ore:ingotVibrantAlloy>);
-//-
-AlloySmelter.removeRecipe(<enderio:item_alloy_ingot:2>);
-
-// --- Redstone Alloy
-AlloySmelter.removeRecipe(<enderio:item_alloy_ingot:3>);
-
-// --- Conductive Iron
-AlloySmelter.removeRecipe(<enderio:item_alloy_ingot:4>);
 
 // --- Pulsating Iron
 furnace.remove(<ore:ingotPulsatingIron>);
-//-
-AlloySmelter.removeRecipe(<enderio:item_alloy_ingot:5>);
 
 // --- Dark Steel
 furnace.remove(<ore:ingotDarkSteel>);
-//-
-AlloySmelter.removeRecipe(<enderio:item_alloy_ingot:6>);
 
 // --- Soularium
 furnace.remove(<ore:ingotSoularium>);
-//-
-AlloySmelter.removeRecipe(<enderio:item_alloy_ingot:7>);
 
 // --- End Steel
 furnace.remove(<ore:ingotEndSteel>);
-//-
-AlloySmelter.removeRecipe(<enderio:item_alloy_ingot:8>);
-
-// --- Construction Alloy
-AlloySmelter.removeRecipe(<enderio:item_alloy_ingot:9>);
-
 
 
 
@@ -200,33 +170,7 @@ recipes.addShaped(<enderio:item_material:66>, [[<ore:plateEndSteel>, <ore:plateE
 // --- Alloys ---
 val alloy_smelter = RecipeMap.getByName("alloy_smelter");
 
-// --- Redstone Alloy 
-AlloySmelter.addRecipe(<enderio:item_alloy_ingot:3> * 3, [<ore:dustSilicon>, <ore:dustCopper>, <ore:dustRedstone>], 10000);
-//-
-AlloySmelter.addRecipe(<enderio:item_alloy_ingot:3> * 3, [<ore:ingotSilicon>, <ore:ingotCopper>, <ore:dustRedstone>], 10000);
-//-
-AlloySmelter.addRecipe(<enderio:item_alloy_ingot:3> * 3, [<ore:ingotSilicon>, <ore:dustCopper>, <ore:dustRedstone>], 10000);
-//-
-AlloySmelter.addRecipe(<enderio:item_alloy_ingot:3> * 3, [<ore:dustSilicon>, <ore:ingotCopper>, <ore:dustRedstone>], 10000);
-
-// --- Conductive Iron
-AlloySmelter.addRecipe(<enderio:item_alloy_ingot:4> * 4, [<ore:ingotInvar> * 2, <ore:ingotAlumite>, <ore:dustRedstone>], 10000);
-//-
-AlloySmelter.addRecipe(<enderio:item_alloy_ingot:4> * 4, [<ore:dustInvar> * 2, <ore:dustAlumite>, <ore:dustRedstone>], 10000);
-//-
-AlloySmelter.addRecipe(<enderio:item_alloy_ingot:4> * 4, [<ore:ingotInvar> * 2, <ore:dustAlumite>, <ore:dustRedstone>], 10000);
-//-
-AlloySmelter.addRecipe(<enderio:item_alloy_ingot:4> * 4, [<ore:dustInvar> * 2, <ore:ingotAlumite>, <ore:dustRedstone>], 10000);
-
-// --- Construction Alloy
-AlloySmelter.addRecipe(<enderio:item_alloy_ingot:9> * 9, [<ore:dustTinAlloy> * 8, <ore:dustSilicon>], 10000);
-//-
-AlloySmelter.addRecipe(<enderio:item_alloy_ingot:9> * 9, [<ore:ingotTinAlloy> * 8, <ore:ingotSilicon>], 10000);
-//-
-AlloySmelter.addRecipe(<enderio:item_alloy_ingot:9> * 9, [<ore:ingotTinAlloy> * 8, <ore:dustSilicon>], 10000);
-//-
-AlloySmelter.addRecipe(<enderio:item_alloy_ingot:9> * 9, [<ore:dustTinAlloy> * 8, <ore:ingotSilicon>], 10000);
-//-
+// --- Construcion Alloy
 alloy_smelter.recipeBuilder()
     .duration(200).EUt(16)
     .inputs(<ore:dustTinAlloy> * 8)

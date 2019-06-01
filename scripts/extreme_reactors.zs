@@ -4,7 +4,6 @@
 
 
 // --- Imports ---
-import mods.enderio.AlloySmelter;
 
 
 
@@ -18,8 +17,6 @@ import mods.enderio.AlloySmelter;
 
 
 // --- Steel Ingot
-AlloySmelter.removeRecipe(<bigreactors:ingotsteel>);
-// -
 furnace.remove(<ore:ingotSteel>);
 
 

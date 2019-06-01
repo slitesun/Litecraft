@@ -138,6 +138,25 @@ assembler.recipeBuilder()
     .buildAndRegister();
 
 
+// --- Alloy Smelter Recipes ---
+val alloy_smelter = RecipeMap.getByName("alloy_smelter");
+
+// --- Electrotine Alloy
+alloy_smelter.recipeBuilder()
+    .duration(200).EUt(30)
+    .inputs(<ore:ingotIron>)
+    .inputs(<ore:dustElectrotine> * 4)
+    .outputs(<projectred-core:resource_item:104>)
+    .buildAndRegister();
+
+// -
+alloy_smelter.recipeBuilder()
+    .duration(200).EUt(30)
+    .inputs(<ore:dustIron>)
+    .inputs(<ore:dustElectrotine> * 4)
+    .outputs(<projectred-core:resource_item:104>)
+    .buildAndRegister();
+
 // --- Chemical Reactor Recipes ---
 val chemical_reactor = RecipeMap.getByName("chemical_reactor");
 
