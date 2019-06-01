@@ -18,6 +18,9 @@ var glass_cable = <appliedenergistics2:part:16>;
 
 var hv_machine_hull = <gregtech:machine:503>;
 var small_battery_lithium = <gregtech:meta_item_1:32518>;
+var motor_lv = <gregtech:meta_item_1:32600>;
+var robot_arm_lv = <gregtech:meta_item_1:32650>;
+var conveyor_lv = <gregtech:meta_item_1:32630>;
 
 var mold_block = <gregtech:meta_item_1:32308>;
 
@@ -115,6 +118,24 @@ recipes.remove(<enderio:block_ender_charge>);
 // --- Concussion Charge
 recipes.remove(<enderio:block_concussion_charge>);
 
+// --- Simple Powered Furnace
+recipes.remove(<enderio:block_simple_furnace>);
+
+// --- Simple Alloy Smelter
+recipes.remove(<enderio:block_simple_alloy_smelter>);
+
+// --- Simple Striling Generator
+recipes.remove(<enderio:block_simple_stirling_generator>);
+
+// --- Simple SAG Mill
+recipes.remove(<enderio:block_simple_sag_mill>);
+
+// --- Simple Wired Charger
+recipes.remove(<enderio:block_simple_wired_charger>);
+
+// --- Simple Crafter
+recipes.remove(<enderio:block_simple_crafter>);
+
 
 
 
@@ -148,9 +169,44 @@ for i, conduit in list_items {
   }
 }
 
-// --- Simple Machines ---
 
+// --- Simple Machines 
 
+// --- Simple Powered Furnace
+recipes.addShaped(<enderio:block_simple_furnace>, 
+[[<ore:plateConstructionAlloy>, <ore:craftingFurnace>, <ore:plateConstructionAlloy>], 
+[<ore:cableGtSingleTin>, <ore:itemSimpleMachineChassi>, <ore:cableGtSingleTin>], 
+[<ore:gearStone>, <ore:craftingFurnace>, <ore:gearStone>]]);
+
+// --- Simple Alloy Smelter
+recipes.addShaped(<enderio:block_simple_alloy_smelter>, 
+[[<ore:wireGtDoubleCopper>, <ore:cableGtSingleTin>, <ore:wireGtDoubleCopper>], 
+[<ore:craftingFurnace>, <ore:itemSimpleMachineChassi>, <ore:craftingFurnace>], 
+[<ore:gearStone>, <ore:cableGtSingleTin>, <ore:gearStone>]]);
+
+// --- Simple Striling Generator
+recipes.addShaped(<enderio:block_simple_stirling_generator>, 
+[[<ore:stickCopper>, <ore:plateConstructionAlloy>, <ore:stickCopper>], 
+[<ore:stickIronMagnetic>, <ore:itemSimpleMachineChassi>, <ore:stickIronMagnetic>], 
+[<ore:gearStone>, motor_lv, <ore:gearStone>]]);
+
+// --- Simple SAG Mill
+recipes.addShaped(<enderio:block_simple_sag_mill>, 
+[[<ore:gemDiamond>, <ore:craftingPiston>, <ore:gemDiamond>], 
+[<ore:cableGtSingleTin>, <ore:itemSimpleMachineChassi>, <ore:cableGtSingleTin>], 
+[<ore:gearStone>, <ore:craftingPiston>, <ore:gearStone>]]);
+
+// --- Simple Wired Charger
+recipes.addShaped(<enderio:block_simple_wired_charger>, 
+[[<ore:cableGtDoubleConstructionAlloy>, <ore:cableGtSingleTin>, <ore:cableGtDoubleConstructionAlloy>], 
+[<ore:cableGtSingleTin>, <ore:itemSimpleMachineChassi>, <ore:cableGtSingleTin>], 
+[<ore:gearStone>, <ore:cableGtSingleTin>, <ore:gearStone>]]);
+
+// --- Simple Crafter
+recipes.addShaped(<enderio:block_simple_crafter>, 
+[[robot_arm_lv, <ore:cableGtSingleTin>, robot_arm_lv], 
+[conveyor_lv, <ore:itemSimpleMachineChassi>, conveyor_lv], 
+[<ore:gearStone>, <avaritia:compressed_crafting_table>, <ore:gearStone>]]);
 
 
 // --- Dual-wings remake

@@ -189,7 +189,7 @@ chemical_reactor.recipeBuilder()
     .duration(600).EUt(30)
     .inputs(<ore:dustStone> * 4)
     .inputs(<ore:plateWood>)
-    .fluidInputs(<liquid:glue> * 1000)
+    .fluidInputs(<liquid:glue> * 400)
     .outputs(circuit_plate)
     .buildAndRegister();
 
