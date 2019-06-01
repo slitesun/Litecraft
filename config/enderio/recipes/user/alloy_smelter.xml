@@ -98,6 +98,13 @@
     </alloying>
   </recipe>
 
+  <recipe name="Alloy: Bronze (Thermal Expansion)" disabled="true">
+    <alloying energy="4000" exp="0">
+      <input name="ingotCopper" amount="3"/>
+      <input name="ingotTin"/>
+      <output name="ingotBronze" amount="4"/>
+    </alloying>
+  </recipe>
 
   <recipe name="Alloy: Bronze" required="true">
     <alloying energy="4000" exp="0">

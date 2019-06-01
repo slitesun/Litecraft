@@ -21,6 +21,8 @@ var small_battery_lithium = <gregtech:meta_item_1:32518>;
 
 var mold_block = <gregtech:meta_item_1:32308>;
 
+var dynamite = <gregtech:meta_item_1:32629>;
+
 val list_items = [
   <enderio:item_item_conduit>, <enderio:item_liquid_conduit>, <enderio:item_liquid_conduit:1>, <enderio:item_liquid_conduit:2>, <enderio:item_power_conduit>, 
   <enderio:item_power_conduit:1>, <enderio:item_power_conduit:2>, <enderio:item_redstone_conduit>, <enderio:item_me_conduit>, <enderio:item_me_conduit:1>
@@ -104,6 +106,15 @@ furnace.remove(<ore:ingotSoularium>);
 // --- End Steel
 furnace.remove(<ore:ingotEndSteel>);
 
+// --- Confusion Charge
+recipes.remove(<enderio:block_confusion_charge>);
+
+// --- Ender Charge
+recipes.remove(<enderio:block_ender_charge>);
+
+// --- Concussion Charge
+recipes.remove(<enderio:block_concussion_charge>);
+
 
 
 
@@ -167,7 +178,44 @@ recipes.addShaped(<enderio:item_material:54>, [[<ore:plateTitanium>, <ore:plateT
 recipes.addShaped(<enderio:item_material:66>, [[<ore:plateEndSteel>, <ore:plateEndSteel>, <ore:plateEndSteel>], [<ore:plateEndSteel>, <ore:dustBedrock>, <ore:plateEndSteel>], [<ore:plateEndSteel>, <ore:plateEndSteel>, <ore:plateEndSteel>]]);
 
 
-// --- Alloys ---
+// --- Assembler Recipes ---
+val assembler = RecipeMap.getByName("alloy_smelter");
+
+// --- Confusion Charge
+assembler.recipeBuilder()
+    .duration(400).EUt(120)
+    .inputs(<ore:plateWood> * 6)
+    .inputs(dynamite)
+    .inputs(<ore:dustGunpowder> * 2)
+    .inputs(<ore:itemConfusingDust> * 8)
+    .fluidInputs(<liquid:glue> * 300)
+    .outputs(<enderio:block_confusion_charge>)
+    .buildAndRegister();
+
+// --- Ender Charge
+assembler.recipeBuilder()
+    .duration(400).EUt(120)
+    .inputs(<ore:plateWood> * 6)
+    .inputs(dynamite)
+    .inputs(<ore:dustGunpowder> * 2)
+    .inputs(<ore:itemEnderFragment> * 4)
+    .fluidInputs(<liquid:glue> * 300)
+    .outputs(<enderio:block_ender_charge>)
+    .buildAndRegister();
+
+// --- Concussion Charge
+assembler.recipeBuilder()
+    .duration(400).EUt(120)
+    .inputs(<ore:plateWood> * 6)
+    .inputs(<ore:platePaper> * 2)
+    .inputs(<ore:dustGunpowder> * 4)
+    .inputs(<ore:itemConfusingDust> * 3)
+    .inputs(<ore:itemEnderFragment> * 3)
+    .fluidInputs(<liquid:glue> * 300)
+    .outputs(<enderio:block_concussion_charge>)
+    .buildAndRegister();
+
+// --- Alloy Smelter Recipes ---
 val alloy_smelter = RecipeMap.getByName("alloy_smelter");
 
 // --- Construcion Alloy
