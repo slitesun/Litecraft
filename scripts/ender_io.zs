@@ -88,6 +88,12 @@ recipes.remove(<enderio:item_material:54>);
 // --- End Steel Chassis
 recipes.remove(<enderio:item_material:66>);
 
+// --- Dark Steel Bars
+recipes.remove(<enderio:block_dark_iron_bars>);
+
+// --- End Steel Bars
+recipes.remove(<enderio:block_end_iron_bars>);
+
 // --- Electrical Steel
 furnace.remove(<ore:ingotElectricalSteel>);
 
@@ -170,6 +176,19 @@ for i, conduit in list_items {
 }
 
 
+// --- Dark Steel Bars
+recipes.addShaped(<enderio:block_dark_iron_bars> * 8, 
+[[null, <ore:craftingToolWrench>, null], 
+[<ore:stickDarkSteel>, <ore:stickDarkSteel>, <ore:stickDarkSteel>], 
+[<ore:stickDarkSteel>, <ore:stickDarkSteel>, <ore:stickDarkSteel>]]);
+
+// --- End Steel Bars
+recipes.addShaped(<enderio:block_end_iron_bars> * 8, 
+[[null, <ore:craftingToolWrench>, null], 
+[<ore:stickEndSteel>, <ore:stickEndSteel>, <ore:stickEndSteel>], 
+[<ore:stickEndSteel>, <ore:stickEndSteel>, <ore:stickEndSteel>]]);
+
+
 // --- Simple Machines 
 
 // --- Simple Powered Furnace
@@ -218,24 +237,26 @@ recipes.addShaped(<enderio:block_simple_crafter>,
 // --- Basic Capasitor Bank
 recipes.addShaped(<enderio:block_cap_bank:1>, [[null, <ore:ingotConductiveIron>, null], [small_battery_lithium, hv_machine_hull, small_battery_lithium], [<enderio:item_basic_capacitor>, <ore:ingotConductiveIron>, <enderio:item_basic_capacitor>]]);
 
-// --- Simple Machine Chassis
-recipes.addShaped(<enderio:item_material>, [[<ore:plateConstructionAlloy>, <ore:plateConstructionAlloy>, <ore:plateConstructionAlloy>], [<ore:plateConstructionAlloy>, <ore:dustBedrock>, <ore:plateConstructionAlloy>], [<ore:plateConstructionAlloy>, <ore:plateConstructionAlloy>, <ore:plateConstructionAlloy>]]);
-
-// --- Industrial Machine Chassis
-recipes.addShaped(<enderio:item_material:1>, [[<ore:plateStainlessSteel>, <ore:plateStainlessSteel>, <ore:plateStainlessSteel>], [<ore:plateStainlessSteel>, <ore:dyeMachine>, <ore:plateStainlessSteel>], [<ore:plateStainlessSteel>, <ore:plateStainlessSteel>, <ore:plateStainlessSteel>]]);
-
-// --- Soul Machine Chassis
-recipes.addShaped(<enderio:item_material:53>, [[<ore:plateSoularium>, <ore:plateSoularium>, <ore:plateSoularium>], [<ore:plateSoularium>, <ore:dyeSoulMachine>, <ore:plateSoularium>], [<ore:plateSoularium>, <ore:plateSoularium>, <ore:plateSoularium>]]);
-
-// --- Enhanced Machine Chassis
-recipes.addShaped(<enderio:item_material:54>, [[<ore:plateTitanium>, <ore:plateTitanium>, <ore:plateTitanium>], [<ore:plateTitanium>, <ore:dyeEnhancedMachine>, <ore:plateTitanium>], [<ore:plateTitanium>, <ore:plateTitanium>, <ore:plateTitanium>]]);
-
-// --- End Steel Chassis
-recipes.addShaped(<enderio:item_material:66>, [[<ore:plateEndSteel>, <ore:plateEndSteel>, <ore:plateEndSteel>], [<ore:plateEndSteel>, <ore:dustBedrock>, <ore:plateEndSteel>], [<ore:plateEndSteel>, <ore:plateEndSteel>, <ore:plateEndSteel>]]);
-
-
 // --- Assembler Recipes ---
-val assembler = RecipeMap.getByName("alloy_smelter");
+val assembler = RecipeMap.getByName("assembler");
+
+
+// --- Dark Steel Bars
+assembler.recipeBuilder()
+    .duration(300).EUt(4)
+    .property("circuit", 3)
+    .inputs(<ore:stickDarkSteel> * 3)
+    .outputs(<enderio:block_dark_iron_bars> * 4)
+    .buildAndRegister();
+
+// --- End Steel Bars
+assembler.recipeBuilder()
+    .duration(300).EUt(4)
+    .property("circuit", 3)
+    .inputs(<ore:stickEndSteel> * 3)
+    .outputs(<enderio:block_end_iron_bars> * 4)
+    .buildAndRegister();
+    
 
 // --- Confusion Charge
 assembler.recipeBuilder()
@@ -270,6 +291,57 @@ assembler.recipeBuilder()
     .fluidInputs(<liquid:glue> * 300)
     .outputs(<enderio:block_concussion_charge>)
     .buildAndRegister();
+
+// --- Simple Machine Chassis
+assembler.recipeBuilder()
+    .duration(400).EUt(30)
+    .inputs(<ore:dustBedrock> * 4)
+    .inputs(<ore:barsConstructionAlloy> * 6)
+    .inputs(<ore:plateConstructionAlloy> * 2)
+    .fluidInputs(<liquid:soldering_alloy> * 288)
+    .outputs(<enderio:item_material>)
+    .buildAndRegister();
+
+// --- Industrial Machine Chassis
+assembler.recipeBuilder()
+    .duration(400).EUt(480)
+    .inputs(<ore:dyeMachine> * 4)
+    .inputs(<ore:barsStainlessSteel> * 6)
+    .inputs(<ore:plateStainlessSteel> * 2)
+    .fluidInputs(<liquid:soldering_alloy> * 288)
+    .outputs(<enderio:item_material:1>)
+    .buildAndRegister();
+
+// --- Soul Machine Chassis
+assembler.recipeBuilder()
+    .duration(400).EUt(480)
+    .inputs(<ore:dyeSoulMachine> * 4)
+    .inputs(<ore:barsSoularium> * 6)
+    .inputs(<ore:plateSoularium> * 2)
+    .fluidInputs(<liquid:soldering_alloy> * 288)
+    .outputs(<enderio:item_material:53>)
+    .buildAndRegister();
+
+// --- Enhanced Machine Chassis
+assembler.recipeBuilder()
+    .duration(400).EUt(1920)
+    .inputs(<ore:dyeEnhancedMachine> * 4)
+    .inputs(<ore:barsTitanium> * 6)
+    .inputs(<ore:plateTitanium> * 2)
+    .fluidInputs(<liquid:soldering_alloy> * 288)
+    .outputs(<enderio:item_material:54>)
+    .buildAndRegister();
+
+// --- End Steel Chassis
+assembler.recipeBuilder()
+    .duration(400).EUt(1920)
+    .inputs(<ore:dustBedrock> * 4)
+    .inputs(<ore:barsEndSteel> * 6)
+    .inputs(<ore:plateEndSteel> * 2)
+    .fluidInputs(<liquid:soldering_alloy> * 288)
+    .outputs(<enderio:item_material:66>)
+    .buildAndRegister();
+
 
 // --- Alloy Smelter Recipes ---
 val alloy_smelter = RecipeMap.getByName("alloy_smelter");
