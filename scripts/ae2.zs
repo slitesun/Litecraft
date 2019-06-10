@@ -242,6 +242,27 @@ assembler.recipeBuilder()
     .buildAndRegister();
 
 
+// --- Autoclave Recipes ---
+val autoclave = RecipeMap.getByName("autoclave");
+
+
+// --- Charged Certus Quarts Crystall
+autoclave.recipeBuilder()
+    .duration(600).EUt(480)
+    .inputs(<ore:dustChargedCertusQuartz>)
+    .fluidInputs(<liquid:distilled_water> * 1000)
+    .outputs(<appliedenergistics2:material:1>)
+    .buildAndRegister();
+
+// --- Fluix Crystall
+autoclave.recipeBuilder()
+    .duration(600).EUt(480)
+    .inputs(<ore:dustFluix>)
+    .fluidInputs(<liquid:distilled_water> * 1000)
+    .outputs(<appliedenergistics2:material:7>)
+    .buildAndRegister();
+
+
 // --- Forming Press Recipes ---
 val forming_press = RecipeMap.getByName("forming_press");
 
@@ -275,6 +296,30 @@ forming_press.recipeBuilder()
     .notConsumable(silicon_press)
     .inputs(<ore:plateSilicon>)
     .outputs(printed_silicon)
+    .buildAndRegister();
+
+
+// --- Macerator Recipes ---
+val macerator = RecipeMap.getByName("macerator");
+
+// --- Fluix Dust
+macerator.recipeBuilder()
+    .duration(30).EUt(8)
+    .inputs(<ore:crystalFluix>)
+    .outputs(<appliedenergistics2:material:8>)
+    .buildAndRegister();
+
+
+// --- Mixer Recipes ---
+val mixer = RecipeMap.getByName("mixer");
+
+// --- Fluix Dust
+mixer.recipeBuilder()
+    .duration(200).EUt(480)
+    .inputs(<ore:dustChargedCertusQuartz>)
+    .inputs(<ore:dustRedstone>)
+    .inputs(<ore:dustNetherQuartz>)
+    .outputs(<appliedenergistics2:material:8> * 2)
     .buildAndRegister();
 
 
