@@ -73,6 +73,22 @@ Casting.removeTableRecipe(<enderio:item_material:14>);
 recipes.remove(<enderio:item_material:15>);
 Casting.removeTableRecipe(<enderio:item_material:15>);
 
+// --- Infinity Bimetal Gear
+recipes.remove(<enderio:item_material:11>);
+Casting.removeTableRecipe(<enderio:item_material:11>);
+
+// --- Energized Bimetal Gear
+recipes.remove(<enderio:item_material:12>);
+Casting.removeTableRecipe(<enderio:item_material:12>);
+
+// --- Vibrant Bimetal Gear
+recipes.remove(<enderio:item_material:13>);
+Casting.removeTableRecipe(<enderio:item_material:13>);
+
+// --- Dark Bimetal Gear
+recipes.remove(<enderio:item_material:73>);
+Casting.removeTableRecipe(<enderio:item_material:73>);
+
 // --- Simple Machine Chassis
 recipes.remove(<enderio:item_material>);
 
@@ -188,6 +204,36 @@ recipes.addShaped(<enderio:block_end_iron_bars> * 8,
 [<ore:stickEndSteel>, <ore:stickEndSteel>, <ore:stickEndSteel>], 
 [<ore:stickEndSteel>, <ore:stickEndSteel>, <ore:stickEndSteel>]]);
 
+// --- Infinity Bimetal Gear
+recipes.addShaped(<enderio:item_material:11>, 
+[[<ore:dustBedrock>, <ore:plateConstructionAlloy>, <ore:dustBedrock>], 
+[<ore:plateConstructionAlloy>, <ore:gearIron>, <ore:plateConstructionAlloy>], 
+[<ore:craftingToolFile>, <ore:plateConstructionAlloy>, <ore:craftingToolHardHammer>]]);
+
+// --- Energized Bimetal Gear
+recipes.addShaped(<enderio:item_material:12>, 
+[[null, <ore:plateEnergeticAlloy>, null], 
+[<ore:plateEnergeticAlloy>, <ore:gearIronInfinity>, <ore:plateEnergeticAlloy>], 
+[<ore:craftingToolFile>, <ore:plateEnergeticAlloy>, <ore:craftingToolHardHammer>]]);
+// -
+Casting.addTableRecipe(<enderio:item_material:12>, <ore:gearIronInfinity>, <liquid:energetic_alloy>, 576, true);
+
+// --- Vibrant Bimetal Gear
+recipes.addShaped(<enderio:item_material:13>, 
+[[null, <ore:plateVibrantAlloy>, null], 
+[<ore:plateVibrantAlloy>, <ore:gearIronInfinity>, <ore:plateVibrantAlloy>], 
+[<ore:craftingToolFile>, <ore:plateVibrantAlloy>, <ore:craftingToolHardHammer>]]);
+// -
+Casting.addTableRecipe(<enderio:item_material:13>, <ore:gearIronInfinity>, <liquid:vibrant_alloy>, 576, true);
+
+// --- Dark Bimetal Gear
+recipes.addShaped(<enderio:item_material:73>, 
+[[null, <ore:plateDarkSteel>, null], 
+[<ore:plateDarkSteel>, <ore:gearIronInfinity>, <ore:plateDarkSteel>], 
+[<ore:craftingToolFile>, <ore:plateDarkSteel>, <ore:craftingToolHardHammer>]]);
+// -
+Casting.addTableRecipe(<enderio:item_material:73>, <ore:gearIronInfinity>, <liquid:dark_steel>, 576, true);
+
 
 // --- Simple Machines 
 
@@ -226,6 +272,8 @@ recipes.addShaped(<enderio:block_simple_crafter>,
 [[robot_arm_lv, <ore:cableGtSingleTin>, robot_arm_lv], 
 [conveyor_lv, <ore:itemSimpleMachineChassi>, conveyor_lv], 
 [<ore:gearStone>, <avaritia:compressed_crafting_table>, <ore:gearStone>]]);
+
+
 
 
 // --- Dual-wings remake
