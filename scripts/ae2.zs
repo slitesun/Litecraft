@@ -85,6 +85,10 @@ var fluid_storage_component_4k  = <appliedenergistics2:material:55>;
 var fluid_storage_component_16k = <appliedenergistics2:material:56>;
 var fluid_storage_component_64k = <appliedenergistics2:material:57>;
 
+var certus_quartz_seed = <appliedenergistics2:crystal_seed>.withTag({progress: 0});
+var nether_quartz_seed = <appliedenergistics2:crystal_seed:600>.withTag({progress: 600});
+var fluix_seed         = <appliedenergistics2:crystal_seed:1200>.withTag({progress: 1200});
+
 var piston_EV        = <gregtech:meta_item_1:32643>;
 var casing           = <gregtech:machine:504>;
 var interface        = <litecraftcore:lc_meta_item:15>;
@@ -111,7 +115,8 @@ val list_items = [
   ME_export_bus, <appliedenergistics2:controller>, <appliedenergistics2:spatial_io_port>, <appliedenergistics2:spatial_pylon>, <appliedenergistics2:certus_quartz_cutting_knife>, 
   <appliedenergistics2:nether_quartz_cutting_knife>, blank_pattern, ME_fluid_storage_bus, ME_fluid_import_bus, 
   ME_fluid_export_bus, ME_fluid_annihilation_plane, ME_fluid_formation_plane, ME_fluid_terminal, 
-  annihilation_core, formation_core, <appliedenergistics2:matter_cannon>, <appliedenergistics2:fluid_interface>, <appliedenergistics2:light_detector>
+  annihilation_core, formation_core, <appliedenergistics2:matter_cannon>, <appliedenergistics2:fluid_interface>, <appliedenergistics2:light_detector>,
+  <appliedenergistics2:quartz_block>, <appliedenergistics2:fluix_block>
 ] as IItemStack[];
 
 val circuits = [     
@@ -214,7 +219,7 @@ alloy_smelter.recipeBuilder()
 // --- Assembler Recipes ---
 val assembler = RecipeMap.getByName("assembler");
 
-// Calculation Processor
+// --- Calculation Processor
 assembler.recipeBuilder()
     .duration(100).EUt(480)
     .inputs(printed_calculation_circuit)
@@ -223,7 +228,7 @@ assembler.recipeBuilder()
     .outputs(calculation_processor)
     .buildAndRegister();
 
-// Engineering Processor
+// --- Engineering Processor
 assembler.recipeBuilder()
     .duration(100).EUt(480)
     .inputs(printed_engineering_circuit)
@@ -232,7 +237,7 @@ assembler.recipeBuilder()
     .outputs(engineering_processor)
     .buildAndRegister();
 
-// Logic Processor
+// --- Logic Processor
 assembler.recipeBuilder()
     .duration(100).EUt(480)
     .inputs(printed_logic_circuit)
@@ -240,11 +245,34 @@ assembler.recipeBuilder()
     .fluidInputs(<liquid:redstone> * 144)
     .outputs(logic_processor)
     .buildAndRegister();
-
+    
+// --- Certus Quartz Seed
+assembler.recipeBuilder()
+    .duration(200).EUt(8)
+    .inputs(<ore:dustCertusQuartz>)
+    .inputs(<ore:dustSand>)
+    .outputs(certus_quartz_seed * 2)
+    .buildAndRegister();
+    
+// --- Nether Quartz Seed
+assembler.recipeBuilder()
+    .duration(200).EUt(8)
+    .inputs(<ore:dustNetherQuartz>)
+    .inputs(<ore:dustSand>)
+    .outputs(nether_quartz_seed * 2)
+    .buildAndRegister();
+    
+// --- Fluix Seed
+assembler.recipeBuilder()
+    .duration(200).EUt(8)
+    .inputs(<ore:dustFluix>)
+    .inputs(<ore:dustSand>)
+    .outputs(fluix_seed)
+    .buildAndRegister();
+    
 
 // --- Autoclave Recipes ---
 val autoclave = RecipeMap.getByName("autoclave");
-
 
 // --- Charged Certus Quarts Crystall
 autoclave.recipeBuilder()
@@ -262,6 +290,61 @@ autoclave.recipeBuilder()
     .outputs(<appliedenergistics2:material:7>)
     .buildAndRegister();
 
+// --- Pure Certus Quartz Crystall
+autoclave.recipeBuilder()
+    .duration(1800).EUt(4)
+    .inputs(certus_quartz_seed)
+    .fluidInputs(<liquid:distilled_water> * 1000)
+    .outputs(<appliedenergistics2:material:10>)
+    .buildAndRegister();
+    
+// --- Pure Nether Quartz Crystall
+autoclave.recipeBuilder()
+    .duration(1800).EUt(4)
+    .inputs(nether_quartz_seed)
+    .fluidInputs(<liquid:distilled_water> * 1000)
+    .outputs(<appliedenergistics2:material:11>)
+    .buildAndRegister();
+    
+// --- Pure Fluix Crystall
+autoclave.recipeBuilder()
+    .duration(1800).EUt(4)
+    .inputs(fluix_seed)
+    .fluidInputs(<liquid:distilled_water> * 1000)
+    .outputs(<appliedenergistics2:material:12>)
+    .buildAndRegister();
+    
+    
+// --- Compressor Recipes
+val compressor = RecipeMap.getByName("compressor");
+
+// --- Certus Quartz Block
+compressor.recipeBuilder()
+    .duration(400).EUt(2)
+    .inputs(<ore:crystalCertusQuartz> * 4)
+    .outputs(<appliedenergistics2:quartz_block>)
+    .buildAndRegister();
+// -
+compressor.recipeBuilder()
+    .duration(400).EUt(2)
+    .inputs(<ore:crystalPureCertusQuartz> * 8)
+    .outputs(<appliedenergistics2:quartz_block>)
+    .buildAndRegister();
+    
+// --- Fluix Block
+compressor.recipeBuilder()
+    .duration(400).EUt(2)
+    .inputs(<ore:crystalFluix> * 4)
+    .outputs(<appliedenergistics2:fluix_block>)
+    .buildAndRegister();
+    
+// -
+compressor.recipeBuilder()
+    .duration(400).EUt(2)
+    .inputs(<ore:crystalPureFluix> * 8)
+    .outputs(<appliedenergistics2:fluix_block>)
+    .buildAndRegister();
+    
 
 // --- Forming Press Recipes ---
 val forming_press = RecipeMap.getByName("forming_press");
