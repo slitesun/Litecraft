@@ -24,6 +24,11 @@ var Skull    = <ore:itemSkull>;
 var ETable   = <minecraft:enchanting_table>;
 var Compass  = <minecraft:compass>;
 var EnderEye = <ore:gemEnderEye>;
+var Stick    = <ore:stickWood>;
+var SBowString = <tconstruct:bow_string>.withTag({Material: "soularium"});
+
+var EnergizedSiliconChip = <projectred-core:resource_item:21>;
+var SiliconChip          = <projectred-core:resource_item:20>;
 
 var LogicProcessor = <appliedenergistics2:material:22>;
 var CalcProcessor  = <appliedenergistics2:material:23>;
@@ -52,6 +57,8 @@ var SiliconPlate  = <ore:plateSilicon>;
 var TiPlate       = <ore:plateTitanium>;
 
 var ESteelIngot   = <ore:ingotElectricalSteel>;
+var EndSteelIngot = <ore:ingotEndSteel>;
+var DSteelIngot   = <ore:ingotDarkSteel>;
 
 var SoulariumRod  = <ore:stickSoularium>;
 var DarkSteelRod  = <ore:stickDarkSteel>;
@@ -88,20 +95,21 @@ var IvEmitter  = <gregtech:meta_item_1:32684>;
 var PIC = <gregtech:meta_item_2:32483>;
 var HPIC = <gregtech:meta_item_2:32479>;
 
-var TinRotor   = <ore:rotorTin>;
-var SteelRotor = <ore:rotorSteel>;
+var TinRotor    = <ore:rotorTin>;
+var SteelRotor  = <ore:rotorSteel>;
 var SSteelRotor = <ore:rotorStainlessSteel>;
 
-var GrindHead = <ore:craftingGrinder>;
-var mold_block = <gregtech:meta_item_1:32308>;
-var dynamite = <gregtech:meta_item_1:32629>;
+var GrindHead   = <ore:craftingGrinder>;
+var mold_block  = <gregtech:meta_item_1:32308>;
+var dynamite    = <gregtech:meta_item_1:32629>;
 var CircuiPlate = <projectred-core:resource_item>;
 
+var NStick      = <ore:itemNutritiousStick>;
 var InfinityRod = <ore:itemInfinityRod>;
 
-var EConduit = <enderio:item_power_conduit>;
-var EConduit2   = <enderio:item_power_conduit:1>;
-var IRConduit = <enderio:item_redstone_conduit>;
+var EConduit     = <enderio:item_power_conduit>;
+var EConduit2    = <enderio:item_power_conduit:1>;
+var IRConduit    = <enderio:item_redstone_conduit>;
 var ConduitProbe = <enderio:item_conduit_probe>;
 
 var Capacitor  = <enderio:item_basic_capacitor>;
@@ -114,12 +122,14 @@ var FZombi      = <ore:skullZombieFrankenstein>;
 var EResonator  = <ore:skullEnderResonator>;
 var SEnder      = <ore:skullSentientEnder>;
 var SContractor = <ore:skullSkeletalContractor>;
+var GDiode      = <ore:skullGuardianDiode>;
 
 var SimpleChassi = <ore:itemSimpleMachineChassi>;
 var IChassi      = <ore:itemMachineChassi>;
 var SoulChassi   = <ore:itemSoulMachineChassi>;
 var EChassi      = <ore:itemEnhancedMachineChassi>;
 
+var PrecientCrystal = <ore:itemPrecientCrystal>;
 var PCrystal  = <ore:itemPulsatingCrystal>;
 var VCrystal  = <ore:itemVibrantCrystal>;
 var ECrystal  = <ore:itemEnderCrystal>;
@@ -336,6 +346,9 @@ recipes.remove(<enderio:block_power_monitor>);
 // --- The Vat
 recipes.remove(<enderio:block_vat>);
 
+// --- Wired Charger
+recipes.remove(<enderio:block_wired_charger>);
+
 // --- Wireless Charger
 recipes.remove(<enderio:block_wireless_charger>);
 
@@ -357,6 +370,19 @@ recipes.remove(<enderio:block_impulse_hopper>);
 // --- Crafter
 recipes.remove(<enderio:block_crafter>);
 
+// --- Energy Gauge
+recipes.remove(<enderio:block_gauge>);
+
+// --- XP Vacuum
+recipes.remove(<enderio:block_xp_vacuum>);
+
+// --- Fluid Tank
+recipes.remove(<enderio:block_tank>);
+
+// --- Pressurized Fluid Tank
+recipes.remove(<enderio:block_tank:1>);
+
+
 // --- Attractor Obelisk
 recipes.remove(<enderio:block_attractor_obelisk>);
 
@@ -371,6 +397,7 @@ recipes.remove(<enderio:block_weather_obelisk>);
 
 // --- Experience Obelisk
 recipes.remove(<enderio:block_experience_obelisk>);
+
 
 // --- Conduit Probe
 recipes.remove(<enderio:item_conduit_probe>);
@@ -393,8 +420,12 @@ recipes.remove(<enderio:item_material:71>);
 // --- Staff of Traveling
 recipes.remove(<enderio:item_travel_staff>);
 
+// --- Staff of Levity
+recipes.remove(<enderio:item_staff_of_levity>);
+
 // --- Rod of Return
 recipes.remove(<enderio:item_rod_of_return>);
+
 
 // --- Basic Item Filter
 recipes.remove(<enderio:item_basic_item_filter>);
@@ -429,6 +460,12 @@ recipes.remove(<enderio:item_big_advanced_item_filter>);
 // --- Big Enchantement Filter
 recipes.remove(<enderio:item_enchantment_filter_big>);
 
+// --- Extract Speed Upgrade
+recipes.remove(<enderio:item_extract_speed_upgrade>);
+
+// --- Extract Speed Downrade
+recipes.remove(<enderio:item_extract_speed_downgrade>);
+
 
 // --- Enhanced Alloy Smelter
 recipes.remove(<enderio:block_enhanced_alloy_smelter>);
@@ -446,9 +483,69 @@ recipes.remove(<enderio:block_enhanced_vat>);
 recipes.remove(<enderio:block_enhanced_wired_charger>);
 
 
+// --- Dark Helm
+recipes.remove(<enderio:item_dark_steel_helmet>);
+
+// --- Dark Plate
+recipes.remove(<enderio:item_dark_steel_chestplate>);
+
+// --- Dark Leggins
+recipes.remove(<enderio:item_dark_steel_leggings>);
+
+// --- Dark Boots
+recipes.remove(<enderio:item_dark_steel_boots>);
+
+// --- Dark Pick
+recipes.remove(<enderio:item_dark_steel_pickaxe>);
+
+// --- Dark Sword
+recipes.remove(<enderio:item_dark_steel_sword>);
+
+// --- Dark Axe
+recipes.remove(<enderio:item_dark_steel_axe>);
+
+// --- Dark Bow
+recipes.remove(<enderio:item_dark_steel_bow>);
+
+// --- Dark Shears
+recipes.remove(<enderio:item_dark_steel_shears>);
+
+// --- Dark Crook
+recipes.remove(<enderio:item_dark_steel_crook>);
+
+// --- Dark Backhoe
+recipes.remove(<enderio:item_dark_steel_hand>);
+
+// --- Ender Helm
+recipes.remove(<enderio:item_end_steel_helmet>);
+
+// --- Ender Plate
+recipes.remove(<enderio:item_end_steel_chestplate>);
+
+// --- Ender Leggins
+recipes.remove(<enderio:item_end_steel_leggings>);
+
+// --- Ender Boots
+recipes.remove(<enderio:item_end_steel_boots>);
+
+// --- Ender Pickaxe
+recipes.remove(<enderio:item_end_steel_pickaxe>);
+
+// --- The Ender Mk2 
+recipes.remove(<enderio:item_end_steel_sword>);
+
+// --- Ender Axe
+recipes.remove(<enderio:item_end_steel_axe>);
+
+// --- Ender Bow
+recipes.remove(<enderio:item_end_steel_bow>);
+
+
 
 
 // --- Added Recipes ---
+
+// --- Conduits
 for i, conduit in list_items {
   if(i < 3){
     recipes.addShaped(conduit * 4, 
@@ -516,9 +613,9 @@ recipes.addShaped(<enderio:item_material:11>,
 
 // --- Energized Bimetal Gear
 recipes.addShaped(<enderio:item_material:12>, 
-[[null, <ore:plateEnergeticAlloy>, null], 
-[<ore:plateEnergeticAlloy>, <ore:gearIronInfinity>, <ore:plateEnergeticAlloy>], 
-[File, <ore:plateEnergeticAlloy>, Hammer]]);
+[[null, EAPlate, null], 
+[EAPlate, <ore:gearIronInfinity>, EAPlate], 
+[File, EAPlate, Hammer]]);
 // -
 Casting.addTableRecipe(<enderio:item_material:12>, <ore:gearIronInfinity>, <liquid:energetic_alloy>, 576, true);
 
@@ -727,6 +824,12 @@ recipes.addShaped(<enderio:block_power_monitor>, [
 [BCircuit, IChassi, BCircuit],
 [EConduit, ConduitProbe, EConduit]]);
 
+// --- Energy Gauge
+recipes.addShaped(<enderio:block_gauge>, [
+[CAlloyPlate, null, CAlloyPlate], 
+[ESteelPlate, ConduitProbe, ESteelPlate], 
+[CAlloyPlate, null, CAlloyPlate]]);
+
 
 // --- Enhanced Machines
 
@@ -883,8 +986,14 @@ recipes.addShaped(<enderio:item_coord_selector>, [
 // --- Staff of Traveling
 recipes.addShaped(<enderio:item_travel_staff>, [
 [Screwdriver, AdvCircuit, ECrystal],
-[<ore:screwTungstenSteel>, InfinityRod, AdvCircuit],
-[InfinityRod, <ore:screwTungstenSteel>, Wrench]]);
+[<ore:screwStainlessSteel>, InfinityRod, AdvCircuit],
+[InfinityRod, <ore:screwStainlessSteel>, Wrench]]);
+
+// --- Staff of Levity
+recipes.addShaped(<enderio:item_staff_of_levity>, [
+[Screwdriver, AdvCircuit, PrecientCrystal],
+[<ore:screwStainlessSteel>, InfinityRod, AdvCircuit],
+[InfinityRod, <ore:screwStainlessSteel>, Wrench]]);
 
 // --- Rod of Return
 recipes.addShaped(<enderio:item_rod_of_return>, [
@@ -893,145 +1002,125 @@ recipes.addShaped(<enderio:item_rod_of_return>, [
 [InfinityRod, <ore:screwStainlessSteel>, Wrench]]);
 
 
+// --- Dark Helm
+recipes.addShaped(<enderio:item_dark_steel_helmet>, [
+[DSteelPlate, DSteelPlate, DSteelPlate],
+[DSteelPlate, Hammer, DSteelPlate],
+[null, null, null]]);
+
+// --- Dark Plate
+recipes.addShaped(<enderio:item_dark_steel_chestplate>, [
+[DSteelPlate, Hammer, DSteelPlate],
+[DSteelPlate, DSteelPlate, DSteelPlate],
+[DSteelPlate, DSteelPlate, DSteelPlate]]);
+
+// --- Dark Leggins
+recipes.addShaped(<enderio:item_dark_steel_leggings>, [
+[DSteelPlate, DSteelPlate, DSteelPlate],
+[DSteelPlate, Hammer, DSteelPlate],
+[DSteelPlate, null, DSteelPlate]]);
+
+// --- Dark Boots
+recipes.addShaped(<enderio:item_dark_steel_boots>, [
+[null, null, null],
+[DSteelPlate, Hammer, DSteelPlate],
+[DSteelPlate, null, DSteelPlate]]);
+
+// --- Dark Pick
+recipes.addShaped(<enderio:item_dark_steel_pickaxe>, [
+[DSteelPlate, DSteelIngot, DSteelIngot],
+[File, Stick, Hammer],
+[null, Stick, null]]);
+
+// --- Dark Sword
+recipes.addShaped(<enderio:item_dark_steel_sword>, [
+[null, DSteelPlate, null],
+[File, DSteelPlate, Hammer],
+[null, Stick, null]]);
+
+// --- Dark Axe
+recipes.addShaped(<enderio:item_dark_steel_axe>, [
+[DSteelPlate, DSteelIngot, Hammer],
+[DSteelPlate, Stick, null],
+[File, Stick, null]]);
+
+// --- Dark Bow
+recipes.addShaped(<enderio:item_dark_steel_bow>, [
+[null, NStick, SBowString],
+[SContractor, null, SBowString],
+[null, NStick, SBowString]]);
+
+// --- Dark Shears
+recipes.addShaped(<enderio:item_dark_steel_shears>, [
+[Hammer, DSteelPlate, null],
+[DSteelPlate, File, null],
+[null, null, null]]);
+
+// --- Dark Crook
+recipes.addShaped(<enderio:item_dark_steel_crook>, [
+[DSteelPlate, DSteelPlate, Stick],
+[File, Hammer, Stick],
+[null, null, Stick]]);
+
+// --- Dark Backhoe
+recipes.addShaped(<enderio:item_dark_steel_hand>, [
+[DSteelPlate, DSteelPlate, DSteelPlate],
+[DSteelPlate, DSteelPlate, DSteelPlate],
+[File, Hammer, <minecraft:diamond_hoe>]]);
+
+// --- Ender Helm
+recipes.addShaped(<enderio:item_end_steel_helmet>, [
+[EndSteelPlate, EndSteelPlate, EndSteelPlate],
+[EndSteelPlate, GDiode, EndSteelPlate],
+[null, Hammer, null]]);
+
+// --- Ender Plate
+recipes.addShaped(<enderio:item_end_steel_chestplate>, [
+[EndSteelPlate, Hammer, EndSteelPlate],
+[EndSteelPlate, GDiode, EndSteelPlate],
+[EndSteelPlate, EndSteelPlate, EndSteelPlate]]);
+
+// --- Ender Leggins
+recipes.addShaped(<enderio:item_end_steel_leggings>, [
+[EndSteelPlate, EndSteelPlate, EndSteelPlate],
+[EndSteelPlate, GDiode, EndSteelPlate],
+[EndSteelPlate, Hammer, EndSteelPlate]]);
+
+// --- Ender Boots
+recipes.addShaped(<enderio:item_end_steel_boots>, [
+[null, null, null],
+[EndSteelPlate, Hammer, EndSteelPlate],
+[EndSteelPlate, GDiode, EndSteelPlate]]);
+
+// --- Ender Pickaxe
+recipes.addShaped(<enderio:item_end_steel_pickaxe>, [
+[EndSteelPlate, EndSteelIngot, EndSteelIngot],
+[File, InfinityRod, Hammer],
+[null, InfinityRod, null]]);
+
+// --- The Ender Mk2 
+recipes.addShaped(<enderio:item_end_steel_sword>, [
+[null, EndSteelPlate, null],
+[File, EndSteelPlate, Hammer],
+[null, InfinityRod, null]]);
+
+// --- Ender Axe
+recipes.addShaped(<enderio:item_end_steel_axe>, [
+[EndSteelPlate, EndSteelIngot, Hammer],
+[EndSteelPlate, InfinityRod, null],
+[File, InfinityRod, null]]);
+
+// --- Ender Bow
+recipes.addShaped(<enderio:item_end_steel_bow>, [
+[null, InfinityRod, SBowString],
+[SContractor, null, SBowString],
+[null, InfinityRod, SBowString]]);
+
+
+
+
 // --- Assembler Recipes ---
 val assembler = RecipeMap.getByName("assembler");
-
-// --- Basic Item Filter
-assembler.recipeBuilder()
-    .duration(200).EUt(8)
-    .inputs(CircuiPlate)
-    .inputs(<ore:wireFineRedstoneAlloy> * 4)
-    .inputs(LogicProcessor)
-    .fluidInputs(<liquid:soldering_alloy> * 72)
-    .outputs(<enderio:item_basic_item_filter>)
-    .buildAndRegister();
-// -
-assembler.recipeBuilder()
-    .duration(200).EUt(8)
-    .inputs(CircuiPlate)
-    .inputs(<ore:wireFineRedAlloy> * 4)
-    .inputs(LogicProcessor)
-    .fluidInputs(<liquid:soldering_alloy> * 72)
-    .outputs(<enderio:item_basic_item_filter>)
-    .buildAndRegister();
-
-
-// --- Mod Item Filter
-assembler.recipeBuilder()
-    .duration(200).EUt(8)
-    .inputs(CircuiPlate)
-    .inputs(<enderio:item_basic_item_filter>)
-    .inputs(<ore:wireFineConductiveIron> * 8)
-    .inputs(CoreStorageComponent)
-    .fluidInputs(<liquid:soldering_alloy> * 72)
-    .outputs(<enderio:item_mod_item_filter>)
-    .buildAndRegister();
-
-// --- Power Item Filter
-assembler.recipeBuilder()
-    .duration(200).EUt(8)
-    .inputs(CircuiPlate)
-    .inputs(<enderio:item_basic_item_filter>)
-    .inputs(<ore:wireFineConductiveIron> * 8)
-    .inputs(CalcProcessor)
-    .fluidInputs(<liquid:soldering_alloy> * 72)
-    .outputs(<enderio:item_power_item_filter>)
-    .buildAndRegister();
-
-// --- Fluid Filter
-assembler.recipeBuilder()
-    .duration(200).EUt(8)
-    .inputs(CircuiPlate)
-    .inputs(<enderio:item_basic_item_filter>)
-    .inputs(<ore:wireFineConductiveIron> * 8)
-    .inputs(FluidProcessor)
-    .fluidInputs(<liquid:soldering_alloy> * 72)
-    .outputs(<enderio:item_fluid_filter>)
-    .buildAndRegister();
-
-// --- Enchantment Filter
-assembler.recipeBuilder()
-    .duration(200).EUt(8)
-    .inputs(CircuiPlate)
-    .inputs(<enderio:item_basic_item_filter>)
-    .inputs(<ore:wireFineConductiveIron> * 8)
-    .inputs(<ore:bookEnchanted>)
-    .fluidInputs(<liquid:soldering_alloy> * 72)
-    .outputs(<enderio:item_enchantment_filter_normal>)
-    .buildAndRegister();
-
-// --- Advanced Item Filter
-assembler.recipeBuilder()
-    .duration(200).EUt(16)
-    .inputs(CircuiPlate)
-    .inputs(<ore:wireFineRedstoneAlloy> * 8)
-    .inputs(ZLogic)
-    .fluidInputs(<liquid:soldering_alloy> * 144)
-    .outputs(<enderio:item_advanced_item_filter>)
-    .buildAndRegister();
-// -
-assembler.recipeBuilder()
-    .duration(200).EUt(16)
-    .inputs(CircuiPlate)
-    .inputs(<ore:wireFineRedAlloy> * 8)
-    .inputs(ZLogic)
-    .fluidInputs(<liquid:soldering_alloy> * 144)
-    .outputs(<enderio:item_advanced_item_filter>)
-    .buildAndRegister();
-
-// --- Limited Item Filter
-assembler.recipeBuilder()
-    .duration(200).EUt(8)
-    .inputs(CircuiPlate)
-    .inputs(<enderio:item_advanced_item_filter>)
-    .inputs(<ore:wireFineAluminium> * 16)
-    .inputs(EngineeringProcessor)
-    .fluidInputs(<liquid:soldering_alloy> * 144)
-    .outputs(<enderio:item_limited_item_filter>)
-    .buildAndRegister();
-
-// --- Existing Item Filter
-assembler.recipeBuilder()
-    .duration(200).EUt(8)
-    .inputs(CircuiPlate)
-    .inputs(<enderio:item_advanced_item_filter>)
-    .inputs(<ore:wireFineAluminium> * 16)
-    .inputs(Comparator)
-    .outputs(<enderio:item_existing_item_filter>)
-    .buildAndRegister();
-
-// --- Big Item Filter
-assembler.recipeBuilder()
-    .duration(200).EUt(8)
-    .inputs(CircuiPlate)
-    .inputs(<ore:wireFineElectrum> * 8)
-    .inputs(<ore:dustObsidian> * 4)
-    .inputs(SContractor)
-    .fluidInputs(<liquid:soldering_alloy> * 144)
-    .outputs(<enderio:item_big_item_filter>)
-    .buildAndRegister();
-
-// --- Advanced Big Item Filter
-assembler.recipeBuilder()
-    .duration(200).EUt(8)
-    .inputs(CircuiPlate)
-    .inputs(<enderio:item_big_item_filter>)
-    .inputs(<ore:wireFineElectrum> * 16)
-    .inputs(<minecraft:shulker_shell> * 2)
-    .fluidInputs(<liquid:soldering_alloy> * 144)
-    .outputs(<enderio:item_big_advanced_item_filter>)
-    .buildAndRegister();
-
-// --- Big Enchantement Filter
-assembler.recipeBuilder()
-    .duration(200).EUt(8)
-    .inputs(CircuiPlate)
-    .inputs(<enderio:item_big_item_filter>)
-    .inputs(<ore:wireFineElectrum> * 16)
-    .inputs(<ore:bookEnchanted>)
-    .fluidInputs(<liquid:soldering_alloy> * 144)
-    .outputs(<enderio:item_enchantment_filter_big>)
-    .buildAndRegister();
 
 // --- Infinity Rod 
 assembler.recipeBuilder()
@@ -1354,6 +1443,170 @@ autoclave.recipeBuilder()
     .outputs(<enderio:item_material:19>)
     .buildAndRegister();
 
+
+// --- Circuit Assembler Recipes ---
+val circuit_assembler = RecipeMap.getByName("circuit_assembler");
+
+// --- Basic Item Filter
+circuit_assembler.recipeBuilder()
+    .duration(200).EUt(8)
+    .inputs(CircuiPlate)
+    .inputs(<ore:wireFineRedstoneAlloy> * 4)
+    .inputs(LogicProcessor)
+    .fluidInputs(<liquid:soldering_alloy> * 72)
+    .outputs(<enderio:item_basic_item_filter>)
+    .buildAndRegister();
+// -
+circuit_assembler.recipeBuilder()
+    .duration(200).EUt(8)
+    .inputs(CircuiPlate)
+    .inputs(<ore:wireFineRedAlloy> * 4)
+    .inputs(LogicProcessor)
+    .fluidInputs(<liquid:soldering_alloy> * 72)
+    .outputs(<enderio:item_basic_item_filter>)
+    .buildAndRegister();
+
+
+// --- Mod Item Filter
+circuit_assembler.recipeBuilder()
+    .duration(200).EUt(8)
+    .inputs(CircuiPlate)
+    .inputs(<enderio:item_basic_item_filter>)
+    .inputs(<ore:wireFineConductiveIron> * 8)
+    .inputs(CoreStorageComponent)
+    .fluidInputs(<liquid:soldering_alloy> * 72)
+    .outputs(<enderio:item_mod_item_filter>)
+    .buildAndRegister();
+
+// --- Power Item Filter
+circuit_assembler.recipeBuilder()
+    .duration(200).EUt(8)
+    .inputs(CircuiPlate)
+    .inputs(<enderio:item_basic_item_filter>)
+    .inputs(<ore:wireFineConductiveIron> * 8)
+    .inputs(CalcProcessor)
+    .fluidInputs(<liquid:soldering_alloy> * 72)
+    .outputs(<enderio:item_power_item_filter>)
+    .buildAndRegister();
+
+// --- Fluid Filter
+circuit_assembler.recipeBuilder()
+    .duration(200).EUt(8)
+    .inputs(CircuiPlate)
+    .inputs(<enderio:item_basic_item_filter>)
+    .inputs(<ore:wireFineConductiveIron> * 8)
+    .inputs(FluidProcessor)
+    .fluidInputs(<liquid:soldering_alloy> * 72)
+    .outputs(<enderio:item_fluid_filter>)
+    .buildAndRegister();
+
+// --- Enchantment Filter
+circuit_assembler.recipeBuilder()
+    .duration(200).EUt(8)
+    .inputs(CircuiPlate)
+    .inputs(<enderio:item_basic_item_filter>)
+    .inputs(<ore:wireFineConductiveIron> * 8)
+    .inputs(<ore:bookEnchanted>)
+    .fluidInputs(<liquid:soldering_alloy> * 72)
+    .outputs(<enderio:item_enchantment_filter_normal>)
+    .buildAndRegister();
+
+// --- Advanced Item Filter
+circuit_assembler.recipeBuilder()
+    .duration(200).EUt(16)
+    .inputs(CircuiPlate)
+    .inputs(<ore:wireFineRedstoneAlloy> * 8)
+    .inputs(ZLogic)
+    .fluidInputs(<liquid:soldering_alloy> * 144)
+    .outputs(<enderio:item_advanced_item_filter>)
+    .buildAndRegister();
+// -
+circuit_assembler.recipeBuilder()
+    .duration(200).EUt(16)
+    .inputs(CircuiPlate)
+    .inputs(<ore:wireFineRedAlloy> * 8)
+    .inputs(ZLogic)
+    .fluidInputs(<liquid:soldering_alloy> * 144)
+    .outputs(<enderio:item_advanced_item_filter>)
+    .buildAndRegister();
+
+// --- Limited Item Filter
+circuit_assembler.recipeBuilder()
+    .duration(200).EUt(8)
+    .inputs(CircuiPlate)
+    .inputs(<enderio:item_advanced_item_filter>)
+    .inputs(<ore:wireFineAluminium> * 16)
+    .inputs(EngineeringProcessor)
+    .fluidInputs(<liquid:soldering_alloy> * 144)
+    .outputs(<enderio:item_limited_item_filter>)
+    .buildAndRegister();
+
+// --- Existing Item Filter
+circuit_assembler.recipeBuilder()
+    .duration(200).EUt(8)
+    .inputs(CircuiPlate)
+    .inputs(<enderio:item_advanced_item_filter>)
+    .inputs(<ore:wireFineAluminium> * 16)
+    .inputs(Comparator)
+    .outputs(<enderio:item_existing_item_filter>)
+    .buildAndRegister();
+
+// --- Big Item Filter
+circuit_assembler.recipeBuilder()
+    .duration(200).EUt(8)
+    .inputs(CircuiPlate)
+    .inputs(<ore:wireFineElectrum> * 8)
+    .inputs(<ore:dustObsidian> * 4)
+    .inputs(SContractor)
+    .fluidInputs(<liquid:soldering_alloy> * 144)
+    .outputs(<enderio:item_big_item_filter>)
+    .buildAndRegister();
+
+// --- Advanced Big Item Filter
+circuit_assembler.recipeBuilder()
+    .duration(200).EUt(8)
+    .inputs(CircuiPlate)
+    .inputs(<enderio:item_big_item_filter>)
+    .inputs(<ore:wireFineElectrum> * 16)
+    .inputs(<minecraft:shulker_shell> * 2)
+    .fluidInputs(<liquid:soldering_alloy> * 144)
+    .outputs(<enderio:item_big_advanced_item_filter>)
+    .buildAndRegister();
+
+// --- Big Enchantement Filter
+circuit_assembler.recipeBuilder()
+    .duration(200).EUt(8)
+    .inputs(CircuiPlate)
+    .inputs(<enderio:item_big_item_filter>)
+    .inputs(<ore:wireFineElectrum> * 16)
+    .inputs(<ore:bookEnchanted>)
+    .fluidInputs(<liquid:soldering_alloy> * 144)
+    .outputs(<enderio:item_enchantment_filter_big>)
+    .buildAndRegister();
+
+// --- Extract Speed Upgrade
+circuit_assembler.recipeBuilder()
+    .duration(200).EUt(8)
+    .inputs(CircuiPlate)
+    .inputs(EnergizedSiliconChip)
+    .inputs(LogicProcessor)
+    .inputs(<ore:wireFineGold> * 8)
+    .fluidInputs(<liquid:soldering_alloy> * 144)
+    .outputs(<enderio:item_extract_speed_upgrade>)
+    .buildAndRegister();
+
+// --- Extract Speed Downgrade
+circuit_assembler.recipeBuilder()
+    .duration(200).EUt(8)
+    .inputs(CircuiPlate)
+    .inputs(SiliconChip)
+    .inputs(LogicProcessor)
+    .inputs(<ore:wireFineGold> * 8)
+    .fluidInputs(<liquid:soldering_alloy> * 144)
+    .outputs(<enderio:item_extract_speed_downgrade>)
+    .buildAndRegister();
+
+
 // --- Chemical Reactor Recipes ---
 val chemical_reactor = RecipeMap.getByName("chemical_reactor");
 
@@ -1363,7 +1616,7 @@ chemical_reactor.recipeBuilder()
     .inputs(<ore:itemPowderPhotovoltaic>)
     .fluidInputs(<liquid:sulfuric_acid> * 1000)
     .outputs(<enderio:item_material:3>)
-    .fluidOutputs(<liquid:diluted_sulfuric_acid> * 400)
+    .fluidOutputs(<liquid:diluted_sulfuric_acid> * 500)
     .buildAndRegister();
 
 
@@ -1426,15 +1679,3 @@ mixer.recipeBuilder()
     .inputs(<ore:nuggetElectricalSteel>)
     .outputs(<enderio:item_material:35>)
     .buildAndRegister();
-
-
-// <enderio:item_material:37> Grains End
-// <enderio:item_material:34> Grains Precient
-
-
-
-
-
-
-
-
