@@ -48,15 +48,15 @@ var ME_fluid_terminal           = <appliedenergistics2:part:520>;
 
 var charged_certus_quartz = <appliedenergistics2:material:1>;
 
-val calculation_press = <appliedenergistics2:material:13>;
-val engineering_press = <appliedenergistics2:material:14>;
-val logic_press       = <appliedenergistics2:material:15>;
-val silicon_press     = <appliedenergistics2:material:19>;
+var calculation_press = <appliedenergistics2:material:13>;
+var engineering_press = <appliedenergistics2:material:14>;
+var logic_press       = <appliedenergistics2:material:15>;
+var silicon_press     = <appliedenergistics2:material:19>;
 
-val printed_calculation_circuit = <appliedenergistics2:material:16>;
-val printed_engineering_circuit = <appliedenergistics2:material:17>;
-val printed_logic_circuit       = <appliedenergistics2:material:18>;
-val printed_silicon             = <appliedenergistics2:material:20>;
+var printed_calculation_circuit = <appliedenergistics2:material:16>;
+var printed_engineering_circuit = <appliedenergistics2:material:17>;
+var printed_logic_circuit       = <appliedenergistics2:material:18>;
+var printed_silicon             = <appliedenergistics2:material:20>;
 
 var logic_processor       = <appliedenergistics2:material:22>;
 var calculation_processor = <appliedenergistics2:material:23>;
@@ -97,6 +97,7 @@ var energy_crystall  = <gregtech:meta_item_2:32212>;
 var circuit_fluid    = <litecraftcore:lc_meta_item:18>;
 var ae_circuit       = <litecraftcore:lc_meta_item:16>;
 var adv_ae_circuit   = <litecraftcore:lc_meta_item:17>;
+var PlaticCircuitBoard = <gtadditions:ga_meta_item:32031>;
 
 var core_storage_component         = <litecraftcore:lc_meta_item:12>;
 var core_fluid_storage_component   = <litecraftcore:lc_meta_item:13>;
@@ -158,7 +159,9 @@ val list_inscriber_item_recipes = [
   logic_processor, calculation_processor, engineering_processor
 ] as IItemStack[];
 
-
+val any_skystone = [
+  <appliedenergistics2:sky_stone_block>, <appliedenergistics2:smooth_sky_stone_block>, <appliedenergistics2:sky_stone_brick>, <appliedenergistics2:sky_stone_small_brick>
+] as IItemStack[];
 
 
 // --- Remove Recipes ---
@@ -198,7 +201,6 @@ alloy_smelter.recipeBuilder()
     .inputs(<ore:dustCertusQuartz>)
     .outputs(<appliedenergistics2:quartz_glass>)
     .buildAndRegister();
-
 //-
 alloy_smelter.recipeBuilder()
     .duration(100).EUt(120)
@@ -313,7 +315,27 @@ autoclave.recipeBuilder()
     .fluidInputs(<liquid:distilled_water> * 1000)
     .outputs(<appliedenergistics2:material:12>)
     .buildAndRegister();
-    
+
+// --- Centrifuge Recipes ---
+val centrifuge = RecipeMap.getByName("centrifuge");
+
+// --- Centrifuge Sky Stone Dust
+centrifuge.recipeBuilder()
+    .duration(600).EUt(120)
+    .inputs(<appliedenergistics2:material:45>)
+    // Small Pile of Banded Iron Dust
+    .chancedOutput(<gregtech:meta_item_1:1090>, 5000)
+    // Small Pile of Olivine Dust
+    .chancedOutput(<gregtech:meta_item_1:1212>, 5000)
+    // Small Pile of Obsidian Dust
+    .chancedOutput(<gregtech:meta_item_1:1138>, 5000)
+    // Small Pile of Silicon Dioxide Dust
+    .chancedOutput(<gregtech:meta_item_1:1159>, 5000)
+    // Small Pile of Glowstone Dust
+    .chancedOutput(<gregtech:meta_item_1:1330>, 1000)
+    // Small Pile of Basaltic Mineral Sand
+    .chancedOutput(<gregtech:meta_item_1:1266>, 1000)
+    .buildAndRegister();
     
 // --- Compressor Recipes
 val compressor = RecipeMap.getByName("compressor");
@@ -344,7 +366,67 @@ compressor.recipeBuilder()
     .inputs(<ore:crystalPureFluix> * 8)
     .outputs(<appliedenergistics2:fluix_block>)
     .buildAndRegister();
-    
+
+// --- Circuit Assembler Recipes ---
+val circuit_assembler = RecipeMap.getByName("circuit_assembler");
+
+// --- Storage Componets and Cells
+for i, storage_cell in storage_cells {
+
+  circuit_assembler.recipeBuilder()
+      .duration(400).EUt(120)
+      .inputs(PlaticCircuitBoard)
+      .inputs(circuits[i] * 4)
+      .inputs(storage_components[i] * 3)
+      .inputs(processors[i])
+      .inputs(core_storage_component)
+      .inputs(<ore:wireFineEnergeticAlloy> * 8)
+      .fluidInputs(<liquid:soldering_alloy> * 72)
+      .outputs(storage_components[i + 1])
+      .buildAndRegister();
+
+  recipes.addShaped(storage_cell, [[<ore:plateDarkSteel>, storage_components[i + 1], <ore:plateDarkSteel>], [<ore:plateDarkSteel>, <ore:cableGtSingleEnergeticAlloy>, <ore:plateDarkSteel>]]);
+  recipes.addShapeless(storage_cell, [ME_storage_housing, storage_components[i + 1]]);
+}
+
+// --- Fluid Storage Componets and Cells
+for i, fluid_storage_cell in fluid_storage_cells {
+
+  circuit_assembler.recipeBuilder()
+      .duration(400).EUt(120)
+      .inputs(PlaticCircuitBoard)
+      .inputs(circuits[i] * 4)
+      .inputs(fluid_storage_components[i] * 3)
+      .inputs(processors[i])
+      .inputs(core_fluid_storage_component)
+      .inputs(<ore:wireFineEnergeticAlloy> * 8)
+      .fluidInputs(<liquid:soldering_alloy> * 72)
+      .outputs(fluid_storage_components[i + 1])
+      .buildAndRegister();  
+  
+  recipes.addShaped(fluid_storage_cell, [[<ore:plateDarkSteel>, fluid_storage_components[i + 1], <ore:plateDarkSteel>], [<ore:plateDarkSteel>, <ore:cableGtSingleEnergeticAlloy>, <ore:plateDarkSteel>]]);
+  recipes.addShapeless(fluid_storage_cell, [ME_storage_housing, fluid_storage_components[i + 1]]);
+}
+
+// --- Spatial Storage Componets and Cells
+for i, spatial_storage_cell in spatial_storage_cells {
+
+  circuit_assembler.recipeBuilder()
+      .duration(400).EUt(120)
+      .inputs(PlaticCircuitBoard)
+      .inputs(circuits[i] * 4)
+      .inputs(spatial_storage_components[i] * 3)
+      .inputs(processors[i])
+      .inputs(core_spatial_storage_component)
+      .inputs(<ore:wireFineEnergeticAlloy> * 8)
+      .fluidInputs(<liquid:soldering_alloy> * 72)
+      .outputs(spatial_storage_components[i + 1])
+      .buildAndRegister();    
+
+  recipes.addShaped(spatial_storage_cell, [[<ore:plateDarkSteel>, spatial_storage_components[i + 1], <ore:plateDarkSteel>], [<ore:plateDarkSteel>, <ore:cableGtSingleEnergeticAlloy>, <ore:plateDarkSteel>]]);
+  recipes.addShapeless(spatial_storage_cell, [ME_storage_housing, spatial_storage_components[i + 1]]);
+}
+
 
 // --- Forming Press Recipes ---
 val forming_press = RecipeMap.getByName("forming_press");
@@ -392,6 +474,16 @@ macerator.recipeBuilder()
     .outputs(<appliedenergistics2:material:8>)
     .buildAndRegister();
 
+// --- Sky Stone Dust
+for stone in any_skystone {
+
+  macerator.recipeBuilder()
+      .duration(30).EUt(8)
+      .inputs(stone)
+      .outputs(<appliedenergistics2:material:45>)
+      .buildAndRegister();
+}
+
 
 // --- Mixer Recipes ---
 val mixer = RecipeMap.getByName("mixer");
@@ -405,7 +497,7 @@ mixer.recipeBuilder()
     .outputs(<appliedenergistics2:material:8> * 2)
     .buildAndRegister();
 
-
+/*
 for i, storage_cell in storage_cells {
   recipes.addShaped(storage_components[i + 1], [[circuits[i], processors[i], circuits[i]], [storage_components[i], core_storage_component, storage_components[i]], [circuits[i], storage_components[i], circuits[i]]]);
   recipes.addShaped(storage_cell, [[<ore:plateDarkSteel>, storage_components[i + 1], <ore:plateDarkSteel>], [<ore:plateDarkSteel>, <ore:cableGtSingleEnergeticAlloy>, <ore:plateDarkSteel>]]);
@@ -423,6 +515,7 @@ for i, spatial_storage_cell in spatial_storage_cells {
   recipes.addShaped(spatial_storage_cell, [[<ore:plateDarkSteel>, spatial_storage_components[i + 1], <ore:plateDarkSteel>], [<ore:plateDarkSteel>, <ore:cableGtSingleEnergeticAlloy>, <ore:plateDarkSteel>]]);
   recipes.addShapeless(spatial_storage_cell, [ME_storage_housing, spatial_storage_components[i + 1]]);
 }
+*/
 
 // --- Charged Quartz Fixture
 recipes.addShapeless(<appliedenergistics2:quartz_fixture>, [charged_certus_quartz, <ore:stickIron>]);

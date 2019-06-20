@@ -210,9 +210,9 @@ val blast_furnace = RecipeMap.getByName("blast_furnace");
 
 // --- Silicon Boule
 blast_furnace.recipeBuilder()
-    .duration(9000).EUt(120)
+    .duration(2000).EUt(120)
+    .property("temperature", 1000)
     .inputs(sandy_coal_compound)
-    .inputs(<ore:nuggetElectricalSteel>)
     .outputs(silicon_boule)
     .buildAndRegister();
 
@@ -250,6 +250,7 @@ mixer.recipeBuilder()
     .duration(400).EUt(480)
     .inputs(<ore:dustSand> * 32)
     .inputs(<ore:dustCoal> * 32)
+    .inputs(<ore:nuggetElectricalSteel>)
     .outputs(sandy_coal_compound)
     .buildAndRegister();
 
