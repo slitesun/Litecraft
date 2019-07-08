@@ -283,17 +283,19 @@ laser_engraver.recipeBuilder()
     .outputs(electro_silicon)
     .buildAndRegister();
 
-
+/*
 // --- Unpacker Recipes ---
 val unpacker = RecipeMap.getByName("unpacker");
 
 // --- Red Alloy Wire
 unpacker.recipeBuilder()
+    .duration(200).EUt(8)
     .inputs(<ore:projredInsulatedWire>)
+    .notConsumable(<gregtech:meta_item_1:32766>.withTag({Configuration: 1}))
     .outputs(<projectred-transmission:wire>)
     .buildAndRegister();
 
-
+*/
 // --- Crafting Recipes ---
 
 
