@@ -476,7 +476,6 @@ macerator.recipeBuilder()
 
 // --- Sky Stone Dust
 for stone in any_skystone {
-
   macerator.recipeBuilder()
       .duration(30).EUt(8)
       .inputs(stone)
@@ -539,10 +538,10 @@ recipes.addShaped(<appliedenergistics2:spatial_pylon>, [[<ore:plateSignalum>, gl
 recipes.addShaped(<appliedenergistics2:controller>, [[<ore:plateSignalum>, <ore:crystalPureFluix>, <ore:plateSignalum>], [<ore:crystalPureFluix>, engineering_processor, <ore:crystalPureFluix>], [<ore:plateSignalum>, <ore:crystalPureFluix>, <ore:plateSignalum>]]);
 
 // --- ME Drive
-recipes.addShaped(<appliedenergistics2:drive>, [[glass_cable, <ore:plateSignalum>, glass_cable], [engineering_processor, <ore:itemMachineChassi>, engineering_processor], [<ore:plateSignalum>, adv_ae_circuit, <ore:plateSignalum>]]);
+recipes.addShaped(<appliedenergistics2:drive>, [[glass_cable, <ore:plateSignalum>, glass_cable], [engineering_processor, <appliedenergistics2:chest>, engineering_processor], [<ore:plateSignalum>, adv_ae_circuit, <ore:plateSignalum>]]);
 
 // --- ME Chest
-recipes.addShaped(<appliedenergistics2:chest>, [[<ore:plateGlass>, ME_terminal, <ore:plateGlass>], [glass_cable, <ore:itemMachineChassi>, glass_cable], [<ore:plateSignalum>, ae_circuit, <ore:plateSignalum>]]);
+recipes.addShaped(<appliedenergistics2:chest>, [[<ore:plateGlass>, ME_terminal, <ore:plateGlass>], [glass_cable, <ore:itemMachineChassi>, glass_cable], [<ore:plateStainlessSteel>, ae_circuit, <ore:plateStainlessSteel>]]);
 
 // --- ME Interface
 recipes.addShaped(<appliedenergistics2:interface>, [[<ore:stickStainlesssteel>, <ore:plateSignalum>, <ore:stickStainlesssteel>], [annihilation_core, <ore:itemMachineChassi>, formation_core], [<ore:stickStainlesssteel>, <ore:plateSignalum>, <ore:stickStainlesssteel>]]);
@@ -665,10 +664,10 @@ recipes.addShaped(ME_interface_terminal, [[null, adv_ae_circuit, null], [<ore:it
 recipes.addShaped(ME_pattern_terminal, [[logic_processor, ME_crafting_terminal, logic_processor], [engineering_processor, data_stick, engineering_processor]]);
 
 // --- ME Terminal
-recipes.addShaped(ME_terminal, [[ae_circuit, formation_core, ae_circuit], [<ore:itemIlluminatedPanel>, interface, <ore:plateGlass>], [<ore:plateSignalum>, annihilation_core, <ore:plateSignalum>]]);
+recipes.addShaped(ME_terminal, [[ae_circuit, formation_core, ae_circuit], [<ore:itemIlluminatedPanel>, interface, <ore:plateGlass>], [<ore:plateStainlessSteel>, annihilation_core, <ore:plateStainlessSteel>]]);
 
 // --- Illuminated Panel
-recipes.addShaped(illuminated_panel, [[null, <ore:plateGlowstone>, <ore:plateGlass>], [<ore:plateSignalum>, <ore:plateGlowstone>, <ore:plateGlass>], [null, <ore:plateGlowstone>, <ore:plateGlass>]]);
+recipes.addShaped(illuminated_panel, [[null, <ore:plateGlowstone>, <ore:plateGlass>], [<ore:plateStainlessSteel>, <ore:plateGlowstone>, <ore:plateGlass>], [null, <ore:plateGlowstone>, <ore:plateGlass>]]);
 
 // --- ME Storage Monitor
 recipes.addShaped(ME_storage_monitor, [[null, <ore:plateGlass>, null], [<ore:plateSignalum>, <ore:itemIlluminatedPanel>, <ore:plateSignalum>], [ae_circuit, interface, ae_circuit]]);
@@ -680,10 +679,10 @@ recipes.addShaped(toggle_bus, [[<ore:plateSignalum>, ae_circuit, <ore:nuggetReds
 recipes.addShaped(ME_storage_bus, [[annihilation_core, ME_interface_non_cube, formation_core], [null, ae_circuit, null]]);
 
 // --- ME Import Bus
-recipes.addShaped(ME_import_bus, [[<ore:plateSignalum>, annihilation_core, <ore:plateSignalum>], [null, ae_circuit, null]]);
+recipes.addShaped(ME_import_bus, [[<ore:plateStainlessSteel>, annihilation_core, <ore:plateSignalum>], [null, ae_circuit, null]]);
 
 // --- ME Export Bus
-recipes.addShaped(ME_export_bus, [[<ore:plateSignalum>, formation_core, <ore:plateSignalum>], [null, ae_circuit, null]]);
+recipes.addShaped(ME_export_bus, [[<ore:plateStainlessSteel>, formation_core, <ore:plateSignalum>], [null, ae_circuit, null]]);
 
 // --- ME Fluid Storage Bus
 recipes.addShaped(ME_fluid_storage_bus, [[null, circuit_fluid, null], [annihilation_core, ME_interface_non_cube, formation_core], [null, ae_circuit, null]]);

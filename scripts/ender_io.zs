@@ -33,7 +33,6 @@ var SiliconChip          = <projectred-core:resource_item:20>;
 var LogicProcessor = <appliedenergistics2:material:22>;
 var CalcProcessor  = <appliedenergistics2:material:23>;
 var EngineeringProcessor = <appliedenergistics2:material:24>;
-var CoreStorageComponent = <litecraftcore:lc_meta_item:12>;
 var FluidProcessor = <litecraftcore:lc_meta_item:8>;
 
 var Hammer = <ore:craftingToolHardHammer>;
@@ -1443,6 +1442,9 @@ autoclave.recipeBuilder()
     .outputs(<enderio:item_material:19>)
     .buildAndRegister();
 
+var ItemProcessor = <litecraftcore:lc_meta_item:27>;
+var ControlProcessor = <litecraftcore:lc_meta_item:25>;
+
 
 // --- Circuit Assembler Recipes ---
 val circuit_assembler = RecipeMap.getByName("circuit_assembler");
@@ -1452,7 +1454,7 @@ circuit_assembler.recipeBuilder()
     .duration(200).EUt(8)
     .inputs(CircuiPlate)
     .inputs(<ore:wireFineRedstoneAlloy> * 4)
-    .inputs(LogicProcessor)
+    .inputs(ItemProcessor)
     .fluidInputs(<liquid:soldering_alloy> * 72)
     .outputs(<enderio:item_basic_item_filter>)
     .buildAndRegister();
@@ -1461,7 +1463,7 @@ circuit_assembler.recipeBuilder()
     .duration(200).EUt(8)
     .inputs(CircuiPlate)
     .inputs(<ore:wireFineRedAlloy> * 4)
-    .inputs(LogicProcessor)
+    .inputs(ItemProcessor)
     .fluidInputs(<liquid:soldering_alloy> * 72)
     .outputs(<enderio:item_basic_item_filter>)
     .buildAndRegister();
@@ -1473,7 +1475,7 @@ circuit_assembler.recipeBuilder()
     .inputs(CircuiPlate)
     .inputs(<enderio:item_basic_item_filter>)
     .inputs(<ore:wireFineConductiveIron> * 8)
-    .inputs(CoreStorageComponent)
+    .inputs(ControlProcessor)
     .fluidInputs(<liquid:soldering_alloy> * 72)
     .outputs(<enderio:item_mod_item_filter>)
     .buildAndRegister();
