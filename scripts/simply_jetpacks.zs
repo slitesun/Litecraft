@@ -4,6 +4,7 @@
 
 // Imports
 import mods.enderio.AlloySmelter;
+import mods.gregtech.recipe.RecipeMap;
 
 
 
@@ -117,6 +118,49 @@ recipes.remove(<simplyjetpacks:metaitemmods:5>);
 
 
 // Adding Recipes
+
+// --- Arc Furnace Recipes --- 
+val arc_furnace = RecipeMap.getByName("arc_furnace");
+
+// --- Silicon Armor Plating 
+arc_furnace.recipeBuilder()
+    .duration(200).EUt(30)
+    .inputs(<simplyjetpacks:metaitemmods:12>)
+    // construction alloy ingot
+    .outputs(<enderio:item_alloy_ingot:9> * 4)
+    // Silicon ingot
+    .outputs(<gregtech:meta_item_1:10061> * 4)
+    .buildAndRegister();
+
+// --- Conductive Iron Armor Plating
+arc_furnace.recipeBuilder()
+    .duration(200).EUt(30)
+    .inputs(<simplyjetpacks:metaitemmods:13>)
+    // Conductive Iron ingot
+    .outputs(<enderio:item_alloy_ingot:4> * 4)
+    // Stainless Steel ingot
+    .outputs(<gregtech:meta_item_1:10183> * 4)
+    .buildAndRegister();
+
+// --- Electrical Steel Armor Plating
+arc_furnace.recipeBuilder()
+    .duration(200).EUt(30)
+    .inputs(<simplyjetpacks:metaitemmods:14>)
+    // Electrical Steel ingot
+    .outputs(<enderio:item_alloy_ingot> * 4)
+    // Titanium ingot
+    .outputs(<gregtech:meta_item_1:10072> * 4)
+    .buildAndRegister();
+
+// --- Dark Steel Armor Plating
+arc_furnace.recipeBuilder()
+    .duration(200).EUt(30)
+    .inputs(<simplyjetpacks:metaitemmods:15>)
+    // Dark Steel ingot
+    .outputs(<enderio:item_alloy_ingot:6> * 4)
+    // Tungstensteel ingot
+    .outputs(<gregtech:meta_item_1:10235> * 4)
+    .buildAndRegister();
 
 
 // Conductive Iron Jetpack
