@@ -1,0 +1,8 @@
+waypoint:Золото:Л:-147:149:330:11:false:0:gui.xaero_default:false:0
+waypoint:Касситерит:К:-132:152:377:2:false:0:gui.xaero_default:false:0
+waypoint:Серебро:С:-138:160:434:4:false:0:gui.xaero_default:false:0
+waypoint:Гарниерит:Г:-316:148:320:7:false:0:gui.xaero_default:false:0
+waypoint:Касситерит:К:-250:152:492:11:false:0:gui.xaero_default:false:0
+waypoint:Серебро:С:-240:160:542:3:false:0:gui.xaero_default:false:0
+waypoint:Золото:З:-24:160:479:9:false:0:gui.xaero_default:false:0
+waypoint:Золото:З:133:155:612:10:false:0:gui.xaero_default:false:0

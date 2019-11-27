@@ -25,6 +25,9 @@ recipes.remove(<harvestcraft:market>);
 // --- Shipping Bin
 recipes.remove(<harvestcraft:shippingbin>);
 
+// --- Presser
+recipes.remove(<harvestcraft:presser>);
+
 // --- Pot
 recipes.remove(<harvestcraft:potitem>);
 
@@ -68,8 +71,14 @@ recipes.addShaped(<harvestcraft:market>, [
 // --- Shipping Bin
 recipes.addShaped(<harvestcraft:shippingbin>, [
 [<ore:plankWood>, <ore:circuitBasic>, <ore:plankWood>], 
-[<ore:plateCopper>,<ore:itemSimpleMachineChassi>, <ore:plateCopper>], 
+[<ore:plateCopper>, <ore:itemSimpleMachineChassi>, <ore:plateCopper>], 
 [<ore:plateEmerald>, <ore:plateEmerald>, <ore:plateEmerald>]]);
+
+// --- Presser
+recipes.addShaped(<harvestcraft:presser>, [
+[<ore:craftingPiston>, <ore:gearIron>, <ore:craftingPiston>], 
+[<ore:gearIron>, <ore:itemSimpleMachineChassi>, <ore:gearIron>], 
+[<ore:dustRedstone>, <minecraft:repeater>, <ore:dustRedstone>]]);
 
 // --- Pot
 recipes.addShaped(<harvestcraft:potitem>, [
@@ -118,7 +127,7 @@ recipes.addShaped(<harvestcraft:cuttingboarditem>, [
 
 // --- Grinder
 recipes.addShaped(<harvestcraft:grinder>, [
-[null, null, null], 
+[<ore:dustRedstone>, <minecraft:repeater>, <ore:dustRedstone>], 
 [<ore:gearIron>, <ore:itemSimpleMachineChassi>, <ore:gearIron>], 
 [<ore:plateIron>, <ore:plateIron>, <ore:plateIron>]]);
 

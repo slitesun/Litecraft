@@ -120,6 +120,28 @@ recipes.remove(silicon_wafer);
 // --- IC Chip
 recipes.remove(<projectred-fabrication:ic_chip>);
 
+// --- Null-logic Routing Chip
+recipes.remove(<projectred-core:resource_item:600>);
+
+// --- Item Chips
+recipes.remove(<projectred-transportation:routing_chip:*>);
+
+// --- Empty Battery
+recipes.remove(<projectred-expansion:empty_battery>);
+
+// --- Battery
+recipes.remove(<projectred-expansion:charged_battery>);
+
+// --- Jetpack
+recipes.remove(<projectred-expansion:jetpack>);
+
+// --- Solar Panel
+recipes.remove(<projectred-expansion:solar_panel>);
+
+// --- Router Utility
+recipes.remove(<projectred-transportation:router_utility>);
+
+
 
 // --- Adding Recipes ---
 
@@ -156,6 +178,21 @@ alloy_smelter.recipeBuilder()
     .inputs(<ore:dustElectrotine> * 4)
     .outputs(<projectred-core:resource_item:104>)
     .buildAndRegister();
+
+
+
+// --- Canning Recipes ---
+val canner = RecipeMap.getByName("canner");
+
+// --- Small Batterry
+canner.recipeBuilder()
+    .duration(100).EUt(2)
+    .inputs(<ore:dustElectrotine> * 2)
+    .inputs(<projectred-expansion:empty_battery>)
+    .outputs(<projectred-expansion:charged_battery>)
+    .buildAndRegister();
+
+
 
 // --- Chemical Reactor Recipes ---
 val chemical_reactor = RecipeMap.getByName("chemical_reactor");
@@ -194,6 +231,7 @@ chemical_reactor.recipeBuilder()
     .buildAndRegister();
 
 
+
 // --- Cutting Machine Recipes ---
 val cutting_saw = RecipeMap.getByName("cutting_saw");
 
@@ -203,6 +241,7 @@ cutting_saw.recipeBuilder()
     .inputs(silicon_boule)
     .outputs(silicon_wafer * 16)
     .buildAndRegister();
+
 
 
 // --- EBF Recipes ---
@@ -217,6 +256,7 @@ blast_furnace.recipeBuilder()
     .buildAndRegister();
 
 
+
 // --- Mixer Recipes ---
 val mixer = RecipeMap.getByName("mixer");
 
@@ -228,6 +268,15 @@ for i, e in list_illumar {
         .outputs(e * 4)
         .buildAndRegister();
 }
+
+// --- Forming Press Recipes ---
+var forming_press = RecipeMap.getByName("forming_press");
+
+forming_press.recipeBuilder()
+    .duration(200).EUt(4)
+    .inputs([circuit_plate, <ore:dustRedstone>])
+    .outputs(<projectred-core:resource_item:1>)
+    .buildAndRegister();
 
 // --- Red Iron Compound
 mixer.recipeBuilder()
@@ -255,9 +304,9 @@ mixer.recipeBuilder()
     .buildAndRegister();
 
 
+
 // --- Precision Laser Engraver Recipes ---
 val laser_engraver = RecipeMap.getByName("laser_engraver");
-
 
 // --- Infused Silicon
 laser_engraver.recipeBuilder()
@@ -283,21 +332,97 @@ laser_engraver.recipeBuilder()
     .outputs(electro_silicon)
     .buildAndRegister();
 
-/*
+
 // --- Unpacker Recipes ---
 val unpacker = RecipeMap.getByName("unpacker");
 
 // --- Red Alloy Wire
 unpacker.recipeBuilder()
     .duration(200).EUt(8)
-    .inputs(<ore:projredInsulatedWire>)
-    .notConsumable(<gregtech:meta_item_1:32766>.withTag({Configuration: 1}))
-    .outputs(<projectred-transmission:wire>)
+    .inputs([<ore:projredInsulatedWire>])
+    .outputs([<projectred-transmission:wire>, <minecraft:string> * 2])
     .buildAndRegister();
 
-*/
+
+
 // --- Crafting Recipes ---
 
+// --- Solar Panel
+recipes.addShaped(<projectred-expansion:solar_panel>, [
+[<projectred-core:resource_item:342>],
+[<gregtech:meta_item_1:32750>]]);
+
+// --- Empty Battery
+recipes.addShaped(<projectred-expansion:empty_battery>, [
+[<ore:cableGtSingleCopper>], 
+[<ore:plateTin>], 
+[<ore:plateTin>]]);
+
+// --- Null-logic Routing Chip
+recipes.addShaped(<projectred-core:resource_item:600>, [
+[<ore:wireGtSingleGold>, <projectred-core:resource_item>, <projectred-core:resource_item>],
+[<ore:wireGtSingleGold>, <ore:circuitPrimitive>, <ore:wireGtSingleGold>],
+[<ore:screwSteel>, <gregtech:meta_tool:11>, <ore:screwSteel>]]);
+
+// --- Item Responder Chip
+recipes.addShaped(<projectred-transportation:routing_chip>, [
+[<projectred-core:resource_item:501>, <ore:wireGtSingleRedAlloy>, <projectred-core:resource_item:501>],
+[<ore:plateBronze>, <projectred-core:resource_item:600>, <ore:circuitBasic>],
+[<projectred-core:resource_item:501>, <ore:wireGtSingleRedAlloy>, <projectred-core:resource_item:501>]]);
+
+// --- Dynamic Item Responder Chip
+recipes.addShaped(<projectred-transportation:routing_chip:1>, [
+[<projectred-core:resource_item:501>, <ore:wireGtSingleRedAlloy>, <projectred-core:resource_item:509>],
+[<ore:plateBronze>, <projectred-core:resource_item:600>, <ore:circuitBasic>],
+[<projectred-core:resource_item:501>, <ore:wireGtSingleRedAlloy>, <projectred-core:resource_item:509>]]);
+
+// --- Item Overflow Responder Chip
+recipes.addShaped(<projectred-transportation:routing_chip:2>, [
+[<projectred-core:resource_item:513>, <ore:wireGtSingleRedAlloy>, <projectred-core:resource_item:513>],
+[<ore:plateIron>, <projectred-core:resource_item:600>, <ore:circuitBasic>],
+[<projectred-core:resource_item:513>, <ore:wireGtSingleRedAlloy>, <projectred-core:resource_item:513>]]);
+
+// --- Item Terminator Chip
+recipes.addShaped(<projectred-transportation:routing_chip:3>, [
+[<projectred-core:resource_item:510>, <ore:wireGtSingleRedAlloy>, <projectred-core:resource_item:515>],
+[<ore:plateTin>, <projectred-core:resource_item:600>, <ore:circuitBasic>],
+[<projectred-core:resource_item:510>, <ore:wireGtSingleRedAlloy>, <projectred-core:resource_item:515>]]);
+
+// --- Item Extractor Chip
+recipes.addShaped(<projectred-transportation:routing_chip:4>, [
+[<projectred-core:resource_item:509>, <ore:wireGtSingleRedAlloy>, <projectred-core:resource_item:509>],
+[<ore:plateSteel>, <projectred-core:resource_item:600>, <ore:circuitBasic>],
+[<projectred-core:resource_item:509>, <ore:wireGtSingleRedAlloy>, <projectred-core:resource_item:509>]]);
+
+// --- Item Broadcaster Chip
+recipes.addShaped(<projectred-transportation:routing_chip:5>, [
+[<projectred-core:resource_item:502>, <ore:wireGtDoubleRedAlloy>, <projectred-core:resource_item:502>],
+[<ore:plateGold>, <projectred-core:resource_item:600>, <ore:circuitGood>],
+[<projectred-core:resource_item:502>, <ore:wireGtDoubleRedAlloy>, <projectred-core:resource_item:502>]]);
+
+// --- Item Stock Keeper Chip
+recipes.addShaped(<projectred-transportation:routing_chip:6>, [
+[<projectred-core:resource_item:511>, <ore:wireGtDoubleRedAlloy>, <projectred-core:resource_item:511>],
+[<ore:plateDiamond>, <projectred-core:resource_item:600>, <ore:circuitGood>],
+[<projectred-core:resource_item:511>, <ore:wireGtDoubleRedAlloy>, <projectred-core:resource_item:511>]]);
+
+// --- Item Crafting Chip
+recipes.addShaped(<projectred-transportation:routing_chip:7>, [
+[<projectred-core:resource_item:505>, <ore:wireGtDoubleRedAlloy>, <projectred-core:resource_item:505>],
+[<ore:plateGlowstone>, <projectred-core:resource_item:600>, <ore:circuitGood>],
+[<projectred-core:resource_item:505>, <ore:wireGtDoubleRedAlloy>, <projectred-core:resource_item:505>]]);
+
+// --- Item Crafting Extension Chip
+recipes.addShaped(<projectred-transportation:routing_chip:8>, [
+[<projectred-core:resource_item:514>, <ore:wireGtDoubleRedAlloy>, <projectred-core:resource_item:514>],
+[<ore:plateRedAlloy>, <projectred-core:resource_item:600>, <ore:circuitGood>],
+[<projectred-core:resource_item:514>, <ore:wireGtDoubleRedAlloy>,< projectred-core:resource_item:514>]]);
+
+// --- Router Utility
+recipes.addShaped(<projectred-transportation:router_utility>, [
+[<ore:wireGtSingleRedAlloy>, <ore:plateSteel>, <ore:wireGtSingleRedAlloy>],
+[<ore:circuitGood>, <ore:plateEmerald>, <ore:circuitGood>],
+[<ore:plateSteel>, <gregtech:meta_item_1:32510>, <ore:plateSteel>]]);
 
 // --- IC Workbench
 recipes.addShaped(<projectred-fabrication:ic_machine>, 

@@ -4,12 +4,14 @@
 
 
 // --- Imports ---
-import mods.appliedenergistics2.Inscriber;
-
 import crafttweaker.item.IItemStack;
 import crafttweaker.oredict.IOreDictEntry;
 
+import mods.appliedenergistics2.Inscriber;
+
 import mods.gregtech.recipe.RecipeMap;
+
+import mods.jei.JEI;
 
 
 
@@ -163,11 +165,20 @@ val any_skystone = [
   <appliedenergistics2:sky_stone_block>, <appliedenergistics2:smooth_sky_stone_block>, <appliedenergistics2:sky_stone_brick>, <appliedenergistics2:sky_stone_small_brick>
 ] as IItemStack[];
 
+val tools = [
+  <appliedenergistics2:certus_quartz_pickaxe>, <appliedenergistics2:certus_quartz_sword>, <appliedenergistics2:certus_quartz_axe>, <appliedenergistics2:certus_quartz_spade>, <appliedenergistics2:certus_quartz_hoe>, 
+  <appliedenergistics2:nether_quartz_pickaxe>, <appliedenergistics2:nether_quartz_sword>, <appliedenergistics2:nether_quartz_axe>, <appliedenergistics2:nether_quartz_spade>, <appliedenergistics2:nether_quartz_hoe>
+] as IItemStack[];
+
 
 // --- Remove Recipes ---
 for i, e in list_items {
   recipes.remove(e);
 
+  if (i < 10) {
+    JEI.removeAndHide(tools[i]);
+  }
+  
   if (i < 3) {
     recipes.remove(spatial_storage_cells[i]);
     recipes.remove(spatial_storage_components[i + 1]);
@@ -579,10 +590,10 @@ recipes.addShaped(<appliedenergistics2:molecular_assembler>, [[<ore:plateGlass>,
 recipes.addShapeless(<appliedenergistics2:light_detector>, [<ore:gemQuartz>, <ore:stickIron>]);
 
 // --- Certus Quartz Cutting Knife
-recipes.addShaped(<appliedenergistics2:certus_quartz_cutting_knife>, [[null, null, <ore:stickWood>], [<ore:plateStainlesssteel>, <ore:stickWood>, null], [<ore:plateCertusQuartz>, <ore:plateCertusQuartz>, null]]);
+recipes.addShaped(<appliedenergistics2:certus_quartz_cutting_knife>, [[null, null, <ore:stickWood>], [<ore:plateIron>, <ore:stickWood>, null], [<ore:plateCertusQuartz>, <ore:plateCertusQuartz>, null]]);
 
 // --- Nether Quartz Cutting Knife
-recipes.addShaped(<appliedenergistics2:nether_quartz_cutting_knife>, [[null, null, <ore:stickWood>], [<ore:plateStainlesssteel>, <ore:stickWood>, null], [<ore:plateNetherQuartz>, <ore:plateNetherQuartz>, null]]);
+recipes.addShaped(<appliedenergistics2:nether_quartz_cutting_knife>, [[null, null, <ore:stickWood>], [<ore:plateIron>, <ore:stickWood>, null], [<ore:plateNetherQuartz>, <ore:plateNetherQuartz>, null]]);
 
 // --- Entropy Manipulator
 recipes.addShaped(<appliedenergistics2:entropy_manipulator>, [[engineering_processor, <ore:crystalFluix>], [<ore:stickLongDarkSteel>, <appliedenergistics2:energy_cell>]]);

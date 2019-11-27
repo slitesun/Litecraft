@@ -368,36 +368,3 @@ recipes.addShaped(Magnet, [
 [<ore:platePulsatingIron>, <ore:cableGtDoubleEnergeticAlloy>, <ore:platePulsatingIron>], 
 [<ore:platePulsatingIron>, <ore:cableGtDoubleEnergeticAlloy>, <ore:platePulsatingIron>]]);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

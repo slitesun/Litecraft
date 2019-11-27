@@ -1,0 +1,6 @@
+waypoint:sapphire:S:162:13:329:9:false:0:gui.xaero_default:false:0
+waypoint:Coal Ore:C:219:60:77:1:false:0:gui.xaero_default:false:0
+waypoint:Home:Р:98:67:335:8:false:0:gui.xaero_default:false:0
+waypoint:Tetrahedride:C:54:58:329:0:false:0:gui.xaero_default:false:0
+waypoint:Olivine:L:40:19:437:8:false:0:gui.xaero_default:false:0
+waypoint:Lapis:L:56:30:232:6:false:0:gui.xaero_default:false:0

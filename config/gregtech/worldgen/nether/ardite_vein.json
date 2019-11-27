@@ -1,0 +1,33 @@
+{
+  "weight": 80,
+  "density": 0.4,
+  "max_height": 60,
+  "min_height": 10,
+  "dimension_filter": ["is_nether"],
+  "surface_stone_material": "ardite",
+
+  "generator": {
+    "type": "ellipsoid",
+    "radius": [12, 12]
+  },
+  "filler": {
+    "type": "simple",
+    "value": {
+      "type": "weight_random",
+      "values": [
+        {
+          "weight": 30,
+          "value": "ore:ardite"
+        },
+		{
+          "weight": 30,
+          "value": "ore:garnierite"
+        },
+		{
+          "weight": 30,
+          "value": "ore:pentlandite"
+        }
+      ]
+    }
+  }
+}

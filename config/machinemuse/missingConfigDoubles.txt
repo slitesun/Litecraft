@@ -6,7 +6,6 @@ put( "advSolarGenerator.Slot Points.base", 5.0D );
 put( "advancedBattery.Maximum Energy.Battery Size.multiplier", 4000000.0D );
 put( "advancedBattery.Maximum Energy.base", 1000000.0D );
 put( "advancedBattery.Slot Points.base", 1.0D );
-put( "airtightSeal.Slot Points.base", 5.0D );
 put( "appengWireless.Slot Points.base", 5.0D );
 put( "aquaAffinity.Slot Points.base", 5.0D );
 put( "aquaAffinity.Underwater Energy Consumption.Power.multiplier", 1000.0D );

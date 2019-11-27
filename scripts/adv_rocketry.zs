@@ -176,7 +176,6 @@ recipes.addShaped(<advancedrocketry:solargenerator>, [
 // --- Assembler Recipes ---
 val assembler = RecipeMap.getByName("assembler");
 
-
 // --- Copper Coil
 assembler.recipeBuilder()
     .duration(200).EUt(30)
@@ -302,6 +301,8 @@ assembler.recipeBuilder()
     .outputs(<advancedrocketry:satellitepowersource:1>)
     .buildAndRegister();
 
+
+
 // --- Autoclave Recipes ---
 val autoclave = RecipeMap.getByName("autoclave");
 
@@ -312,6 +313,7 @@ autoclave.recipeBuilder()
     .fluidInputs(<liquid:distilled_water> * 1000)
     .outputs(<libvulpes:productcrystal>)
     .buildAndRegister();
+
 
 
 // --- EBF Recipes ---
@@ -327,6 +329,7 @@ blast_furnace.recipeBuilder()
     .buildAndRegister();
 
 
+
 // --- Canning Recipes ---
 val canner = RecipeMap.getByName("canner");
 
@@ -337,6 +340,7 @@ canner.recipeBuilder()
     .inputs(SBatteryHull)
     .outputs(<libvulpes:battery>)
     .buildAndRegister();
+
 
 
 // --- Cluster Mill Recipes --- 
@@ -392,6 +396,7 @@ cluster_mill.recipeBuilder()
     .buildAndRegister();
 
 
+
 // --- Chemical Reactor Recipes ---
 val chemical_reactor = RecipeMap.getByName("chemical_reactor");
 
@@ -412,6 +417,7 @@ chemical_reactor.recipeBuilder()
     .fluidInputs(<liquid:conductive_iron> * 288)
     .outputs(<advancedrocketry:itemcircuitplate:1>)
     .buildAndRegister();
+
 
 
 // --- Circuit Assembler Recipes ---
@@ -584,6 +590,8 @@ circuit_assembler.recipeBuilder()
     .outputs(<advancedrocketry:dataunit>)
     .buildAndRegister();
 
+
+
 // --- Cutting Machine Recipes ---
 val cutting_saw = RecipeMap.getByName("cutting_saw");
 
@@ -593,6 +601,7 @@ cutting_saw.recipeBuilder()
     .inputs(SiBoule)
     .outputs(SiWafer * 16)
     .buildAndRegister();
+
 
 
 // --- Mixer Recipes ---

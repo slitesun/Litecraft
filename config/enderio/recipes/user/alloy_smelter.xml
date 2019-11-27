@@ -152,7 +152,7 @@
   <recipe name="Alloy: Conductive Iron" required="true">
     <alloying energy="10000" exp="0.5">
       <input name="dustRedstone"/>
-      <input name="ingotInvar, dustinvar" amount="2" />
+      <input name="ingotInvar, dustInvar" amount="2" />
       <input name="ingotAlumite, dustAlumite"/>
       <output name="ingotConductiveIron" amount="4" />
     </alloying>

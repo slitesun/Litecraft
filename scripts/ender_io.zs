@@ -6,137 +6,141 @@
 import crafttweaker.item.IItemStack;
 import crafttweaker.oredict.IOreDictEntry;
 import mods.tconstruct.Casting;
+import mods.tconstruct.Melting;
 import mods.gregtech.recipe.RecipeMap;
 
 
 
 // --- Variables ---
-var glass_cable = <appliedenergistics2:part:16>;
-var Comparator = <projectred-integration:gate:26>;
-var Furnace = <minecraft:furnace>;
-var Display = <litecraftcore:lc_meta_item:15>;
-var Cauldron = <minecraft:cauldron>;
-var Leather  = <ore:leather>;
-var Book     = <ore:book>;
-var Shears   = <ore:toolShears>;
-var IronAxe  = <minecraft:iron_axe>;
-var Skull    = <ore:itemSkull>;
-var ETable   = <minecraft:enchanting_table>;
-var Compass  = <minecraft:compass>;
-var EnderEye = <ore:gemEnderEye>;
-var Stick    = <ore:stickWood>;
-var SBowString = <tconstruct:bow_string>.withTag({Material: "soularium"});
+val glass_cable = <appliedenergistics2:part:16>;
+val Comparator = <projectred-integration:gate:26>;
+val Furnace = <minecraft:furnace>;
+val Display = <litecraftcore:lc_meta_item:15>;
+val Cauldron = <minecraft:cauldron>;
+val Leather  = <ore:leather>;
+val Book     = <ore:book>;
+val Shears   = <ore:toolShears>;
+val IronAxe  = <minecraft:iron_axe>;
+val Skull    = <ore:itemSkull>;
+val ETable   = <minecraft:enchanting_table>;
+val Compass  = <minecraft:compass>;
+val EnderEye = <ore:gemEnderEye>;
+val Stick    = <ore:stickWood>;
+val SBowString = <tconstruct:bow_string>.withTag({Material: "soularium"});
 
-var EnergizedSiliconChip = <projectred-core:resource_item:21>;
-var SiliconChip          = <projectred-core:resource_item:20>;
+val EnergizedSiliconChip = <projectred-core:resource_item:21>;
+val SiliconChip          = <projectred-core:resource_item:20>;
 
-var LogicProcessor = <appliedenergistics2:material:22>;
-var CalcProcessor  = <appliedenergistics2:material:23>;
-var EngineeringProcessor = <appliedenergistics2:material:24>;
-var FluidProcessor = <litecraftcore:lc_meta_item:8>;
+val LogicProcessor = <appliedenergistics2:material:22>;
+val CalcProcessor  = <appliedenergistics2:material:23>;
+val EngineeringProcessor = <appliedenergistics2:material:24>;
+val FluidProcessor = <litecraftcore:lc_meta_item:8>;
 
-var Hammer = <ore:craftingToolHardHammer>;
-var File   = <ore:craftingToolFile>;
-var Wrench = <ore:craftingToolWrench>;
-var Screwdriver = <ore:craftingToolScrewdriver>;
+val Hammer = <ore:craftingToolHardHammer>;
+val File   = <ore:craftingToolFile>;
+val Wrench = <ore:craftingToolWrench>;
+val Screwdriver = <ore:craftingToolScrewdriver>;
 
-var ESteelPlate   = <ore:plateElectricalSteel>;
-var DSteelPlate   = <ore:plateDarkSteel>;
-var EndSteelPlate = <ore:plateEndSteel>;
-var SoulPlate     = <ore:plateSoularium>;
-var CAlloyPlate   = <ore:plateConstructionAlloy>;
-var CIPlate       = <ore:plateConductiveIron>;
-var VAPlate       = <ore:plateVibrantAlloy>;
-var PIPlate       = <ore:platePulsatingIron>;
-var EAPlate       = <ore:plateEnergeticAlloy>;
-var SteelPlate    = <ore:plateSteel>;
-var AluPlate      = <ore:plateAluminium>;
-var RedstonePlate = <ore:plateRedstone>;
-var SiliconPlate  = <ore:plateSilicon>;
-var TiPlate       = <ore:plateTitanium>;
+val ESteelPlate   = <ore:plateElectricalSteel>;
+val DSteelPlate   = <ore:plateDarkSteel>;
+val EndSteelPlate = <ore:plateEndSteel>;
+val SoulPlate     = <ore:plateSoularium>;
+val CAlloyPlate   = <ore:plateConstructionAlloy>;
+val CIPlate       = <ore:plateConductiveIron>;
+val VAPlate       = <ore:plateVibrantAlloy>;
+val PIPlate       = <ore:platePulsatingIron>;
+val EAPlate       = <ore:plateEnergeticAlloy>;
+val SteelPlate    = <ore:plateSteel>;
+val AluPlate      = <ore:plateAluminium>;
+val RedstonePlate = <ore:plateRedstone>;
+val SiliconPlate  = <ore:plateSilicon>;
+val TiPlate       = <ore:plateTitanium>;
 
-var ESteelIngot   = <ore:ingotElectricalSteel>;
-var EndSteelIngot = <ore:ingotEndSteel>;
-var DSteelIngot   = <ore:ingotDarkSteel>;
+val DSteelCurved = <ore:plateCurvedDarkSteel>;
+val EndSteelCurved = <ore:plateCurvedEndSteel>;
 
-var SoulariumRod  = <ore:stickSoularium>;
-var DarkSteelRod  = <ore:stickDarkSteel>;
+val ESteelIngot   = <ore:ingotElectricalSteel>;
+val EndSteelIngot = <ore:ingotEndSteel>;
+val DSteelIngot   = <ore:ingotDarkSteel>;
 
-
-var BCircuit      = <ore:circuitBasic>;
-var GCircuit      = <ore:circuitGood>;
-var AdvCircuit    = <ore:circuitAdvanced>;
-var ECircuit      = <ore:circuitExtreme>;
-var MasterCircuit = <ore:circuitMaster>;
-
-var LvMotor = <gregtech:meta_item_1:32600>;
-var MvMotor = <gregtech:meta_item_1:32601>;
-var HvMotor = <gregtech:meta_item_1:32602>;
-var EvMotor = <gregtech:meta_item_1:32603>;
-
-var LvConveyor = <gregtech:meta_item_1:32630>;
-var HvConveyor = <gregtech:meta_item_1:32632>;
-
-var LvPiston   = <gregtech:meta_item_1:32640>;
-var EvPiston    = <gregtech:meta_item_1:32643>;
-
-var HvPump     = <gregtech:meta_item_1:32612>; 
-
-var LvRobotArm = <gregtech:meta_item_1:32650>;
-var HvRobotArm = <gregtech:meta_item_1:32652>;
-
-var MvFieldGen = <gregtech:meta_item_1:32671>;
-var EvFieldGen = <gregtech:meta_item_1:32673>;
-
-var IvSensor   = <gregtech:meta_item_1:32694>;
-var IvEmitter  = <gregtech:meta_item_1:32684>;
-
-var PIC = <gregtech:meta_item_2:32483>;
-var HPIC = <gregtech:meta_item_2:32479>;
-
-var TinRotor    = <ore:rotorTin>;
-var SteelRotor  = <ore:rotorSteel>;
-var SSteelRotor = <ore:rotorStainlessSteel>;
-
-var GrindHead   = <ore:craftingGrinder>;
-var mold_block  = <gregtech:meta_item_1:32308>;
-var dynamite    = <gregtech:meta_item_1:32629>;
-var CircuiPlate = <projectred-core:resource_item>;
-
-var NStick      = <ore:itemNutritiousStick>;
-var InfinityRod = <ore:itemInfinityRod>;
-
-var EConduit     = <enderio:item_power_conduit>;
-var EConduit2    = <enderio:item_power_conduit:1>;
-var IRConduit    = <enderio:item_redstone_conduit>;
-var ConduitProbe = <enderio:item_conduit_probe>;
-
-var Capacitor  = <enderio:item_basic_capacitor>;
-var Capacitor2 = <enderio:item_basic_capacitor:1>;
-var Capacitor3 = <enderio:item_basic_capacitor:2>;
-
-var ZElectrode  = <ore:skullZombieElectrode>;
-var ZLogic      = <ore:skullZombieController>;
-var FZombi      = <ore:skullZombieFrankenstein>;
-var EResonator  = <ore:skullEnderResonator>;
-var SEnder      = <ore:skullSentientEnder>;
-var SContractor = <ore:skullSkeletalContractor>;
-var GDiode      = <ore:skullGuardianDiode>;
-
-var SimpleChassi = <ore:itemSimpleMachineChassi>;
-var IChassi      = <ore:itemMachineChassi>;
-var SoulChassi   = <ore:itemSoulMachineChassi>;
-var EChassi      = <ore:itemEnhancedMachineChassi>;
-
-var PrecientCrystal = <ore:itemPrecientCrystal>;
-var PCrystal  = <ore:itemPulsatingCrystal>;
-var VCrystal  = <ore:itemVibrantCrystal>;
-var ECrystal  = <ore:itemEnderCrystal>;
+val SoulariumRod  = <ore:stickSoularium>;
+val DarkSteelRod  = <ore:stickDarkSteel>;
 
 
-var TormentedEndermanHead = <enderio:block_enderman_skull:2>;
-var Tank    = <enderio:block_tank>;
-var FQuartz = <ore:fusedQuartz>;
+val BCircuit      = <ore:circuitBasic>;
+val GCircuit      = <ore:circuitGood>;
+val AdvCircuit    = <ore:circuitAdvanced>;
+val ECircuit      = <ore:circuitExtreme>;
+val MasterCircuit = <ore:circuitMaster>;
+
+val LvMotor = <gregtech:meta_item_1:32600>;
+val MvMotor = <gregtech:meta_item_1:32601>;
+val HvMotor = <gregtech:meta_item_1:32602>;
+val EvMotor = <gregtech:meta_item_1:32603>;
+
+val LvConveyor = <gregtech:meta_item_1:32630>;
+val HvConveyor = <gregtech:meta_item_1:32632>;
+
+val LvPiston   = <gregtech:meta_item_1:32640>;
+val EvPiston    = <gregtech:meta_item_1:32643>;
+
+val HvPump     = <gregtech:meta_item_1:32612>; 
+
+val LvRobotArm = <gregtech:meta_item_1:32650>;
+val HvRobotArm = <gregtech:meta_item_1:32652>;
+
+val MvFieldGen = <gregtech:meta_item_1:32671>;
+val EvFieldGen = <gregtech:meta_item_1:32673>;
+
+val IvSensor   = <gregtech:meta_item_1:32694>;
+val IvEmitter  = <gregtech:meta_item_1:32684>;
+
+val PIC = <gregtech:meta_item_2:32483>;
+val HPIC = <gregtech:meta_item_2:32479>;
+
+val TinRotor    = <ore:rotorTin>;
+val SteelRotor  = <ore:rotorSteel>;
+val SSteelRotor = <ore:rotorStainlessSteel>;
+
+val GrindHead   = <ore:craftingGrinder>;
+val mold_block  = <gregtech:meta_item_1:32308>;
+val dynamite    = <gregtech:meta_item_1:32629>;
+val CircuiPlate = <projectred-core:resource_item>;
+
+val NStick      = <ore:itemNutritiousStick>;
+val InfinityRod = <ore:itemInfinityRod>;
+
+val EConduit     = <enderio:item_power_conduit>;
+val EConduit2    = <enderio:item_power_conduit:1>;
+val IRConduit    = <enderio:item_redstone_conduit>;
+val ConduitProbe = <enderio:item_conduit_probe>;
+
+val Capacitor  = <enderio:item_basic_capacitor>;
+val Capacitor2 = <enderio:item_basic_capacitor:1>;
+val Capacitor3 = <enderio:item_basic_capacitor:2>;
+
+val ZElectrode  = <ore:skullZombieElectrode>;
+val ZLogic      = <ore:skullZombieController>;
+val FZombi      = <ore:skullZombieFrankenstein>;
+val EResonator  = <ore:skullEnderResonator>;
+val SEnder      = <ore:skullSentientEnder>;
+val SContractor = <ore:skullSkeletalContractor>;
+val GDiode      = <ore:skullGuardianDiode>;
+
+val SimpleChassi = <ore:itemSimpleMachineChassi>;
+val IChassi      = <ore:itemMachineChassi>;
+val SoulChassi   = <ore:itemSoulMachineChassi>;
+val EChassi      = <ore:itemEnhancedMachineChassi>;
+
+val PrecientCrystal = <ore:itemPrecientCrystal>;
+val PCrystal  = <ore:itemPulsatingCrystal>;
+val VCrystal  = <ore:itemVibrantCrystal>;
+val ECrystal  = <ore:itemEnderCrystal>;
+
+
+val TormentedEndermanHead = <enderio:block_enderman_skull:2>;
+val Tank    = <enderio:block_tank>;
+val FQuartz = <ore:fusedQuartz>;
 
 val list_items = [
   <enderio:item_item_conduit>, <enderio:item_liquid_conduit>, <enderio:item_liquid_conduit:1>, <enderio:item_liquid_conduit:2>, <enderio:item_power_conduit>, 
@@ -188,26 +192,32 @@ recipes.remove(<enderio:item_material:38>);
 
 // --- Infinity Bimetal Gear
 recipes.remove(<enderio:item_material:11>);
+// -
 Casting.removeTableRecipe(<enderio:item_material:11>);
 
 // --- Energized Bimetal Gear
 recipes.remove(<enderio:item_material:12>);
+// -
 Casting.removeTableRecipe(<enderio:item_material:12>);
 
 // --- Vibrant Bimetal Gear
 recipes.remove(<enderio:item_material:13>);
+// -
 Casting.removeTableRecipe(<enderio:item_material:13>);
 
 // --- Dark Bimetal Gear
 recipes.remove(<enderio:item_material:73>);
+// -
 Casting.removeTableRecipe(<enderio:item_material:73>);
 
 // --- Pulsating Crystall
 recipes.remove(<enderio:item_material:14>);
+// -
 Casting.removeTableRecipe(<enderio:item_material:14>);
 
 // --- Vibrant Crystall
 recipes.remove(<enderio:item_material:15>);
+// -
 Casting.removeTableRecipe(<enderio:item_material:15>);
 
 
@@ -236,24 +246,68 @@ recipes.remove(<enderio:block_end_iron_bars>);
 
 // --- Electrical Steel
 furnace.remove(<ore:ingotElectricalSteel>);
+// -
+Melting.removeRecipe(<liquid:electrical_steel>, <gregtech:meta_item_1:2812>);
+// -
+Melting.removeRecipe(<liquid:electrical_steel>, <gregtech:meta_item_1:1812>);
+// -
+Melting.removeRecipe(<liquid:electrical_steel>, <gregtech:meta_item_1:812>);
 
 // --- Energetic Alloy
 furnace.remove(<ore:ingotEnergeticAlloy>);
+// -
+Melting.removeRecipe(<liquid:energetic_alloy>, <gregtech:meta_item_1:2807>);
+// -
+Melting.removeRecipe(<liquid:energetic_alloy>, <gregtech:meta_item_1:1807>);
+// -
+Melting.removeRecipe(<liquid:energetic_alloy>, <gregtech:meta_item_1:807>);
 
 // --- Vibrant Alloy
 furnace.remove(<ore:ingotVibrantAlloy>);
+// -
+Melting.removeRecipe(<liquid:vibrant_alloy>, <gregtech:meta_item_1:2809>);
+// -
+Melting.removeRecipe(<liquid:vibrant_alloy>, <gregtech:meta_item_1:1809>);
+// -
+Melting.removeRecipe(<liquid:vibrant_alloy>, <gregtech:meta_item_1:809>);
 
 // --- Pulsating Iron
 furnace.remove(<ore:ingotPulsatingIron>);
+// -
+Melting.removeRecipe(<liquid:pulsating_iron>, <gregtech:meta_item_1:2808>);
+// -
+Melting.removeRecipe(<liquid:pulsating_iron>, <gregtech:meta_item_1:1808>);
+// -
+Melting.removeRecipe(<liquid:pulsating_iron>, <gregtech:meta_item_1:808>);
 
 // --- Dark Steel
 furnace.remove(<ore:ingotDarkSteel>);
+// -
+Melting.removeRecipe(<liquid:dark_steel>, <gregtech:meta_item_1:2811>);
+// -
+Melting.removeRecipe(<liquid:dark_steel>, <gregtech:meta_item_1:1811>);
+// -
+Melting.removeRecipe(<liquid:dark_steel>, <gregtech:meta_item_1:811>);
 
 // --- Soularium
 furnace.remove(<ore:ingotSoularium>);
+// -
+Melting.removeRecipe(<liquid:soularium>, <gregtech:meta_item_1:2814>);
+// -
+Melting.removeRecipe(<liquid:soularium>, <gregtech:meta_item_1:1814>);
+// -
+Melting.removeRecipe(<liquid:soularium>, <gregtech:meta_item_1:814>);
+// -
+Melting.removeRecipe(<liquid:soularium>, <enderio:item_material:74>);
 
 // --- End Steel
 furnace.remove(<ore:ingotEndSteel>);
+// -
+Melting.removeRecipe(<liquid:end_steel>, <gregtech:meta_item_1:2813>);
+// -
+Melting.removeRecipe(<liquid:end_steel>, <gregtech:meta_item_1:1813>);
+// -
+Melting.removeRecipe(<liquid:end_steel>, <gregtech:meta_item_1:813>);
 
 
 // --- Confusion Charge
@@ -1000,30 +1054,29 @@ recipes.addShaped(<enderio:item_rod_of_return>, [
 [<ore:screwStainlessSteel>, InfinityRod, PCrystal],
 [InfinityRod, <ore:screwStainlessSteel>, Wrench]]);
 
-
 // --- Dark Helm
 recipes.addShaped(<enderio:item_dark_steel_helmet>, [
 [DSteelPlate, DSteelPlate, DSteelPlate],
-[DSteelPlate, Hammer, DSteelPlate],
+[DSteelCurved, Hammer, DSteelCurved],
 [null, null, null]]);
 
 // --- Dark Plate
 recipes.addShaped(<enderio:item_dark_steel_chestplate>, [
-[DSteelPlate, Hammer, DSteelPlate],
-[DSteelPlate, DSteelPlate, DSteelPlate],
-[DSteelPlate, DSteelPlate, DSteelPlate]]);
+[DSteelCurved, Hammer, DSteelCurved],
+[DSteelCurved, DSteelPlate, DSteelCurved],
+[DSteelCurved, DSteelPlate, DSteelCurved]]);
 
 // --- Dark Leggins
 recipes.addShaped(<enderio:item_dark_steel_leggings>, [
 [DSteelPlate, DSteelPlate, DSteelPlate],
-[DSteelPlate, Hammer, DSteelPlate],
-[DSteelPlate, null, DSteelPlate]]);
+[DSteelCurved, Hammer, DSteelCurved],
+[DSteelCurved, null, DSteelCurved]]);
 
 // --- Dark Boots
 recipes.addShaped(<enderio:item_dark_steel_boots>, [
 [null, null, null],
-[DSteelPlate, Hammer, DSteelPlate],
-[DSteelPlate, null, DSteelPlate]]);
+[DSteelCurved, Hammer, DSteelCurved],
+[DSteelCurved, null, DSteelCurved]]);
 
 // --- Dark Pick
 recipes.addShaped(<enderio:item_dark_steel_pickaxe>, [
@@ -1070,26 +1123,26 @@ recipes.addShaped(<enderio:item_dark_steel_hand>, [
 // --- Ender Helm
 recipes.addShaped(<enderio:item_end_steel_helmet>, [
 [EndSteelPlate, EndSteelPlate, EndSteelPlate],
-[EndSteelPlate, GDiode, EndSteelPlate],
+[EndSteelCurved, GDiode, EndSteelCurved],
 [null, Hammer, null]]);
 
 // --- Ender Plate
 recipes.addShaped(<enderio:item_end_steel_chestplate>, [
-[EndSteelPlate, Hammer, EndSteelPlate],
-[EndSteelPlate, GDiode, EndSteelPlate],
-[EndSteelPlate, EndSteelPlate, EndSteelPlate]]);
+[EndSteelCurved, Hammer, EndSteelCurved],
+[EndSteelCurved, GDiode, EndSteelCurved],
+[EndSteelCurved, EndSteelPlate, EndSteelCurved]]);
 
 // --- Ender Leggins
 recipes.addShaped(<enderio:item_end_steel_leggings>, [
 [EndSteelPlate, EndSteelPlate, EndSteelPlate],
-[EndSteelPlate, GDiode, EndSteelPlate],
-[EndSteelPlate, Hammer, EndSteelPlate]]);
+[EndSteelCurved, GDiode, EndSteelCurved],
+[EndSteelCurved, Hammer, EndSteelCurved]]);
 
 // --- Ender Boots
 recipes.addShaped(<enderio:item_end_steel_boots>, [
 [null, null, null],
-[EndSteelPlate, Hammer, EndSteelPlate],
-[EndSteelPlate, GDiode, EndSteelPlate]]);
+[EndSteelCurved, Hammer, EndSteelCurved],
+[EndSteelCurved, GDiode, EndSteelCurved]]);
 
 // --- Ender Pickaxe
 recipes.addShaped(<enderio:item_end_steel_pickaxe>, [
